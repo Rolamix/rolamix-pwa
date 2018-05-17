@@ -23,13 +23,11 @@ declare global {
   interface HTMLAttributes {}
 }
 
-import '@stencil/router';
-import '@ionic/core';
-import 'ionicons';
+import '@engineerapart/stencil-router';
 
 import {
   MatchResults,
-} from '@stencil/router';
+} from '@engineerapart/stencil-router';
 import {
   EventEmitter,
 } from '@stencil/core';

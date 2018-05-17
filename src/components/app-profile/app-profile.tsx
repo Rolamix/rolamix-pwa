@@ -1,5 +1,6 @@
 import { Component, Listen, Prop, State } from '@stencil/core';
-import { MatchResults } from '@stencil/router';
+// import { MatchResults } from '@stencil/router';
+import { MatchResults } from '@engineerapart/stencil-router';
 
 import { urlB64ToUint8Array } from '../../helpers/utils';
 
@@ -15,8 +16,6 @@ export class AppProfile {
 
   // @Prop() name: string; // ion-router usage.
   @Prop() match: MatchResults;
-  @Prop({ connect: 'ion-toast-controller' }) toastCtrl: HTMLIonToastControllerElement;
-
   @State() notify: boolean;
   @State() swSupport: boolean;
 
@@ -72,26 +71,24 @@ export class AppProfile {
 
   render() {
     const name = this.match.params.name;
-    // const name = this.name; // ion-router usage.
 
     return [
-        <ion-header>
-          <ion-toolbar color='primary'>
-            <ion-title>Ionic PWA Toolkit - {name}</ion-title>
-          </ion-toolbar>
-        </ion-header>,
+      <header>
+        <h1>Stencil PWA Toolkit - {name}</h1>
+      </header>,
 
-        <ion-content>
-          <p>
-            Hello! My name is {name}.
-            My name was passed in through a route param!
-          </p>
+      <div class='app-profile'>
+        <p>
+          Hello! My name is {name}.
+          My name was passed in through a route param!
+        </p>
 
-          {this.swSupport ? <ion-item>
-            <ion-label>Notifications</ion-label>
-            <ion-toggle checked={this.notify} disabled={this.notify}></ion-toggle>
-          </ion-item> : null}
-        </ion-content>
+        {this.swSupport ?
+        <div class='check-wrap'>
+          <label htmlFor='notif-check'>Notifications</label>
+          <input type="checkbox" id='notif-check' checked={this.notify} disabled={this.notify}></input>
+        </div> : null}
+      </div>
     ];
   }
 }

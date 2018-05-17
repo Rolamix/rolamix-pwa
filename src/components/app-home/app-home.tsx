@@ -21,26 +21,24 @@ export class AppHome {
   render() {
 
     return [
-      <ion-header>
-        <ion-toolbar color='primary'>
-          <ion-title>Ionic PWA Toolkit</ion-title>
-        </ion-toolbar>
-      </ion-header>,
+      <header>
+        <h1>Stencil PWA Toolkit</h1>
+      </header>,
 
-      <ion-content>
+      <div class='app-home'>
         <p>
-          Welcome to the Ionic PWA Toolkit.
+          Welcome to the Stencil PWA Toolkit.
           You can use this starter to build entire PWAs all with
           web components using Stencil and ionic/core! Check out the readme for everything that comes in this starter out of the box and
           Check out our docs on <a href='https://stenciljs.com'>stenciljs.com</a> to get started.
         </p>
 
         <stencil-route-link url={`/profile/${this.id}`}>
-          <ion-button> {/* href={`/profile/${this.id}`} */}
+          <button>
             Profile page
-          </ion-button>
+          </button>
         </stencil-route-link>
-      </ion-content>
+      </div>
     ];
   }
 }

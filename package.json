@@ -13,15 +13,15 @@
     "devWithSW": "sd concurrent \"stencil build --dev --service-worker --watch\" \"stencil-dev-server\" ",
     "serve": "stencil-dev-server",
     "start": "npm run dev",
-    "start:ssr": "NODE_ENV=production stencil build --ssr --es5 && NODE_ENV=production node server.js",
+    "start:ssr": "NODE_ENV=production stencil build --ssr && NODE_ENV=production node server.js",
     "start:ssr:dev": "sd concurrent \"NODE_ENV=production stencil build --dev --watch\" \"NODE_ENV=production node server.js\"",
     "test": "jest --no-cache",
     "test.watch": "jest --watch --no-cache"
   },
   "dependencies": {
+    "@engineerapart/stencil-router": "^0.1.14",
     "@ionic/core": "4.0.0-alpha.6",
     "@stencil/core": "0.9.1",
-    "@stencil/router": "^0.1.7",
     "express": "^4.16.3"
   },
   "devDependencies": {

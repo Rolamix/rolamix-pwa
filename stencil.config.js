@@ -2,6 +2,7 @@ const sass = require('@stencil/sass');
 
 exports.config = {
   namespace: 'app',
+  flags: { prerender: true },
   // bundles: [
   //   { components: ['app-home', 'etc'] },
   // ],

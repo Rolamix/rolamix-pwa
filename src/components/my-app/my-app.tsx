@@ -1,7 +1,8 @@
-import '@ionic/core';
+// import '@ionic/core';
 import '@stencil/core';
-import { Component, Prop, Listen } from '@stencil/core';
-import { RouterSwitch } from '@stencil/router';
+import { Component, Listen } from '@stencil/core';
+// import { RouterSwitch } from '@stencil/router';
+import { RouterSwitch } from '@engineerapart/stencil-router';
 
 @Component({
   tag: 'my-app',
@@ -9,7 +10,7 @@ import { RouterSwitch } from '@stencil/router';
 })
 export class MyApp {
 
-  @Prop({ connect: 'ion-toast-controller' }) toastCtrl: HTMLIonToastControllerElement;
+  // @Prop({ connect: 'ion-toast-controller' }) toastCtrl: HTMLIonToastControllerElement;
 
   /**
    * Handle service worker updates correctly.
@@ -22,38 +23,26 @@ export class MyApp {
    */
   @Listen('window:swUpdate')
   async onSWUpdate() {
-    const toast = await this.toastCtrl.create({
-      message: 'New version available',
-      showCloseButton: true,
-      closeButtonText: 'Reload'
-    });
-    await toast.present();
-    await toast.onWillDismiss()
+    // const toast = await this.toastCtrl.create({
+    //   message: 'New version available',
+    //   showCloseButton: true,
+    //   closeButtonText: 'Reload'
+    // });
+    // await toast.present();
+    // await toast.onWillDismiss();
     window.location.reload();
   }
 
   render() {
     return (
-      <ion-app>
-
-        {/* We do not want ion-router navigation, it produces the floating pages
-          as in a mobile experience. But I want to record how to do it here. */}
-        {/* <ion-router useHash={false}>
-          <ion-route url='/' component='app-home'></ion-route>
-          <ion-route url='/profile/:name' component='app-profile'></ion-route>
-        </ion-router>
-        <ion-nav></ion-nav> */}
-
-        <main>
-          <stencil-router>
-            <RouterSwitch>
-              <stencil-route url='/' component='app-home' exact={true} />
-              <stencil-route url='/profile/:name' component='app-profile' />
-            </RouterSwitch>
-          </stencil-router>
-        </main>
-
-      </ion-app>
+      <main>
+        <stencil-router>
+          <RouterSwitch>
+            <stencil-route url='/' component='app-home' exact={true} />
+            <stencil-route url='/profile/:name' component='app-profile' />
+          </RouterSwitch>
+        </stencil-router>
+      </main>
     );
   }
 }
