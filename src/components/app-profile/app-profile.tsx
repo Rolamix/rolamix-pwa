@@ -71,7 +71,8 @@ export class AppProfile {
   }
 
   render() {
-    const name = this.match.params.name; // const name = this.name; // ion-router usage.
+    const name = this.match.params.name;
+    // const name = this.name; // ion-router usage.
 
     return [
         <ion-header>
