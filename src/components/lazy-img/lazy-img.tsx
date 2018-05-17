@@ -1,4 +1,4 @@
-import {Component, Element, Event, EventEmitter, Prop, State} from '@stencil/core';
+import { Component, Element, Event, EventEmitter, Prop, State } from '@stencil/core';
 
 /*
   You can use this component to lazy load below the fold images to improve load time.
@@ -19,10 +19,12 @@ export class LazyImg {
 
   @Prop() src: string;
   @Prop() alt: string;
+  @Prop() width: number;
 
   @State() oldSrc: string;
 
   @Event() lazyImgloaded: EventEmitter<HTMLImageElement>;
+  @Prop({context: 'isServer'}) isServer: boolean;
 
   image: HTMLImageElement;
   io: IntersectionObserver | null;
@@ -44,7 +46,7 @@ export class LazyImg {
 
   handleImage() {
     const image = this.image;
-    image.setAttribute('src', image.getAttribute('data-src'));
+    image.setAttribute('src', image.getAttribute('data-src') || '');
     image.onload = () => {
       image.removeAttribute('data-src');
       this.lazyImgloaded.emit(image);
@@ -52,7 +54,7 @@ export class LazyImg {
   }
 
   addIntersectionObserver() {
-    if (!this.src) {
+    if (!this.src || this.isServer) {
       return;
     }
     if ('IntersectionObserver' in window) {
@@ -73,7 +75,7 @@ export class LazyImg {
   }
 
   removeIntersectionObserver() {
-    if (this.io) {
+    if (this.io && !this.isServer) {
       this.io.disconnect();
       this.io = null;
     }
@@ -81,7 +83,7 @@ export class LazyImg {
 
   render() {
     return (
-      <img ref={(el) => this.image = el as HTMLImageElement} data-src={this.src} alt={this.alt}></img>
+      <img ref={(el) => this.image = el as HTMLImageElement} data-src={this.src} alt={this.alt} width={this.width}></img>
     );
   }
 }

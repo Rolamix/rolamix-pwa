@@ -26,7 +26,7 @@
         "headers": [
           {
             "key": "Link",
-            "value": "</build/app/app.mmlkvqio.js>;rel=preload;as=script,</build/app/otnhfzuk.js>;rel=preload;as=script,</build/app/vqdmmwyk.js>;rel=preload;as=script,</build/app/ga7zzchw.js>;rel=preload;as=script,</build/app/icy6acjg.js>;rel=preload;as=script,</build/app/5piuuqes.js>;rel=preload;as=script,</build/app/mtmzksh6.js>;rel=preload;as=script,</build/app/rqk2ui2b.js>;rel=preload;as=script,</build/app/cf8a9frs.js>;rel=preload;as=script,</build/app/7xjek45h.js>;rel=preload;as=script,</build/app/5e3mm8py.js>;rel=preload;as=script,</build/app/svg/md-ionic.js>;rel=preload;as=script"
+            "value": "</build/app/app.js>;rel=preload;as=style,</build/app/app.r6xjmhqd.js>;rel=preload;as=script,</build/app/sw.js>;rel=preload;as=script,</build/app/chunk-63df273d.js>;rel=preload;as=script,</build/app/chunk-1fa7ed7c.js>;rel=preload;as=script,</build/app/chunk-f025f93c.js>;rel=preload;as=script,</build/app/chunk-4620ed8e.js>;rel=preload;as=script,</build/app/3woyhwwb.js>;rel=preload;as=script,</build/app/dthapuf7.js>;rel=preload;as=script,</build/app/3empjjxa.js>;rel=preload;as=script,</build/app/21la2ua8.js>;rel=preload;as=script,</build/app/ft6xt8ml.js>;rel=preload;as=script,</build/app/jffakara.js>;rel=preload;as=script"
           }
         ]
       }

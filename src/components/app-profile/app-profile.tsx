@@ -1,19 +1,21 @@
 import { Component, Listen, Prop, State } from '@stencil/core';
 import { MatchResults } from '@stencil/router';
-import { ToastController } from '@ionic/core';
 
 import { urlB64ToUint8Array } from '../../helpers/utils';
 
 
 @Component({
   tag: 'app-profile',
-  styleUrl: 'app-profile.scss'
+  styleUrl: 'app-profile.scss',
+  host: {
+    theme: 'ion-page',
+  },
 })
 export class AppProfile {
 
+  // @Prop() name: string; // ion-router usage.
   @Prop() match: MatchResults;
-  @Prop({ connect: 'ion-toast-controller' }) toastCtrl: ToastController;
-  @Prop({ context: 'isServer' }) private isServer: boolean;
+  @Prop({ connect: 'ion-toast-controller' }) toastCtrl: HTMLIonToastControllerElement;
 
   @State() notify: boolean;
   @State() swSupport: boolean;
@@ -28,17 +30,13 @@ export class AppProfile {
     } else {
       this.swSupport = false;
     }
-
-    if (!this.isServer) {
-      console.log('loaded');
-    }
   }
 
   @Listen('ionChange')
   subscribeToNotify($event: CustomEvent) {
     console.log($event.detail.checked);
 
-    if ($event.detail.checked === true) {
+    if ($event.detail.checked) {
       this.handleSub();
     }
   }
@@ -69,32 +67,30 @@ export class AppProfile {
           }
         })
       }
-    })
+    });
   }
 
   render() {
-    if (this.match && this.match.params.name) {
-      return (
-        <ion-page>
-          <ion-header>
-            <ion-toolbar color='primary'>
-              <ion-title>Ionic PWA Toolkit - {this.match.params.name}</ion-title>
-            </ion-toolbar>
-          </ion-header>
+    const name = this.match.params.name; // const name = this.name; // ion-router usage.
 
-          <ion-content>
-            <p>
-              Hello! My name is {this.match.params.name}.
-              My name was passed in through a route param!
-            </p>
+    return [
+        <ion-header>
+          <ion-toolbar color='primary'>
+            <ion-title>Ionic PWA Toolkit - {name}</ion-title>
+          </ion-toolbar>
+        </ion-header>,
 
-            {this.swSupport ? <ion-item>
-              <ion-label>Notifications</ion-label>
-              <ion-toggle checked={this.notify} disabled={this.notify}></ion-toggle>
-            </ion-item> : null}
-          </ion-content>
-        </ion-page>
-      );
-    }
+        <ion-content>
+          <p>
+            Hello! My name is {name}.
+            My name was passed in through a route param!
+          </p>
+
+          {this.swSupport ? <ion-item>
+            <ion-label>Notifications</ion-label>
+            <ion-toggle checked={this.notify} disabled={this.notify}></ion-toggle>
+          </ion-item> : null}
+        </ion-content>
+    ];
   }
 }

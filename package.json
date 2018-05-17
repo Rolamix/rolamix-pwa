@@ -7,7 +7,8 @@
     "dist/"
   ],
   "scripts": {
-    "build": "stencil build --prerender",
+    "build": "stencil build",
+    "buildWPrerender": "stencil build --prerender",
     "dev": "sd concurrent \"stencil build --dev --watch\" \"stencil-dev-server\" ",
     "devWithSW": "sd concurrent \"stencil build --dev --service-worker --watch\" \"stencil-dev-server\" ",
     "serve": "stencil-dev-server",
@@ -16,16 +17,16 @@
     "test.watch": "jest --watch --no-cache"
   },
   "dependencies": {
-    "@ionic/core": "0.0.2-65",
-    "@stencil/core": "0.6.1",
-    "@stencil/router": "latest"
+    "@ionic/core": "4.0.0-alpha.6",
+    "@stencil/core": "0.9.1",
+    "@stencil/router": "^0.1.7"
   },
   "devDependencies": {
     "@stencil/dev-server": "latest",
-    "@stencil/sass": "0.0.2",
+    "@stencil/sass": "0.0.5",
     "@stencil/utils": "latest",
-    "@types/jest": "^21.1.1",
-    "jest": "^21.2.1"
+    "@types/jest": "^22.2.3",
+    "jest": "^22.4.3"
   },
   "repository": {
     "type": "git",

@@ -1,7 +1,7 @@
 import '@ionic/core';
 import '@stencil/core';
-import { Component, State, Prop, Listen } from '@stencil/core';
-import { ToastController } from '@ionic/core';
+import { Component, Prop, Listen } from '@stencil/core';
+import { RouterSwitch } from '@stencil/router';
 
 @Component({
   tag: 'my-app',
@@ -9,54 +9,50 @@ import { ToastController } from '@ionic/core';
 })
 export class MyApp {
 
-  @Prop({ connect: 'ion-toast-controller' }) toastCtrl: ToastController;
-  @Prop({ context: 'isServer' }) private isServer: boolean;
-  @State() id: string;
+  @Prop({ connect: 'ion-toast-controller' }) toastCtrl: HTMLIonToastControllerElement;
 
-  componentWillLoad() {
-    if (!this.isServer) {
-      this.id = Math.random().toString(36).substr(2, 8); // stencil
-    }
-  }
-
-  componentDidLoad() {
-    /*
-      Handle service worker updates correctly.
-      This code will show a toast letting the
-      user of the PWA know that there is a
-      new version available. When they click the
-      reload button it then reloads the page
-      so that the new service worker can take over
-      and serve the fresh content
-    */
-    window.addEventListener('swUpdate', () => {
-      this.toastCtrl.create({
-        message: 'New version available',
-        showCloseButton: true,
-        closeButtonText: 'Reload'
-      }).then((toast) => {
-        toast.present();
-      });
+  /**
+   * Handle service worker updates correctly.
+   * This code will show a toast letting the
+   * user of the PWA know that there is a
+   * new version available. When they click the
+   * reload button it then reloads the page
+   * so that the new service worker can take over
+   * and serve the fresh content
+   */
+  @Listen('window:swUpdate')
+  async onSWUpdate() {
+    const toast = await this.toastCtrl.create({
+      message: 'New version available',
+      showCloseButton: true,
+      closeButtonText: 'Reload'
     });
-  }
-
-  @Listen('body:ionToastWillDismiss')
-  reload() {
+    await toast.present();
+    await toast.onWillDismiss()
     window.location.reload();
   }
 
   render() {
     return (
       <ion-app>
+
+        {/* We do not want ion-router navigation, it produces the floating pages
+          as in a mobile experience. But I want to record how to do it here. */}
+        {/* <ion-router useHash={false}>
+          <ion-route url='/' component='app-home'></ion-route>
+          <ion-route url='/profile/:name' component='app-profile'></ion-route>
+        </ion-router>
+        <ion-nav></ion-nav> */}
+
         <main>
           <stencil-router>
-            <stencil-route url='/' component='app-home' exact={true} componentProps={{id: this.id}}>
-            </stencil-route>
-
-            <stencil-route url='/profile/:name' component='app-profile'>
-            </stencil-route>
+            <RouterSwitch>
+              <stencil-route url='/' component='app-home' exact={true} />
+              <stencil-route url='/profile/:name' component='app-profile' />
+            </RouterSwitch>
           </stencil-router>
         </main>
+
       </ion-app>
     );
   }
