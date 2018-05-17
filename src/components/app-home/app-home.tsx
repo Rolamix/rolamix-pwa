@@ -1,4 +1,4 @@
-import { Component } from '@stencil/core';
+import { Component, Prop } from '@stencil/core';
 
 
 @Component({
@@ -7,7 +7,10 @@ import { Component } from '@stencil/core';
 })
 export class AppHome {
 
+  @Prop() id: string;
+
   render() {
+
     return (
       <ion-page>
         <ion-header>
@@ -24,7 +27,7 @@ export class AppHome {
             Check out our docs on <a href='https://stenciljs.com'>stenciljs.com</a> to get started.
           </p>
 
-          <stencil-route-link url='/profile/stencil'>
+          <stencil-route-link url={`/profile/${this.id}`}>
             <ion-button>
               Profile page
             </ion-button>

@@ -13,6 +13,7 @@ export class AppProfile {
 
   @Prop() match: MatchResults;
   @Prop({ connect: 'ion-toast-controller' }) toastCtrl: ToastController;
+  @Prop({ context: 'isServer' }) private isServer: boolean;
 
   @State() notify: boolean;
   @State() swSupport: boolean;
@@ -26,6 +27,10 @@ export class AppProfile {
       this.swSupport = true;
     } else {
       this.swSupport = false;
+    }
+
+    if (!this.isServer) {
+      console.log('loaded');
     }
   }
 
@@ -46,7 +51,7 @@ export class AppProfile {
       if (reg) {
         // get push subscription
         reg.pushManager.getSubscription().then((sub) => {
-  
+
           // if there is no subscription that means
           // the user has not subscribed before
           if (sub === null) {
@@ -73,7 +78,7 @@ export class AppProfile {
         <ion-page>
           <ion-header>
             <ion-toolbar color='primary'>
-              <ion-title>Ionic PWA Toolkit</ion-title>
+              <ion-title>Ionic PWA Toolkit - {this.match.params.name}</ion-title>
             </ion-toolbar>
           </ion-header>
 

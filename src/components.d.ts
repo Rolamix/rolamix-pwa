@@ -41,7 +41,7 @@ declare global {
   }
   namespace JSXElements {
     export interface AppHomeAttributes extends HTMLAttributes {
-      
+      id?: string;
     }
   }
 }

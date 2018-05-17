@@ -1,0 +1,35 @@
+{
+  "hosting": {
+    "public": "www",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/src/**",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ],
+    "headers": [
+      {
+        "source": "sw.js",
+        "headers" : [ {
+          "key" : "Cache-Control",
+          "value" : "no-cache"
+        } ]
+      },
+      {
+        "source": "/",
+        "headers": [
+          {
+            "key": "Link",
+            "value": "</build/app/app.mmlkvqio.js>;rel=preload;as=script,</build/app/otnhfzuk.js>;rel=preload;as=script,</build/app/vqdmmwyk.js>;rel=preload;as=script,</build/app/ga7zzchw.js>;rel=preload;as=script,</build/app/icy6acjg.js>;rel=preload;as=script,</build/app/5piuuqes.js>;rel=preload;as=script,</build/app/mtmzksh6.js>;rel=preload;as=script,</build/app/rqk2ui2b.js>;rel=preload;as=script,</build/app/cf8a9frs.js>;rel=preload;as=script,</build/app/7xjek45h.js>;rel=preload;as=script,</build/app/5e3mm8py.js>;rel=preload;as=script,</build/app/svg/md-ionic.js>;rel=preload;as=script"
+          }
+        ]
+      }
+    ]
+  }
+}
