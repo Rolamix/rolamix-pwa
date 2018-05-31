@@ -13,9 +13,12 @@ declare global {
   }
   namespace JSXElements {}
 
+  interface HTMLElement {
+    componentOnReady?: () => Promise<this | null>;
+  }
+
   interface HTMLStencilElement extends HTMLElement {
     componentOnReady(): Promise<this>;
-    componentOnReady(done: (ele?: this) => void): void;
 
     forceUpdate(): void;
   }
@@ -23,11 +26,11 @@ declare global {
   interface HTMLAttributes {}
 }
 
-import '@engineerapart/stencil-router';
+import '@theracode/router';
 
 import {
   MatchResults,
-} from '@engineerapart/stencil-router';
+} from '@theracode/router';
 import {
   EventEmitter,
 } from '@stencil/core';
@@ -70,6 +73,7 @@ declare global {
   namespace StencilComponents {
     interface AppProfile {
       'match': MatchResults;
+      'name': string;
     }
   }
 
@@ -93,6 +97,7 @@ declare global {
   namespace JSXElements {
     export interface AppProfileAttributes extends HTMLAttributes {
       'match'?: MatchResults;
+      'name'?: string;
     }
   }
 }

@@ -1,20 +1,15 @@
 import { Component, Listen, Prop, State } from '@stencil/core';
-// import { MatchResults } from '@stencil/router';
-import { MatchResults } from '@engineerapart/stencil-router';
 
+import { MatchResults } from '@theracode/router';
 import { urlB64ToUint8Array } from '../../helpers/utils';
-
 
 @Component({
   tag: 'app-profile',
-  styleUrl: 'app-profile.scss',
-  host: {
-    theme: 'ion-page',
-  },
+  styleUrl: 'app-profile.scss'
 })
 export class AppProfile {
 
-  // @Prop() name: string; // ion-router usage.
+  @Prop() name: string;
   @Prop() match: MatchResults;
   @State() notify: boolean;
   @State() swSupport: boolean;
@@ -24,17 +19,12 @@ export class AppProfile {
   publicServerKey = urlB64ToUint8Array('BBsb4au59pTKF4IKi-aJkEAGPXxtzs-lbtL58QxolsT2T-3dVQIXTUCCE1TSY8hyUvXLhJFEUmH7b5SJfSTcT-E');
 
   componentWillLoad() {
-    if ('serviceWorker' in navigator && 'PushManager' in window) {
-      this.swSupport = true;
-    } else {
-      this.swSupport = false;
-    }
+    this.swSupport = 'serviceWorker' in navigator && 'PushManager' in window;
   }
 
   @Listen('ionChange')
   subscribeToNotify($event: CustomEvent) {
     console.log($event.detail.checked);
-
     if ($event.detail.checked) {
       this.handleSub();
     }
@@ -62,31 +52,31 @@ export class AppProfile {
               // lets reflect this in our UI
               console.log('web push subscription: ', sub);
               this.notify = true;
-            })
+            });
           }
-        })
+        });
       }
     });
   }
 
   render() {
-    const name = this.match.params.name;
-
+    // Here, we can use 'this.name' or 'this.match.params.name'.
+    // theracode router passes your route params as props.
     return [
       <header>
-        <h1>Stencil PWA Toolkit - {name}</h1>
+        <h1>Stencil PWA Toolkit - {this.name}</h1>
       </header>,
 
-      <div class='app-profile'>
+      <div class="app-profile">
         <p>
-          Hello! My name is {name}.
+          Hello! My name is {this.name}.
           My name was passed in through a route param!
         </p>
 
         {this.swSupport ?
-        <div class='check-wrap'>
-          <label htmlFor='notif-check'>Notifications</label>
-          <input type="checkbox" id='notif-check' checked={this.notify} disabled={this.notify}></input>
+        <div class="check-wrap">
+          <label htmlFor="notif-check">Notifications</label>
+          <input type="checkbox" id="notif-check" checked={this.notify} disabled={this.notify}></input>
         </div> : null}
       </div>
     ];

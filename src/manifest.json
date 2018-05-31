@@ -1,6 +1,6 @@
 {
-  "name": "Ionic PWA Toolkit",
-  "short_name": "Ionic PWA",
+  "name": "Stencil PWA Toolkit",
+  "short_name": "Stencil PWA",
   "start_url": "/",
   "display": "standalone",
   "icons": [{

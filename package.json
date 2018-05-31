@@ -16,20 +16,23 @@
     "start:ssr": "NODE_ENV=production stencil build --ssr && NODE_ENV=production node server.js",
     "start:ssr:dev": "sd concurrent \"NODE_ENV=production stencil build --dev --watch\" \"NODE_ENV=production node server.js\"",
     "test": "jest --no-cache",
-    "test.watch": "jest --watch --no-cache"
+    "test.watch": "jest --watch --no-cache",
+    "lint": "tslint --project ."
   },
   "dependencies": {
-    "@engineerapart/stencil-router": "^0.1.14",
-    "@ionic/core": "4.0.0-alpha.6",
-    "@stencil/core": "0.9.1",
+    "@stencil/core": "^0.9.2",
+    "@theracode/router": "/Users/patricksears/Git/EngineerApart/theracode/open-source/packages/router",
     "express": "^4.16.3"
   },
   "devDependencies": {
     "@stencil/dev-server": "latest",
     "@stencil/sass": "0.0.5",
     "@stencil/utils": "latest",
+    "@theracode/tslint-rules": "^0.0.1",
     "@types/jest": "^22.2.3",
-    "jest": "^22.4.3"
+    "jest": "^22.4.3",
+    "tslint": "^5.10.0",
+    "typescript": "^2.9.1"
   },
   "repository": {
     "type": "git",

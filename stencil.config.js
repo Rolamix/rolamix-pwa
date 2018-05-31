@@ -21,6 +21,7 @@ exports.config = {
   outputTargets: [
     {
       type: 'www',
+      console: console,
       serviceWorker: {
         swSrc: 'src/sw.js',
         globPatterns: [

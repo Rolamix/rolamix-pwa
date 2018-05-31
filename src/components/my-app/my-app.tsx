@@ -1,8 +1,4 @@
-// import '@ionic/core';
-import '@stencil/core';
 import { Component, Listen } from '@stencil/core';
-// import { RouterSwitch } from '@stencil/router';
-import { RouterSwitch } from '@engineerapart/stencil-router';
 
 @Component({
   tag: 'my-app',
@@ -36,12 +32,10 @@ export class MyApp {
   render() {
     return (
       <main>
-        <stencil-router>
-          <RouterSwitch>
-            <stencil-route url='/' component='app-home' exact={true} />
-            <stencil-route url='/profile/:name' component='app-profile' />
-          </RouterSwitch>
-        </stencil-router>
+        <th-router>
+          <th-route url="/" component="app-home" exact={true}></th-route>
+          <th-route url="/profile/:name" component="app-profile"></th-route>
+        </th-router>
       </main>
     );
   }
