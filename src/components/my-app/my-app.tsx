@@ -1,5 +1,6 @@
 import 'ionicons'; // tslint:disable-line
-import { Component, Listen } from '@stencil/core';
+import '@ionic/core'; // tslint:disable-line
+import { Component, Listen, Prop } from '@stencil/core';
 
 @Component({
   tag: 'my-app',
@@ -7,7 +8,7 @@ import { Component, Listen } from '@stencil/core';
 })
 export class MyApp {
 
-  // @Prop({ connect: 'ion-toast-controller' }) toastCtrl: HTMLIonToastControllerElement;
+  @Prop({ connect: 'ion-toast-controller' }) toastCtrl: HTMLIonToastControllerElement;
 
   /**
    * Handle service worker updates correctly.
@@ -20,24 +21,26 @@ export class MyApp {
    */
   @Listen('window:swUpdate')
   async onSWUpdate() {
-  //   const toast = await this.toastCtrl.create({
-  //     message: 'New version available',
-  //     showCloseButton: true,
-  //     closeButtonText: 'Reload'
-  //   });
-  //   await toast.present();
-  //   await toast.onWillDismiss();
+    const toast = await this.toastCtrl.create({
+      message: 'New version available',
+      showCloseButton: true,
+      closeButtonText: 'Reload'
+    });
+    await toast.present();
+    await toast.onWillDismiss();
     window.location.reload();
   }
 
   render() {
     return (
-      <main>
-        <th-router>
-          <th-route url="/" component="app-home" exact={true}></th-route>
-          <th-route url="/profile/:name" component="app-profile"></th-route>
-        </th-router>
-      </main>
+      <ion-app>
+        <main>
+          <th-router>
+            <th-route url="/" component="app-home" exact={true}></th-route>
+            <th-route url="/profile/:name" component="app-profile"></th-route>
+          </th-router>
+        </main>
+      </ion-app>
     );
   }
 }

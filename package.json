@@ -20,8 +20,9 @@
     "lint": "tslint --project ."
   },
   "dependencies": {
+    "@ionic/core": "^4.0.0-alpha.7",
     "@stencil/core": "^0.9.7",
-    "@theracode/router": "/Users/patricksears/Git/EngineerApart/theracode/open-source/packages/router",
+    "@theracode/router": "^0.0.7",
     "express": "^4.16.3",
     "ionicons": "^4.1.2"
   },
