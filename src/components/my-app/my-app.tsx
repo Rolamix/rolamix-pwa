@@ -1,3 +1,4 @@
+import 'ionicons'; // tslint:disable-line
 import { Component, Listen } from '@stencil/core';
 
 @Component({
@@ -19,13 +20,13 @@ export class MyApp {
    */
   @Listen('window:swUpdate')
   async onSWUpdate() {
-    // const toast = await this.toastCtrl.create({
-    //   message: 'New version available',
-    //   showCloseButton: true,
-    //   closeButtonText: 'Reload'
-    // });
-    // await toast.present();
-    // await toast.onWillDismiss();
+  //   const toast = await this.toastCtrl.create({
+  //     message: 'New version available',
+  //     showCloseButton: true,
+  //     closeButtonText: 'Reload'
+  //   });
+  //   await toast.present();
+  //   await toast.onWillDismiss();
     window.location.reload();
   }
 

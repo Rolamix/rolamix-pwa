@@ -27,6 +27,8 @@ declare global {
 }
 
 import '@theracode/router';
+import '@ionic/core';
+import 'ionicons';
 
 import {
   MatchResults,
