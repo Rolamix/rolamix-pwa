@@ -1,7 +1,7 @@
 import { Component, Listen, Prop, State } from '@stencil/core';
 
 import { MatchResults } from '@theracode/router';
-import { urlB64ToUint8Array } from '../../helpers/utils';
+import { urlB64ToUint8Array } from '../../utils';
 
 @Component({
   tag: 'app-profile',
@@ -59,26 +59,42 @@ export class AppProfile {
     });
   }
 
+  hostData() {
+    return { class: 'ion-page' };
+  }
+
   render() {
     // Here, we can use 'this.name' or 'this.match.params.name'.
     // theracode router passes your route params as props.
     return [
-      <header>
-        <h1>Stencil PWA Toolkit - {this.name}</h1>
-      </header>,
+      <ion-header>
+        <ion-toolbar color="primary">
+          <ion-buttons slot="start">
+            <ion-back-button defaultHref="/"></ion-back-button>
+          </ion-buttons>
 
-      <div class="app-profile">
-        <p>
-          Hello! My name is {this.name}.
-          My name was passed in through a route param!
-        </p>
+          <ion-title>Stencil PWA Toolkit - {this.name}</ion-title>
+        </ion-toolbar>
+      </ion-header>,
+      // <header>
+      //   <h1>Stencil PWA Toolkit - {this.name}</h1>
+      // </header>,
 
-        {this.swSupport ?
-        <div class="check-wrap">
-          <label htmlFor="notif-check">Notifications</label>
-          <input type="checkbox" id="notif-check" checked={this.notify} disabled={this.notify}></input>
-        </div> : null}
-      </div>
+      <ion-content padding>
+        <div class="app-profile">
+          <p>
+            Hello! My name is {this.name}.
+            My name was passed in through a route param!
+          </p>
+
+          {/* htmlFor="notif-check" */}
+          {this.swSupport ?
+          <ion-item class="check-wrap">
+            <ion-label>Notifications</ion-label>
+            <ion-toggle id="notif-check" checked={this.notify} disabled={this.notify}></ion-toggle>
+          </ion-item> : null}
+        </div>
+      </ion-content>
     ];
   }
 }

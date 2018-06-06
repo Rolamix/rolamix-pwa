@@ -1,5 +1,3 @@
-import 'ionicons'; // tslint:disable-line
-import '@ionic/core'; // tslint:disable-line
 import { Component, Listen, Prop } from '@stencil/core';
 
 @Component({
@@ -24,7 +22,7 @@ export class MyApp {
     const toast = await this.toastCtrl.create({
       message: 'New version available',
       showCloseButton: true,
-      closeButtonText: 'Reload'
+      closeButtonText: 'Update Now!'
     });
     await toast.present();
     await toast.onWillDismiss();
@@ -33,14 +31,14 @@ export class MyApp {
 
   render() {
     return (
-      <ion-app>
-        <main>
+      <stencil-lift>
+        <pwa-ion-app>
           <th-router>
             <th-route url="/" component="app-home" exact={true}></th-route>
             <th-route url="/profile/:name" component="app-profile"></th-route>
           </th-router>
-        </main>
-      </ion-app>
+        </pwa-ion-app>
+      </stencil-lift>
     );
   }
 }
