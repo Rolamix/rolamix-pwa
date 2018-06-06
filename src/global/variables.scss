@@ -1,16 +1,16 @@
 /* Document Level Styles */
-body {
-  margin: 0px;
-  padding: 0px;
-  font-family: sans-serif;
-}
+// body {
+//   margin: 0px;
+//   padding: 0px;
+//   font-family: sans-serif;
+// }
 
 /*
   The CSS Variables below can be used to theme your app.
   For more info on CSS variables check out https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables
  */
-
- :root {
+// Supposedly SCSS now wants you to use --my-var: #{$my-scss-var}; ?
+:root {
   --ion-color-primary: #488aff;
   --ion-color-primary-rgb: 72,138,255;
   --ion-color-primary-contrast: #fff;
@@ -131,6 +131,7 @@ body {
   --ion-placeholder-text-color: #999;
 
   /** iOS overrides **/
+  --ion-background-ios-color: var(--ion-background-color);
   --ion-border-ios-color: #dedede;
   --ion-overlay-ios-background-color: #f9f9f9;
   --ion-tabbar-ios-translucent-background-color: rgba(248, 248, 248, var(--ion-alpha-ios-high, var(--ion-alpha-high, .8)));
@@ -148,11 +149,18 @@ body {
   --ion-alpha-md-lowest: .1;
   --ion-border-md-color: #c1c4cd;
   --ion-overlay-md-background-color: #fafafa;
+  --ion-background-md-color: var(--ion-background-color);
   --ion-tabbar-md-border-color: rgba(0, 0, 0, var(--ion-alpha-md-border-low, var(--ion-alpha-border-low, .07)));
   --ion-tabbar-md-text-color: var(--ion-text-md-color-step-400, var(--ion-text-color-step-400, #666));
   --ion-toolbar-md-border-color: var(--ion-border-md-color, var(--ion-border-color, #c1c4cd));
   --ion-toolbar-md-color-active: #4a4a4a;
   --ion-toolbar-md-text-color: #424242;
   --ion-item-md-background-color-active: #f1f1f1;
-  --ion-item-md-border-color: rgba(0, 0, 0, var(--ion-alpha-md-border-medium, var(--ion-alpha-border-medium, 0.13)));;
+  --ion-item-md-border-color: rgba(0, 0, 0, var(--ion-alpha-md-border-medium, var(--ion-alpha-border-medium, 0.13)));
+
+  /** Ion Grid **/
+  --ion-grid-max-width-sm: 540px;
+  --ion-grid-max-width-md: 720px;
+  --ion-grid-max-width-lg: 960px;
+  --ion-grid-max-width-xl: 1140px;
 }

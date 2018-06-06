@@ -13,6 +13,7 @@
     "devWithSW": "sd concurrent \"stencil build --dev --service-worker --watch\" \"stencil-dev-server\" ",
     "serve": "stencil-dev-server",
     "start": "npm run dev",
+    "start:prod": "NODE_ENV=production stencil build --ssr && NODE_ENV=production node server.js",
     "start:ssr": "NODE_ENV=production stencil build --ssr && NODE_ENV=production node server.js",
     "start:ssr:dev": "sd concurrent \"NODE_ENV=production stencil build --dev --watch\" \"NODE_ENV=production node server.js\"",
     "test": "jest --no-cache",
@@ -23,16 +24,20 @@
     "@ionic/core": "^4.0.0-alpha.7",
     "@stencil/core": "^0.9.7",
     "@theracode/router": "^0.0.7",
+    "compression": "^1.7.2",
     "express": "^4.16.3",
-    "ionicons": "^4.1.2"
+    "ionicons": "^4.1.2",
+    "redux": "^4.0.0"
   },
   "devDependencies": {
     "@stencil/dev-server": "latest",
+    "@stencil/postcss": "^0.0.4",
     "@stencil/sass": "0.0.5",
     "@stencil/utils": "latest",
     "@theracode/tslint-rules": "^0.0.1",
     "@types/jest": "^22.2.3",
     "jest": "^23.1.0",
+    "postcss-css-variables": "^0.8.1",
     "tslint": "^5.10.0",
     "typescript": "^2.9.1"
   },
