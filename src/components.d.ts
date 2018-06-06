@@ -175,4 +175,70 @@ declare global {
   }
 }
 
+
+declare global {
+
+  namespace StencilComponents {
+    interface PwaIonApp {
+
+    }
+  }
+
+  interface HTMLPwaIonAppElement extends StencilComponents.PwaIonApp, HTMLStencilElement {}
+
+  var HTMLPwaIonAppElement: {
+    prototype: HTMLPwaIonAppElement;
+    new (): HTMLPwaIonAppElement;
+  };
+  interface HTMLElementTagNameMap {
+    'pwa-ion-app': HTMLPwaIonAppElement;
+  }
+  interface ElementTagNameMap {
+    'pwa-ion-app': HTMLPwaIonAppElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'pwa-ion-app': JSXElements.PwaIonAppAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface PwaIonAppAttributes extends HTMLAttributes {
+
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
+    interface StencilLift {
+
+    }
+  }
+
+  interface HTMLStencilLiftElement extends StencilComponents.StencilLift, HTMLStencilElement {}
+
+  var HTMLStencilLiftElement: {
+    prototype: HTMLStencilLiftElement;
+    new (): HTMLStencilLiftElement;
+  };
+  interface HTMLElementTagNameMap {
+    'stencil-lift': HTMLStencilLiftElement;
+  }
+  interface ElementTagNameMap {
+    'stencil-lift': HTMLStencilLiftElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'stencil-lift': JSXElements.StencilLiftAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface StencilLiftAttributes extends HTMLAttributes {
+
+    }
+  }
+}
+
 declare global { namespace JSX { interface StencilJSX {} } }
