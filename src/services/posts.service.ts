@@ -13,7 +13,7 @@ export class PostsService {
   private _id = Math.floor(Math.random() * 10000 + 1000);
 
   constructor(
-    @Inject(TDataService, 'dataService')
+    @Inject(TDataService)
     private dataService: DataService,
   ) {
   }

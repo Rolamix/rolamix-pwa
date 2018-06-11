@@ -7,11 +7,21 @@ import {
 } from './interfaces';
 import { isSymbol } from './utils';
 
+// On the server, Stencil provides the Context globally on the jsdom Window.
+// Keep an eye on if this changes - we will need to ask them for another API to determine this,
+// since testing for window won't work (jsdom provides one).
+declare var Context: any;
+const isServer = typeof Context !== 'undefined' && Context.isServer;
+
 const log = console;
 export class DependencyContainer implements IContainer {
 
-  dependencyRegistry = new Map<symbol, Injectable>();
-  injectionsRegistry = new Map<Function, InjectionParam[]>(); // Function vs object: the eternal struggle
+  private dependencyRegistry = new Map<symbol, Injectable>();
+  private injectionsRegistry = new Map<Function, InjectionParam[]>(); // Function vs object: the eternal struggle
+
+  get isServer() {
+    return isServer;
+  }
 
   hasDependency = (type: string | symbol) => {
     const depSymbol = typeof type === 'string' ? Symbol.for(type) : <symbol>type;
@@ -60,7 +70,9 @@ export class DependencyContainer implements IContainer {
     const entry: Injectable = this.findDependencyEntrySymbol(depSymbol);
 
     if (entry) {
-      if (entry.instance && entry.singleton) {
+      // Return the singleton entry, unless we are on the server.
+      // On the server we always want a new instance.
+      if (entry.instance && entry.singleton && !isServer) {
         return entry.instance;
       }
 
@@ -112,7 +124,7 @@ export class DependencyContainer implements IContainer {
     const resolvedRequires = injectionParams
       .sort((l, r) => (l.parameterIndex - r.parameterIndex))
       .map((injection) => {
-        injection.instance = injection.instance || this.resolve(injection.requires);
+        injection.instance = isServer ? this.resolve(injection.requires) : injection.instance || this.resolve(injection.requires);
         return injection.instance;
       });
 

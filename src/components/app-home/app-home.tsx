@@ -2,9 +2,9 @@ import { Component, State } from '@stencil/core';
 
 import { Lift } from '../../stencil-lift';
 import { InjectProp } from '../../stencil-di/inject-prop';
-
 import { AutoUnsubscribe, Post, PostsService, TPostsService } from '../../services';
 
+@Lift({ key: 'APPHOME' })
 @AutoUnsubscribe()
 @Component({
   tag: 'app-home',
@@ -18,18 +18,13 @@ export class AppHome {
 
   h1: HTMLElement;
 
+  async getInitialProps() { // args = { Lift: LiftService, isServer: boolean }
+    const { data, error } = await this.postsService.getPosts();
+    return { posts: data.slice(0, 20), error };
+  }
+
   async componentWillLoad() {
     this.id = Math.random().toString(36).substr(2, 8);
-
-    if (Lift.isServer) {
-      const { data, error } = await this.postsService.getPosts();
-      if (!error) {
-        this.posts = data;
-        Lift.set({ key: 'APPHOME_POSTS', payload: data });
-      }
-    } else {
-      this.posts = Lift.get('APPHOME_POSTS');
-    }
   }
 
   hostData() {

@@ -5,6 +5,7 @@
  */
 
 export interface IContainer {
+  isServer: boolean;
   hasDependency(type: string | symbol): boolean;
   registerDependency(options: RegisterInjectableDecoratorOptions): boolean;
   registerInjection(injection: InjectionParam): number;

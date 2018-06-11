@@ -1,7 +1,8 @@
-import Lift, { LiftSet } from './lift';
+import LiftServiceInstance, { LiftSet } from './lift.service';
 
+export * from './lift.decorator';
 export * from './stencil-lift';
 export {
-  Lift,
+  LiftServiceInstance as LiftService,
   LiftSet,
 };
