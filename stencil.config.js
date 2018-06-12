@@ -38,6 +38,10 @@ exports.config = {
         globPatterns: [
           '**/*.{js,css,json,html,ico,png,svg,jpg,jpeg}'
         ],
+        globIgnores: [
+          '**/build/app/svg/*',
+          '**/index.html' // caching this causes '/' to be cached too.. for future reference :muscle:.
+        ]
       }
     }
   ],
