@@ -26,6 +26,7 @@ declare global {
   interface HTMLAttributes {}
 }
 
+import '@engineerapart/stencil-lift';
 import '@theracode/router';
 import 'ionicons';
 import '@ionic/core';
@@ -204,43 +205,6 @@ declare global {
   namespace JSXElements {
     export interface PwaIonAppAttributes extends HTMLAttributes {
 
-    }
-  }
-}
-
-
-declare global {
-
-  namespace StencilComponents {
-    interface StencilLift {
-      'deleteStateOnWindowLoad': boolean;
-      'initialState': any;
-      'mergeState': boolean;
-    }
-  }
-
-  interface HTMLStencilLiftElement extends StencilComponents.StencilLift, HTMLStencilElement {}
-
-  var HTMLStencilLiftElement: {
-    prototype: HTMLStencilLiftElement;
-    new (): HTMLStencilLiftElement;
-  };
-  interface HTMLElementTagNameMap {
-    'stencil-lift': HTMLStencilLiftElement;
-  }
-  interface ElementTagNameMap {
-    'stencil-lift': HTMLStencilLiftElement;
-  }
-  namespace JSX {
-    interface IntrinsicElements {
-      'stencil-lift': JSXElements.StencilLiftAttributes;
-    }
-  }
-  namespace JSXElements {
-    export interface StencilLiftAttributes extends HTMLAttributes {
-      'deleteStateOnWindowLoad'?: boolean;
-      'initialState'?: any;
-      'mergeState'?: boolean;
     }
   }
 }

@@ -1,10 +1,10 @@
 import { Component, State } from '@stencil/core';
 
-import { Lift } from '../../stencil-lift';
+import { Lift } from '@engineerapart/stencil-lift/';
 import { InjectProp } from '../../stencil-di/inject-prop';
 import { AutoUnsubscribe, Post, PostsService, TPostsService } from '../../services';
 
-@Lift({ key: 'APPHOME' })
+@Lift({ key: 'AppHome' })
 @AutoUnsubscribe()
 @Component({
   tag: 'app-home',
@@ -47,6 +47,7 @@ export class AppHome {
         <main>
           <div class="app-home">
             <p>
+              <ion-icon name="heart" color="red" size="large"></ion-icon>
               Welcome to the Stencil PWA Toolkit.
               You can use this starter to build entire PWAs all with
               web components using Stencil and ionicons! Check out the readme for everything that comes in this starter out of the box and

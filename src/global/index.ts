@@ -1,5 +1,5 @@
 import { initServiceWorker } from '../utils/sw-init';
-// import Services from '../services';
+// declare var Context: any;
 
 // This is temporarily commented out as the `setupConfig` method has been temporarily removed
 // setupConfig({
@@ -8,6 +8,3 @@ import { initServiceWorker } from '../utils/sw-init';
 // });
 
 initServiceWorker();
-
-// declare var Context: any;
-// Context.Services = Services;
