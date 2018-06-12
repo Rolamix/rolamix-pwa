@@ -1,7 +1,7 @@
 import {
   InjectDecoratorOptions,
 } from './interfaces';
-import Injector from './injector';
+import { Injector } from './injector';
 import { resolveInjectDep } from './utils';
 
 export function Inject(depOrOpts: InjectDecoratorOptions | string | symbol): ParameterDecorator {
@@ -13,8 +13,7 @@ export function Inject(depOrOpts: InjectDecoratorOptions | string | symbol): Par
   // For now the workaround is simply to set an access modifier on the property. Typescript will emit
   // the setter for you: @Inject(TService) public someProp: TService;
   return function InjectDecorator(target: Function, _bad_propertyKey: string, parameterIndex: number): void {
-    const container = Injector.container;
-    container.registerInjection({
+    Injector.getContainer().registerInjection({
       target,
       propertyKey: null, // resolvedPropertyKey,
       parameterIndex,

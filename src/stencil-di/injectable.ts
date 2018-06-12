@@ -2,7 +2,7 @@ import {
   InjectableDecoratorOptions,
   RegisterInjectableDecoratorOptions,
 } from './interfaces';
-import Injector from './injector';
+import { Injector } from './injector';
 import { isSymbol } from './utils';
 
 export function Injectable(options: InjectableDecoratorOptions | string | symbol): ClassDecorator {
@@ -24,6 +24,7 @@ export function Injectable(options: InjectableDecoratorOptions | string | symbol
   // Return the actual decorator
   return function InjectableDecorator(target: Function) {
     opts.klass = target;
-    Injector.container.registerDependency(opts);
+    const container = Injector.getContainer(); // don't ask, uglify-es :(
+    container.registerDependency(opts);
   };
 }

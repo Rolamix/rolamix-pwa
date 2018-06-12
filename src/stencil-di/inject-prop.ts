@@ -1,7 +1,7 @@
 import {
   InjectDecoratorOptions,
 } from './interfaces';
-import Injector from './injector';
+import { Injector } from './injector';
 import { resolveInjectDep } from './utils';
 
 const SETTER_METADATA = '__inject_props_meta_';
@@ -14,9 +14,9 @@ export function InjectProp(depOrOpts: InjectDecoratorOptions | string | symbol):
 
     const getter = function() {
       // On client, return the prototype's prop.
-      if (!Injector.container.isServer) {
+      if (!Injector.getContainer().isServer) {
         if (!val) {
-          val = Injector.container.resolve(dep);
+          val = Injector.getContainer().resolve(dep);
         }
         return val;
       }
@@ -31,7 +31,7 @@ export function InjectProp(depOrOpts: InjectDecoratorOptions | string | symbol):
         // Replace the prototype getter with an instance data descriptor
         // so that the instance is reused for this instance of the target object.
         Object.defineProperty(this, propertyKey, {
-          value: Injector.container.resolve(dep),
+          value: Injector.getContainer().resolve(dep),
           enumerable: true,
         });
       }
@@ -45,5 +45,3 @@ export function InjectProp(depOrOpts: InjectDecoratorOptions | string | symbol):
     });
   };
 }
-
-export const ImportProp = InjectProp;
