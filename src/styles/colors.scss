@@ -1,0 +1,31 @@
+// Supposedly SCSS now wants you to use --my-var: #{$my-scss-var}; ?
+:root {
+  --white: rgb(255, 255, 255);
+  --dirtyWhite: rgb(239, 243, 246);
+  --brightGray: rgb(224, 224, 224);
+  --darkerGray: rgb(204, 204, 204);
+  --brightGreen: rgb(72, 187, 152);
+  --darkerGreen: rgba(72, 187, 152, 0.4);
+  --darkGreen: rgba(72, 187, 152, 0.2);
+  --red: rgb(221, 59, 30);
+  --darkerRed: rgba(221, 59, 30, 0.4);
+  --darkRed: rgba(221, 59, 30, 0.2);
+  --lighterMidnight: rgb(53, 64, 82);
+  --midnight: rgb(34, 44, 60);
+  --darkerMidnight: rgb(29, 37, 49);
+  --shadowColor: rgba(0, 0, 0, 0.12);
+  --overlayColor: rgba(34, 44, 60, 0.7);
+  --textColor: rgba(0, 0, 0, 0.87);
+  --codeBlockBgColor: rgb(249, 242, 244);
+
+  // --color-primary: #488aff;
+  // --color-primary-rgb: 72,138,255;
+  // --color-primary-contrast: #fff;
+  // --color-primary-contrast-rgb: 255,255,255;
+  // --backdrop-color: #000;
+  // --overlay-background-color: #fafafa;
+  // --ripple-background-color: #000;
+  // --background-color: #fff;
+  // --box-shadow-color: #000;
+  // --text-color: #000;
+}

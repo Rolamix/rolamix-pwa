@@ -1,3 +1,13 @@
 {
-  "extends": "@theracode/tslint-rules"
+  "extends": [ "@theracode/tslint-rules", "tslint-react" ],
+  "rules": {
+    "import-blacklist": [
+      true,
+      "lodash",
+      "ngrx",
+      "rxjs"
+    ],
+    "jsx-wrap-multiline": false,
+    "jsx-key": false
+  }
 }

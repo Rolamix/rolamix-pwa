@@ -1,5 +1,5 @@
 import { TestWindow } from '@stencil/core/testing';
-import { MyApp } from './my-app';
+import { AppLoader } from './app-loader';
 
 describe('my-app', () => {
 
@@ -7,12 +7,12 @@ describe('my-app', () => {
     await window.flush();
   });
 
-  let element: HTMLAppProfileElement;
+  // let element: HTMLAppProfileElement;
   let window: TestWindow;
   beforeEach(async () => {
     window = new TestWindow();
-    element = await window.load({
-      components: [MyApp],
+    await window.load({
+      components: [AppLoader],
       html: '<my-app></my-app>'
     });
   });

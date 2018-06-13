@@ -1,10 +1,10 @@
 import { Component, Listen, Prop } from '@stencil/core';
 
 @Component({
-  tag: 'my-app',
-  styleUrl: 'my-app.scss'
+  tag: 'app-loader',
+  styleUrl: 'app-loader.scss'
 })
-export class MyApp {
+export class AppLoader {
 
   @Prop({ connect: 'ion-toast-controller' }) toastCtrl: HTMLIonToastControllerElement;
 
@@ -29,15 +29,30 @@ export class MyApp {
     window.location.reload();
   }
 
+  renderThRouter() {
+    return (
+      <th-router>
+        <th-route url="/" component="app-home" exact={true} />
+        <th-route url="/profile/:name" component="app-profile" />
+      </th-router>
+    );
+  }
+
+  // renderStencilRouter() {
+  //   return (
+  //     <stencil-router>
+  //       <stencil-route-switch scrollTopOffset={0}>
+  //         <stencil-route url="/" component="app-home" exact={true} />
+  //         <stencil-route url="/profile/:name" component="app-profile" />
+  //       </stencil-route-switch>
+  //     </stencil-router>
+  //   );
+  // }
+
   render() {
     return (
       <stencil-lift>
-        <pwa-ion-app>
-          <th-router>
-            <th-route url="/" component="app-home" exact={true}></th-route>
-            <th-route url="/profile/:name" component="app-profile"></th-route>
-          </th-router>
-        </pwa-ion-app>
+          {this.renderThRouter()}
       </stencil-lift>
     );
   }
