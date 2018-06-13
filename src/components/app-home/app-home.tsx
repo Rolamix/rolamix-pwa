@@ -19,8 +19,7 @@ export class AppHome {
   h1: HTMLElement;
 
   async getInitialProps() { // args = { Lift: LiftService, isServer: boolean }
-    const { data, error } = await this.postsService.getPosts();
-    return { posts: data.slice(0, 20), error };
+    return this.postsService.getPosts();
   }
 
   async componentWillLoad() {
@@ -47,7 +46,7 @@ export class AppHome {
         <main>
           <div class="app-home">
             <p>
-              <ion-icon name="heart" color="red" size="large"></ion-icon>
+              <ion-icon name="heart" color="primary" size="large"></ion-icon>
               Welcome to the Stencil PWA Toolkit.
               You can use this starter to build entire PWAs all with
               web components using Stencil and ionicons! Check out the readme for everything that comes in this starter out of the box and

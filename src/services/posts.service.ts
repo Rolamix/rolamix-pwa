@@ -22,8 +22,9 @@ export class PostsService {
     return this._id;
   }
 
-  async getPosts(): Promise<{ data?: Post[], error?: Error }> {
-    return this.get('https://jsonplaceholder.typicode.com/posts');
+  async getPosts(): Promise<{ posts?: Post[], error?: Error }> {
+    const { data, error } = await this.get('https://jsonplaceholder.typicode.com/posts');
+    return { posts: data && data.slice(0, 20), error };
   }
 
   async getPost(postId: string) {

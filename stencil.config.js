@@ -5,6 +5,8 @@ const cssvariables = require('postcss-css-variables');
 exports.config = {
   namespace: 'app',
   flags: { prerender: true },
+  buildEs5: true,
+  buildStats: true,
   // bundles: [
   //   { components: ['app-home', 'etc'] },
   // ],

@@ -7,21 +7,22 @@
     "dist/"
   ],
   "scripts": {
-    "build": "NODE_ENV=production stencil build",
+    "build": "NODE_ENV=production stencil build --ssr",
     "buildWPrerender": "NODE_ENV=production stencil build --prerender",
     "dev": "sd concurrent \"stencil build --dev --watch\" \"stencil-dev-server\" ",
     "devWithSW": "sd concurrent \"stencil build --dev --service-worker --watch\" \"stencil-dev-server\" ",
     "serve": "stencil-dev-server",
     "start": "npm run dev",
-    "start:prod": "NODE_ENV=production stencil build --ssr && NODE_ENV=production node server.js",
-    "start:ssr": "NODE_ENV=production stencil build --ssr && NODE_ENV=production node server.js",
-    "start:ssr:dev": "sd concurrent \"NODE_ENV=production stencil build --dev --watch\" \"NODE_ENV=production node server.js\"",
+    "start:prod": "NODE_ENV=production node server.js",
+    "start:ssr": "npm run build && npm start:prod",
+    "start:ssr:dev": "sd concurrent \"stencil build --dev --watch\" \"npm run delay && node server.js\"",
+    "delay": "node scripts/delay.js 20000",
     "test": "jest --no-cache",
     "test.watch": "jest --watch --no-cache",
     "lint": "tslint --project ."
   },
   "dependencies": {
-    "@engineerapart/stencil-lift": "^0.1.2",
+    "@engineerapart/stencil-lift": "^0.1.7",
     "@ionic/core": "^4.0.0-alpha.7",
     "@stencil/core": "^0.9.7",
     "@theracode/router": "^0.0.7",
