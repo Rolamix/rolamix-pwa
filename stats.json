@@ -1,0 +1,1240 @@
+{
+  "compiler": {
+    "name": "@stencil/core",
+    "version": "0.9.7"
+  },
+  "app": {
+    "namespace": "rmx",
+    "fsNamespace": "rmx",
+    "components": 33,
+    "entries": 11,
+    "bundles": 28
+  },
+  "options": {
+    "minifyJs": true,
+    "minifyCss": true,
+    "hashFileNames": true,
+    "hashedFileNameLength": 12,
+    "buildEs5": true
+  },
+  "components": [
+    {
+      "tag": "app-logo",
+      "dependencies": [
+        "svg-icon"
+      ],
+      "dependencyOf": [
+        "app-splash",
+        "site-header"
+      ]
+    },
+    {
+      "tag": "app-splash",
+      "dependencies": [
+        "app-logo",
+        "rmx-spinner"
+      ],
+      "dependencyOf": []
+    },
+    {
+      "tag": "ion-animation-controller",
+      "dependencies": [],
+      "dependencyOf": [
+        "ion-toast"
+      ]
+    },
+    {
+      "tag": "ion-toast",
+      "dependencies": [
+        "ion-animation-controller",
+        "ion-button"
+      ],
+      "dependencyOf": [
+        "app-loader",
+        "ion-toast-controller"
+      ]
+    },
+    {
+      "tag": "app-profile",
+      "dependencies": [
+        "ion-back-button",
+        "ion-buttons",
+        "ion-content",
+        "ion-header",
+        "ion-item",
+        "ion-label",
+        "ion-title",
+        "ion-toggle",
+        "ion-toolbar"
+      ],
+      "dependencyOf": []
+    },
+    {
+      "tag": "ion-back-button",
+      "dependencies": [
+        "ion-icon",
+        "ion-ripple-effect"
+      ],
+      "dependencyOf": [
+        "app-profile"
+      ]
+    },
+    {
+      "tag": "ion-buttons",
+      "dependencies": [],
+      "dependencyOf": [
+        "app-profile"
+      ]
+    },
+    {
+      "tag": "ion-content",
+      "dependencies": [
+        "ion-scroll"
+      ],
+      "dependencyOf": [
+        "app-profile"
+      ]
+    },
+    {
+      "tag": "ion-gesture",
+      "dependencies": [
+        "ion-gesture-controller"
+      ],
+      "dependencyOf": [
+        "ion-toggle"
+      ]
+    },
+    {
+      "tag": "ion-gesture-controller",
+      "dependencies": [],
+      "dependencyOf": [
+        "ion-gesture"
+      ]
+    },
+    {
+      "tag": "ion-header",
+      "dependencies": [],
+      "dependencyOf": [
+        "app-profile"
+      ]
+    },
+    {
+      "tag": "ion-item",
+      "dependencies": [
+        "ion-ripple-effect"
+      ],
+      "dependencyOf": [
+        "app-profile"
+      ]
+    },
+    {
+      "tag": "ion-label",
+      "dependencies": [],
+      "dependencyOf": [
+        "app-profile"
+      ]
+    },
+    {
+      "tag": "ion-scroll",
+      "dependencies": [],
+      "dependencyOf": [
+        "ion-content"
+      ]
+    },
+    {
+      "tag": "ion-title",
+      "dependencies": [],
+      "dependencyOf": [
+        "app-profile"
+      ]
+    },
+    {
+      "tag": "ion-toggle",
+      "dependencies": [
+        "ion-gesture"
+      ],
+      "dependencyOf": [
+        "app-profile"
+      ]
+    },
+    {
+      "tag": "ion-toolbar",
+      "dependencies": [],
+      "dependencyOf": [
+        "app-profile"
+      ]
+    },
+    {
+      "tag": "ion-button",
+      "dependencies": [
+        "ion-ripple-effect"
+      ],
+      "dependencyOf": [
+        "app-home",
+        "ion-toast"
+      ]
+    },
+    {
+      "tag": "ion-icon",
+      "dependencies": [],
+      "dependencyOf": [
+        "app-home",
+        "ion-back-button",
+        "rmx-input",
+        "site-header"
+      ]
+    },
+    {
+      "tag": "th-route-link",
+      "dependencies": [],
+      "dependencyOf": [
+        "app-home",
+        "site-header"
+      ]
+    },
+    {
+      "tag": "app-home",
+      "dependencies": [
+        "ion-button",
+        "ion-icon",
+        "ion-img",
+        "th-route-link"
+      ],
+      "dependencyOf": []
+    },
+    {
+      "tag": "ion-img",
+      "dependencies": [],
+      "dependencyOf": [
+        "app-home"
+      ]
+    },
+    {
+      "tag": "ion-ripple-effect",
+      "dependencies": [],
+      "dependencyOf": [
+        "ion-back-button",
+        "ion-button",
+        "ion-item"
+      ]
+    },
+    {
+      "tag": "rmx-spinner",
+      "dependencies": [],
+      "dependencyOf": [
+        "app-splash",
+        "rmx-button"
+      ]
+    },
+    {
+      "tag": "app-loader",
+      "dependencies": [
+        "ion-toast",
+        "ion-toast-controller",
+        "site-header",
+        "stencil-lift",
+        "th-route",
+        "th-router"
+      ],
+      "dependencyOf": []
+    },
+    {
+      "tag": "rmx-button",
+      "dependencies": [
+        "rmx-spinner",
+        "svg-icon"
+      ],
+      "dependencyOf": [
+        "site-header"
+      ]
+    },
+    {
+      "tag": "rmx-input",
+      "dependencies": [
+        "ion-icon"
+      ],
+      "dependencyOf": [
+        "site-header"
+      ]
+    },
+    {
+      "tag": "site-header",
+      "dependencies": [
+        "app-logo",
+        "ion-icon",
+        "rmx-button",
+        "rmx-input",
+        "th-route-link"
+      ],
+      "dependencyOf": [
+        "app-loader"
+      ]
+    },
+    {
+      "tag": "ion-toast-controller",
+      "dependencies": [
+        "ion-toast"
+      ],
+      "dependencyOf": [
+        "app-loader"
+      ]
+    },
+    {
+      "tag": "stencil-lift",
+      "dependencies": [],
+      "dependencyOf": [
+        "app-loader"
+      ]
+    },
+    {
+      "tag": "th-route",
+      "dependencies": [],
+      "dependencyOf": [
+        "app-loader"
+      ]
+    },
+    {
+      "tag": "th-router",
+      "dependencies": [],
+      "dependencyOf": [
+        "app-loader"
+      ]
+    },
+    {
+      "tag": "svg-icon",
+      "dependencies": [],
+      "dependencyOf": [
+        "app-logo",
+        "rmx-button"
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "entryId": "entry:app-logo",
+      "components": [
+        {
+          "tag": "app-logo",
+          "dependencies": [
+            "svg-icon"
+          ],
+          "dependencyOf": [
+            "app-splash",
+            "site-header"
+          ]
+        }
+      ],
+      "bundles": [
+        {
+          "fileName": "xgzp6mixului.js",
+          "outputs": [
+            "www/build/rmx/xgzp6mixului.js"
+          ],
+          "size": 430,
+          "gzip": 282
+        },
+        {
+          "fileName": "xgzp6mixului.es5.js",
+          "outputs": [
+            "www/build/rmx/xgzp6mixului.es5.js"
+          ],
+          "size": 699,
+          "gzip": 390,
+          "target": "es5"
+        }
+      ],
+      "inputs": [
+        "__tmp__in__memory__/components/shared/app-logo/app-logo.js"
+      ],
+      "encapsulations": [
+        "none"
+      ]
+    },
+    {
+      "entryId": "entry:app-splash",
+      "components": [
+        {
+          "tag": "app-splash",
+          "dependencies": [
+            "app-logo",
+            "rmx-spinner"
+          ],
+          "dependencyOf": []
+        }
+      ],
+      "bundles": [
+        {
+          "fileName": "hhikjhdeuscu.js",
+          "outputs": [
+            "www/build/rmx/hhikjhdeuscu.js"
+          ],
+          "size": 374,
+          "gzip": 249
+        },
+        {
+          "fileName": "hhikjhdeuscu.es5.js",
+          "outputs": [
+            "www/build/rmx/hhikjhdeuscu.es5.js"
+          ],
+          "size": 690,
+          "gzip": 349,
+          "target": "es5"
+        }
+      ],
+      "inputs": [
+        "__tmp__in__memory__/components/app-loader/app-splash/app-splash.js"
+      ],
+      "encapsulations": [
+        "none"
+      ]
+    },
+    {
+      "entryId": "entry:ion-animation-controller.ion-toast",
+      "components": [
+        {
+          "tag": "ion-animation-controller",
+          "dependencies": [],
+          "dependencyOf": [
+            "ion-toast"
+          ]
+        },
+        {
+          "tag": "ion-toast",
+          "dependencies": [
+            "ion-animation-controller",
+            "ion-button"
+          ],
+          "dependencyOf": [
+            "app-loader",
+            "ion-toast-controller"
+          ]
+        }
+      ],
+      "bundles": [
+        {
+          "fileName": "lu9phrhlcusy.js",
+          "outputs": [
+            "www/build/rmx/lu9phrhlcusy.js"
+          ],
+          "size": 17226,
+          "gzip": 4803,
+          "mode": "md"
+        },
+        {
+          "fileName": "cyjqybs5fzyw.js",
+          "outputs": [
+            "www/build/rmx/cyjqybs5fzyw.js"
+          ],
+          "size": 17623,
+          "gzip": 4922,
+          "mode": "ios"
+        },
+        {
+          "fileName": "cyjqybs5fzyw.es5.js",
+          "outputs": [
+            "www/build/rmx/cyjqybs5fzyw.es5.js"
+          ],
+          "size": 21250,
+          "gzip": 5812,
+          "target": "es5",
+          "mode": "ios"
+        },
+        {
+          "fileName": "lu9phrhlcusy.es5.js",
+          "outputs": [
+            "www/build/rmx/lu9phrhlcusy.es5.js"
+          ],
+          "size": 20853,
+          "gzip": 5693,
+          "target": "es5",
+          "mode": "md"
+        }
+      ],
+      "inputs": [
+        "node_modules/@ionic/core/dist/collection/components/animation-controller/animation-controller.js",
+        "node_modules/@ionic/core/dist/collection/components/toast/toast.js"
+      ],
+      "encapsulations": [
+        "none"
+      ],
+      "modes": [
+        "ios",
+        "md"
+      ]
+    },
+    {
+      "entryId": "entry:app-profile.ion-back-button.ion-buttons.ion-content.ion-gesture.ion-gesture-controller.ion-header.ion-item.ion-label.ion-scroll.ion-title.ion-toggle.ion-toolbar",
+      "components": [
+        {
+          "tag": "app-profile",
+          "dependencies": [
+            "ion-back-button",
+            "ion-buttons",
+            "ion-content",
+            "ion-header",
+            "ion-item",
+            "ion-label",
+            "ion-title",
+            "ion-toggle",
+            "ion-toolbar"
+          ],
+          "dependencyOf": []
+        },
+        {
+          "tag": "ion-back-button",
+          "dependencies": [
+            "ion-icon",
+            "ion-ripple-effect"
+          ],
+          "dependencyOf": [
+            "app-profile"
+          ]
+        },
+        {
+          "tag": "ion-buttons",
+          "dependencies": [],
+          "dependencyOf": [
+            "app-profile"
+          ]
+        },
+        {
+          "tag": "ion-content",
+          "dependencies": [
+            "ion-scroll"
+          ],
+          "dependencyOf": [
+            "app-profile"
+          ]
+        },
+        {
+          "tag": "ion-gesture",
+          "dependencies": [
+            "ion-gesture-controller"
+          ],
+          "dependencyOf": [
+            "ion-toggle"
+          ]
+        },
+        {
+          "tag": "ion-gesture-controller",
+          "dependencies": [],
+          "dependencyOf": [
+            "ion-gesture"
+          ]
+        },
+        {
+          "tag": "ion-header",
+          "dependencies": [],
+          "dependencyOf": [
+            "app-profile"
+          ]
+        },
+        {
+          "tag": "ion-item",
+          "dependencies": [
+            "ion-ripple-effect"
+          ],
+          "dependencyOf": [
+            "app-profile"
+          ]
+        },
+        {
+          "tag": "ion-label",
+          "dependencies": [],
+          "dependencyOf": [
+            "app-profile"
+          ]
+        },
+        {
+          "tag": "ion-scroll",
+          "dependencies": [],
+          "dependencyOf": [
+            "ion-content"
+          ]
+        },
+        {
+          "tag": "ion-title",
+          "dependencies": [],
+          "dependencyOf": [
+            "app-profile"
+          ]
+        },
+        {
+          "tag": "ion-toggle",
+          "dependencies": [
+            "ion-gesture"
+          ],
+          "dependencyOf": [
+            "app-profile"
+          ]
+        },
+        {
+          "tag": "ion-toolbar",
+          "dependencies": [],
+          "dependencyOf": [
+            "app-profile"
+          ]
+        }
+      ],
+      "bundles": [
+        {
+          "fileName": "vufv9idbqxsl.js",
+          "outputs": [
+            "www/build/rmx/vufv9idbqxsl.js"
+          ],
+          "size": 185026,
+          "gzip": 17829,
+          "mode": "md"
+        },
+        {
+          "fileName": "dtcr0hy6vuvz.js",
+          "outputs": [
+            "www/build/rmx/dtcr0hy6vuvz.js"
+          ],
+          "size": 184123,
+          "gzip": 18054,
+          "mode": "ios"
+        },
+        {
+          "fileName": "vufv9idbqxsl.es5.js",
+          "outputs": [
+            "www/build/rmx/vufv9idbqxsl.es5.js"
+          ],
+          "size": 193518,
+          "gzip": 19329,
+          "target": "es5",
+          "mode": "md"
+        },
+        {
+          "fileName": "dtcr0hy6vuvz.es5.js",
+          "outputs": [
+            "www/build/rmx/dtcr0hy6vuvz.es5.js"
+          ],
+          "size": 192615,
+          "gzip": 19587,
+          "target": "es5",
+          "mode": "ios"
+        }
+      ],
+      "inputs": [
+        "__tmp__in__memory__/components/app-profile/app-profile.js",
+        "node_modules/@ionic/core/dist/collection/components/back-button/back-button.js",
+        "node_modules/@ionic/core/dist/collection/components/buttons/buttons.js",
+        "node_modules/@ionic/core/dist/collection/components/content/content.js",
+        "node_modules/@ionic/core/dist/collection/components/gesture-controller/gesture-controller.js",
+        "node_modules/@ionic/core/dist/collection/components/gesture/gesture.js",
+        "node_modules/@ionic/core/dist/collection/components/header/header.js",
+        "node_modules/@ionic/core/dist/collection/components/item/item.js",
+        "node_modules/@ionic/core/dist/collection/components/label/label.js",
+        "node_modules/@ionic/core/dist/collection/components/scroll/scroll.js",
+        "node_modules/@ionic/core/dist/collection/components/title/title.js",
+        "node_modules/@ionic/core/dist/collection/components/toggle/toggle.js",
+        "node_modules/@ionic/core/dist/collection/components/toolbar/toolbar.js"
+      ],
+      "encapsulations": [
+        "none"
+      ],
+      "modes": [
+        "ios",
+        "md"
+      ]
+    },
+    {
+      "entryId": "entry:ion-button",
+      "components": [
+        {
+          "tag": "ion-button",
+          "dependencies": [
+            "ion-ripple-effect"
+          ],
+          "dependencyOf": [
+            "app-home",
+            "ion-toast"
+          ]
+        }
+      ],
+      "bundles": [
+        {
+          "fileName": "241uyniucnz5.js",
+          "outputs": [
+            "www/build/rmx/241uyniucnz5.js"
+          ],
+          "size": 23962,
+          "gzip": 3564,
+          "mode": "md"
+        },
+        {
+          "fileName": "rfvgembxvpjx.js",
+          "outputs": [
+            "www/build/rmx/rfvgembxvpjx.js"
+          ],
+          "size": 19628,
+          "gzip": 3140,
+          "mode": "ios"
+        },
+        {
+          "fileName": "241uyniucnz5.es5.js",
+          "outputs": [
+            "www/build/rmx/241uyniucnz5.es5.js"
+          ],
+          "size": 24550,
+          "gzip": 3682,
+          "target": "es5",
+          "mode": "md"
+        },
+        {
+          "fileName": "rfvgembxvpjx.es5.js",
+          "outputs": [
+            "www/build/rmx/rfvgembxvpjx.es5.js"
+          ],
+          "size": 20216,
+          "gzip": 3257,
+          "target": "es5",
+          "mode": "ios"
+        }
+      ],
+      "inputs": [
+        "node_modules/@ionic/core/dist/collection/components/button/button.js"
+      ],
+      "encapsulations": [
+        "none"
+      ],
+      "modes": [
+        "ios",
+        "md"
+      ]
+    },
+    {
+      "entryId": "entry:ion-icon.th-route-link",
+      "components": [
+        {
+          "tag": "ion-icon",
+          "dependencies": [],
+          "dependencyOf": [
+            "app-home",
+            "ion-back-button",
+            "rmx-input",
+            "site-header"
+          ]
+        },
+        {
+          "tag": "th-route-link",
+          "dependencies": [],
+          "dependencyOf": [
+            "app-home",
+            "site-header"
+          ]
+        }
+      ],
+      "bundles": [
+        {
+          "fileName": "xdfujgcgmquj.js",
+          "outputs": [
+            "www/build/rmx/xdfujgcgmquj.js"
+          ],
+          "size": 7000,
+          "gzip": 2023
+        },
+        {
+          "fileName": "xdfujgcgmquj.es5.js",
+          "outputs": [
+            "www/build/rmx/xdfujgcgmquj.es5.js"
+          ],
+          "size": 7852,
+          "gzip": 2125,
+          "target": "es5"
+        }
+      ],
+      "inputs": [
+        "node_modules/@theracode/router/dist/collection/components/th-route-link.js",
+        "node_modules/ionicons/dist/collection/icon/icon.js"
+      ],
+      "encapsulations": [
+        "none"
+      ]
+    },
+    {
+      "entryId": "entry:app-home.ion-img",
+      "components": [
+        {
+          "tag": "app-home",
+          "dependencies": [
+            "ion-button",
+            "ion-icon",
+            "ion-img",
+            "th-route-link"
+          ],
+          "dependencyOf": []
+        },
+        {
+          "tag": "ion-img",
+          "dependencies": [],
+          "dependencyOf": [
+            "app-home"
+          ]
+        }
+      ],
+      "bundles": [
+        {
+          "fileName": "9ky3bgti72z5.js",
+          "outputs": [
+            "www/build/rmx/9ky3bgti72z5.js"
+          ],
+          "size": 10489,
+          "gzip": 3567
+        },
+        {
+          "fileName": "9ky3bgti72z5.es5.js",
+          "outputs": [
+            "www/build/rmx/9ky3bgti72z5.es5.js"
+          ],
+          "size": 14808,
+          "gzip": 4536,
+          "target": "es5"
+        }
+      ],
+      "inputs": [
+        "__tmp__in__memory__/components/app-home/app-home.js",
+        "node_modules/@ionic/core/dist/collection/components/img/img.js"
+      ],
+      "encapsulations": [
+        "none"
+      ]
+    },
+    {
+      "entryId": "entry:ion-ripple-effect",
+      "components": [
+        {
+          "tag": "ion-ripple-effect",
+          "dependencies": [],
+          "dependencyOf": [
+            "ion-back-button",
+            "ion-button",
+            "ion-item"
+          ]
+        }
+      ],
+      "bundles": [
+        {
+          "fileName": "bqnfus2zzcml.js",
+          "outputs": [
+            "www/build/rmx/bqnfus2zzcml.js"
+          ],
+          "size": 2404,
+          "gzip": 1035
+        },
+        {
+          "fileName": "bqnfus2zzcml.es5.js",
+          "outputs": [
+            "www/build/rmx/bqnfus2zzcml.es5.js"
+          ],
+          "size": 2891,
+          "gzip": 1127,
+          "target": "es5"
+        }
+      ],
+      "inputs": [
+        "node_modules/@ionic/core/dist/collection/components/ripple-effect/ripple-effect.js"
+      ],
+      "encapsulations": [
+        "none"
+      ]
+    },
+    {
+      "entryId": "entry:rmx-spinner",
+      "components": [
+        {
+          "tag": "rmx-spinner",
+          "dependencies": [],
+          "dependencyOf": [
+            "app-splash",
+            "rmx-button"
+          ]
+        }
+      ],
+      "bundles": [
+        {
+          "fileName": "vznfc0fkd5fp.js",
+          "outputs": [
+            "www/build/rmx/vznfc0fkd5fp.js"
+          ],
+          "size": 3200,
+          "gzip": 939
+        },
+        {
+          "fileName": "vznfc0fkd5fp.es5.js",
+          "outputs": [
+            "www/build/rmx/vznfc0fkd5fp.es5.js"
+          ],
+          "size": 3555,
+          "gzip": 1049,
+          "target": "es5"
+        }
+      ],
+      "inputs": [
+        "__tmp__in__memory__/components/shared/rmx-spinner/rmx-spinner.js"
+      ],
+      "encapsulations": [
+        "none"
+      ]
+    },
+    {
+      "entryId": "entry:app-loader.rmx-button.rmx-input.site-header.ion-toast-controller.stencil-lift.th-route.th-router",
+      "components": [
+        {
+          "tag": "app-loader",
+          "dependencies": [
+            "ion-toast",
+            "ion-toast-controller",
+            "site-header",
+            "stencil-lift",
+            "th-route",
+            "th-router"
+          ],
+          "dependencyOf": []
+        },
+        {
+          "tag": "rmx-button",
+          "dependencies": [
+            "rmx-spinner",
+            "svg-icon"
+          ],
+          "dependencyOf": [
+            "site-header"
+          ]
+        },
+        {
+          "tag": "rmx-input",
+          "dependencies": [
+            "ion-icon"
+          ],
+          "dependencyOf": [
+            "site-header"
+          ]
+        },
+        {
+          "tag": "site-header",
+          "dependencies": [
+            "app-logo",
+            "ion-icon",
+            "rmx-button",
+            "rmx-input",
+            "th-route-link"
+          ],
+          "dependencyOf": [
+            "app-loader"
+          ]
+        },
+        {
+          "tag": "ion-toast-controller",
+          "dependencies": [
+            "ion-toast"
+          ],
+          "dependencyOf": [
+            "app-loader"
+          ]
+        },
+        {
+          "tag": "stencil-lift",
+          "dependencies": [],
+          "dependencyOf": [
+            "app-loader"
+          ]
+        },
+        {
+          "tag": "th-route",
+          "dependencies": [],
+          "dependencyOf": [
+            "app-loader"
+          ]
+        },
+        {
+          "tag": "th-router",
+          "dependencies": [],
+          "dependencyOf": [
+            "app-loader"
+          ]
+        }
+      ],
+      "bundles": [
+        {
+          "fileName": "saqr58fjyc7d.js",
+          "outputs": [
+            "www/build/rmx/saqr58fjyc7d.js"
+          ],
+          "size": 26028,
+          "gzip": 7502
+        },
+        {
+          "fileName": "saqr58fjyc7d.es5.js",
+          "outputs": [
+            "www/build/rmx/saqr58fjyc7d.es5.js"
+          ],
+          "size": 30350,
+          "gzip": 8367,
+          "target": "es5"
+        }
+      ],
+      "inputs": [
+        "__tmp__in__memory__/components/app-loader/app-loader.js",
+        "__tmp__in__memory__/components/shared/rmx-button/rmx-button.js",
+        "__tmp__in__memory__/components/shared/rmx-input/rmx-input.js",
+        "__tmp__in__memory__/components/site-header/site-header.js",
+        "node_modules/@engineerapart/stencil-lift/dist/collection/components/stencil-lift/stencil-lift.js",
+        "node_modules/@ionic/core/dist/collection/components/toast-controller/toast-controller.js",
+        "node_modules/@theracode/router/dist/collection/components/th-route.js",
+        "node_modules/@theracode/router/dist/collection/components/th-router.js"
+      ],
+      "encapsulations": [
+        "none"
+      ]
+    },
+    {
+      "entryId": "entry:svg-icon",
+      "components": [
+        {
+          "tag": "svg-icon",
+          "dependencies": [],
+          "dependencyOf": [
+            "app-logo",
+            "rmx-button"
+          ]
+        }
+      ],
+      "bundles": [
+        {
+          "fileName": "l52i8enpncot.js",
+          "outputs": [
+            "www/build/rmx/l52i8enpncot.js"
+          ],
+          "size": 3713,
+          "gzip": 1534
+        },
+        {
+          "fileName": "l52i8enpncot.es5.js",
+          "outputs": [
+            "www/build/rmx/l52i8enpncot.es5.js"
+          ],
+          "size": 4224,
+          "gzip": 1641,
+          "target": "es5"
+        }
+      ],
+      "inputs": [
+        "__tmp__in__memory__/components/shared/svg-icon/svg-icon.js"
+      ],
+      "encapsulations": [
+        "none"
+      ]
+    }
+  ],
+  "sourceGraph": {
+    "src/components/app-home/app-home.tsx": [
+      "@engineerapart/stencil-lift",
+      "src/services",
+      "src/stencil-di/inject-prop.ts"
+    ],
+    "src/components/app-loader/app-loader.tsx": [],
+    "src/components/app-loader/app-splash/app-splash.tsx": [],
+    "src/components/app-profile/app-profile.tsx": [
+      "src/utils"
+    ],
+    "src/components/shared/app-logo/app-logo.tsx": [],
+    "src/components/shared/rmx-button/rmx-button.tsx": [
+      "~utils/index"
+    ],
+    "src/components/shared/rmx-input/rmx-input.tsx": [
+      "classnames",
+      "~utils/index"
+    ],
+    "src/components/shared/rmx-spinner/rmx-spinner.tsx": [],
+    "src/components/shared/svg-icon/svg-icon.tsx": [],
+    "src/components/site-header/site-header.tsx": [
+      "classnames"
+    ],
+    "src/global/index.ts": [
+      "src/utils/sw-init.ts"
+    ],
+    "src/global/svg4everybody.ts": [],
+    "src/services/auto-unsubscribe.decorator.ts": [],
+    "src/services/data.service.ts": [
+      "src/stencil-di"
+    ],
+    "src/services/index.ts": [],
+    "src/services/interfaces.ts": [],
+    "src/services/picsum.service.ts": [],
+    "src/services/posts.service.ts": [
+      "src/services/data.service.ts",
+      "src/stencil-di"
+    ],
+    "src/services/users.service.ts": [
+      "src/services/data.service.ts",
+      "src/stencil-di"
+    ],
+    "src/stencil-di/container.ts": [
+      "src/stencil-di/utils.ts"
+    ],
+    "src/stencil-di/index.ts": [
+      "src/stencil-di/injector.ts"
+    ],
+    "src/stencil-di/inject-prop.ts": [
+      "src/stencil-di/injector.ts",
+      "src/stencil-di/utils.ts"
+    ],
+    "src/stencil-di/inject.ts": [
+      "src/stencil-di/injector.ts",
+      "src/stencil-di/utils.ts"
+    ],
+    "src/stencil-di/injectable.ts": [
+      "src/stencil-di/injector.ts",
+      "src/stencil-di/utils.ts"
+    ],
+    "src/stencil-di/injector.ts": [
+      "src/stencil-di/container.ts"
+    ],
+    "src/stencil-di/interfaces.ts": [],
+    "src/stencil-di/utils.ts": [],
+    "src/utils/index.ts": [],
+    "src/utils/sw-init.ts": []
+  },
+  "collections": [
+    {
+      "name": "@engineerapart/stencil-lift",
+      "source": "node_modules/@engineerapart/stencil-lift",
+      "tags": [
+        "example-app",
+        "lift-bubble",
+        "post-listing",
+        "stencil-lift"
+      ]
+    },
+    {
+      "name": "@ionic/core",
+      "source": "node_modules/@ionic/core",
+      "tags": [
+        "ion-action-sheet",
+        "ion-action-sheet-controller",
+        "ion-alert",
+        "ion-alert-controller",
+        "ion-anchor",
+        "ion-animation-controller",
+        "ion-app",
+        "ion-avatar",
+        "ion-back-button",
+        "ion-backdrop",
+        "ion-badge",
+        "ion-button",
+        "ion-buttons",
+        "ion-card",
+        "ion-card-content",
+        "ion-card-header",
+        "ion-card-subtitle",
+        "ion-card-title",
+        "ion-checkbox",
+        "ion-chip",
+        "ion-chip-button",
+        "ion-col",
+        "ion-content",
+        "ion-datetime",
+        "ion-fab",
+        "ion-fab-button",
+        "ion-fab-list",
+        "ion-footer",
+        "ion-gesture",
+        "ion-gesture-controller",
+        "ion-grid",
+        "ion-header",
+        "ion-hide-when",
+        "ion-img",
+        "ion-infinite-scroll",
+        "ion-infinite-scroll-content",
+        "ion-input",
+        "ion-item",
+        "ion-item-divider",
+        "ion-item-group",
+        "ion-item-option",
+        "ion-item-options",
+        "ion-item-sliding",
+        "ion-label",
+        "ion-list",
+        "ion-list-header",
+        "ion-loading",
+        "ion-loading-controller",
+        "ion-menu",
+        "ion-menu-button",
+        "ion-menu-controller",
+        "ion-menu-toggle",
+        "ion-modal",
+        "ion-modal-controller",
+        "ion-nav",
+        "ion-nav-pop",
+        "ion-nav-push",
+        "ion-nav-set-root",
+        "ion-note",
+        "ion-picker",
+        "ion-picker-column",
+        "ion-picker-controller",
+        "ion-popover",
+        "ion-popover-controller",
+        "ion-radio",
+        "ion-radio-group",
+        "ion-range",
+        "ion-range-knob",
+        "ion-refresher",
+        "ion-refresher-content",
+        "ion-reorder",
+        "ion-reorder-group",
+        "ion-ripple-effect",
+        "ion-route",
+        "ion-route-redirect",
+        "ion-router",
+        "ion-router-outlet",
+        "ion-row",
+        "ion-scroll",
+        "ion-searchbar",
+        "ion-segment",
+        "ion-segment-button",
+        "ion-select",
+        "ion-select-option",
+        "ion-select-popover",
+        "ion-show-when",
+        "ion-skeleton-text",
+        "ion-slide",
+        "ion-slides",
+        "ion-spinner",
+        "ion-split-pane",
+        "ion-status-tap",
+        "ion-tab",
+        "ion-tab-button",
+        "ion-tabbar",
+        "ion-tabs",
+        "ion-tap-click",
+        "ion-text",
+        "ion-textarea",
+        "ion-thumbnail",
+        "ion-title",
+        "ion-toast",
+        "ion-toast-controller",
+        "ion-toggle",
+        "ion-toolbar",
+        "ion-virtual-scroll"
+      ]
+    },
+    {
+      "name": "@theracode/router",
+      "source": "node_modules/@theracode/router",
+      "tags": [
+        "th-route",
+        "th-route-link",
+        "th-router"
+      ]
+    },
+    {
+      "name": "ionicons",
+      "source": "node_modules/ionicons",
+      "tags": [
+        "ion-icon"
+      ]
+    }
+  ]
+}
