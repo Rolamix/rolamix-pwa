@@ -1,24 +1,61 @@
 {
   "compilerOptions": {
-    "allowSyntheticDefaultImports": true,
-    "allowUnreachableCode": false,
+    "baseUrl": ".",
+    "rootDir": "src",
+    "outDir": "dist",
+    "sourceMap": true,
+    "jsx": "react",
+    "jsxFactory": "h",
     "declaration": false,
     "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "module": "esnext",
+    "target": "es2017",
+    "allowSyntheticDefaultImports": true,
+    "allowUnreachableCode": false,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
     "lib": [
       "dom",
       "es2017"
     ],
-    "moduleResolution": "node",
-    "module": "es2015",
-    "target": "es2017",
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "jsx": "react",
-    "jsxFactory": "h"
+    "plugins": [
+      { "name": "tslint-language-service" }
+    ],
+    "paths": {
+      "~assets/*": [
+        "src/assets/*"
+      ],
+      "~components/*": [
+        "src/components/*"
+      ],
+      "~decorators/*": [
+        "src/decorators/*"
+      ],
+      "~helpers/*": [
+        "src/helpers/*"
+      ],
+      "~locales/*": [
+        "src/locales/*"
+      ],
+      "~services/*": [
+        "src/services/*"
+      ],
+      "~styles/*": [
+        "src/styles/*"
+      ],
+      "~types/*": [
+        "src/types/*"
+      ],
+      "~utils/*": [
+        "src/utils/*"
+      ]
+    }
   },
   "include": [
-    "src",
-    "types/jsx.d.ts"
+    "src"
   ],
   "exclude": [
     "node_modules"

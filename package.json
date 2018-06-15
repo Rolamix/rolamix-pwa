@@ -7,7 +7,7 @@
     "dist/"
   ],
   "scripts": {
-    "build": "NODE_ENV=production stencil build --ssr",
+    "build": "NODE_ENV=production stencil build --ssr --es5",
     "buildWPrerender": "NODE_ENV=production stencil build --prerender",
     "dev": "sd concurrent \"stencil build --dev --watch\" \"stencil-dev-server\" ",
     "devWithSW": "sd concurrent \"stencil build --dev --service-worker --watch\" \"stencil-dev-server\" ",
@@ -19,7 +19,8 @@
     "delay": "node scripts/delay.js 20000",
     "test": "jest --no-cache",
     "test.watch": "jest --watch --no-cache",
-    "lint": "tslint --project ."
+    "lint": "tslint --project .",
+    "commitmsg": "commitlint -E GIT_PARAMS"
   },
   "dependencies": {
     "@engineerapart/stencil-lift": "^0.1.7",
@@ -27,17 +28,23 @@
     "@stencil/core": "^0.9.7",
     "@stencil/router": "^0.2.1",
     "@theracode/router": "^0.0.7",
+    "classnames": "^2.2.6",
     "compression": "^1.7.2",
     "express": "^4.16.3",
     "ionicons": "^4.1.2",
-    "redux": "^4.0.0"
+    "redux": "^4.0.0",
+    "svg4everybody": "^2.1.9"
   },
   "devDependencies": {
+    "@commitlint/cli": "^7.0.0",
+    "@commitlint/config-angular": "^7.0.1",
+    "@commitlint/config-conventional": "^7.0.1",
     "@stencil/dev-server": "latest",
     "@stencil/postcss": "^0.0.4",
     "@stencil/sass": "0.0.5",
     "@stencil/utils": "latest",
     "@theracode/tslint-rules": "^0.0.1",
+    "@types/classnames": "^2.2.4",
     "@types/jest": "^22.2.3",
     "include-media": "^1.4.9",
     "jest": "^23.1.0",
@@ -71,5 +78,8 @@
       "json",
       "jsx"
     ]
+  },
+  "commitlint": {
+    "extends": [ "@commitlint/config-conventional" ]
   }
 }

@@ -4,6 +4,9 @@ const cssvariables = require('postcss-css-variables');
 const postcssimport = require('postcss-import');
 const postcssreport = require('postcss-reporter');
 
+// I think we can get off sass completely and use postcss plugins
+// https://pawelgrzybek.com/from-sass-to-postcss/
+
 exports.config = {
   namespace: 'rmx',
   srcDir: 'src',
@@ -14,24 +17,26 @@ exports.config = {
   enableCache: false,
   hashFileNames: true,
   hashedFileNameLength: 12,
-  // globalStyle: 'src/global/app.css', // don't use this if you can keep from it.
+  globalStyle: 'src/styles/global.scss', // The file contents injected into the page header - NOT referenced by url.
   globalScript: 'src/global/index.ts',
   // bundles: [
   //   { components: ['app-home', 'etc'] },
   // ],
-  // copy: [
-  //   { src: 'docs-content' }
-  // ],
+  copy: [
+    { src: 'global/svg4everybody.min.js', dest: 'build/rmx/svg4everybody.min.js' },
+    { src: 'assets-svg/*.svg', dest: 'build/rmx/svg/' }
+  ],
   plugins: [
     postcss({
-      // Transform css-variable usages to use fallbacks for older browsers
       plugins: [
-        postcssimport({
+        // We should probably add postcss-url
+        postcssimport({ // be skimpy on repeated imports
           skipDuplicates: true,
           path: [
             'src/styles/'
           ]
         }),
+        // Transform css-variable usages to use fallbacks for older browsers
         cssvariables({
           preserve: true,
         }),
@@ -39,7 +44,10 @@ exports.config = {
       ]
     }),
     sass({
-      injectGlobalPaths: [ ] // SASS variables, mixins & functions only.
+      injectGlobalPaths: [ ], // Inject @ top of every scss file. SASS variables, mixins & functions only.
+      includePaths: [
+        'src/styles/',
+      ]
     }),
   ],
   outputTargets: [
@@ -57,6 +65,10 @@ exports.config = {
           '**/index.html' // caching this causes '/' to be cached too.. for future reference :muscle:.
         ]
       }
+    },
+    {
+      type: 'stats',
+      file: 'stats.json'
     }
   ],
 };
