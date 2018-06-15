@@ -430,16 +430,6 @@
           "mode": "ios"
         },
         {
-          "fileName": "cyjqybs5fzyw.es5.js",
-          "outputs": [
-            "www/build/rmx/cyjqybs5fzyw.es5.js"
-          ],
-          "size": 21250,
-          "gzip": 5812,
-          "target": "es5",
-          "mode": "ios"
-        },
-        {
           "fileName": "lu9phrhlcusy.es5.js",
           "outputs": [
             "www/build/rmx/lu9phrhlcusy.es5.js"
@@ -448,6 +438,16 @@
           "gzip": 5693,
           "target": "es5",
           "mode": "md"
+        },
+        {
+          "fileName": "cyjqybs5fzyw.es5.js",
+          "outputs": [
+            "www/build/rmx/cyjqybs5fzyw.es5.js"
+          ],
+          "size": 21250,
+          "gzip": 5812,
+          "target": "es5",
+          "mode": "ios"
         }
       ],
       "inputs": [
@@ -578,15 +578,6 @@
       ],
       "bundles": [
         {
-          "fileName": "vufv9idbqxsl.js",
-          "outputs": [
-            "www/build/rmx/vufv9idbqxsl.js"
-          ],
-          "size": 185026,
-          "gzip": 17829,
-          "mode": "md"
-        },
-        {
           "fileName": "dtcr0hy6vuvz.js",
           "outputs": [
             "www/build/rmx/dtcr0hy6vuvz.js"
@@ -594,6 +585,15 @@
           "size": 184123,
           "gzip": 18054,
           "mode": "ios"
+        },
+        {
+          "fileName": "vufv9idbqxsl.js",
+          "outputs": [
+            "www/build/rmx/vufv9idbqxsl.js"
+          ],
+          "size": 185026,
+          "gzip": 17829,
+          "mode": "md"
         },
         {
           "fileName": "vufv9idbqxsl.es5.js",
@@ -958,20 +958,20 @@
       ],
       "bundles": [
         {
-          "fileName": "saqr58fjyc7d.js",
+          "fileName": "2frjqa4qevdc.js",
           "outputs": [
-            "www/build/rmx/saqr58fjyc7d.js"
+            "www/build/rmx/2frjqa4qevdc.js"
           ],
-          "size": 26028,
-          "gzip": 7502
+          "size": 26216,
+          "gzip": 7532
         },
         {
-          "fileName": "saqr58fjyc7d.es5.js",
+          "fileName": "2frjqa4qevdc.es5.js",
           "outputs": [
-            "www/build/rmx/saqr58fjyc7d.es5.js"
+            "www/build/rmx/2frjqa4qevdc.es5.js"
           ],
-          "size": 30350,
-          "gzip": 8367,
+          "size": 30538,
+          "gzip": 8395,
           "target": "es5"
         }
       ],

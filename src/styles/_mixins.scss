@@ -1,9 +1,9 @@
 // Gracias Ionic for the utilities
-@import 'mixins-string';
-@import 'mixins-list';
-@import 'mixins-map';
-@import 'mixins-url';
-@import 'mixins-color';
+@import 'mixins/string';
+@import 'mixins/list';
+@import 'mixins/map';
+@import 'mixins/url';
+@import 'mixins/color';
 
 // eg: background: getSafeRGBA(color($colors, secondary), 0.65);
 @function getSafeRGBA($color, $alpha: 1.0) {

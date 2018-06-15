@@ -1,5 +1,5 @@
-@import "mixins-list";
-@import "mixins-string";
+@import "list";
+@import "string";
 
 $css-variable-prefix: "--" !default;
 $default-color-variation: base !default;
