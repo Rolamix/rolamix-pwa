@@ -35,7 +35,7 @@ export class PostsService {
     return this.get(`https://jsonplaceholder.typicode.com/posts/${postId}/comments`);
   }
 
-  private async get(url) {
+  private async get(url: string) {
     const { data, error } = await this.dataService.get(url);
     if (error) {
       return { error };

@@ -1,15 +1,74 @@
-@import 'reset.scss';
-@import 'typography.scss';
+@import 'core';
 
-my-app {
-  // header {
-  //   background: var(--ion-color-primary); // #5851ff;
-  //   color: white;
-  //   height: 56px;
-  //   display: flex;
-  //   align-items: center;
-  //   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
-  // }
+app-loader {
+
+  // .site-pusher,
+  .site-container {
+    min-height: calc(100% - #{$header-height});
+    height: calc(100% - #{$header-height});
+    position: relative;
+    // padding-top: $header-height;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    will-change: scroll-position;
+    contain: size style layout;
+    z-index: 1;
+  }
+
+  .backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .2s ease-out;
+    z-index: 1;
+  }
+
+  .site-content {
+    @include clearfix();
+    height: 100%;
+    position: relative;
+
+    // If we set these, the scroll bar scrolls from the header's bottom,
+    // instead of against the whole body. We may decide to go with this behavior later.
+    // height: 100%;
+    // overflow: scroll;
+
+    &.push {
+      transition-duration: 300ms;
+      transform: translateX(0px);
+    }
+  }
+
+  body.with--sidebar & {
+    .site-container {
+      overflow: hidden;
+    }
+
+    // .site-pusher {
+    .site-content.push {
+      transform: translateX($menu-width * -1); // * 1 if on left
+    }
+
+    .backdrop {
+      opacity: 1;
+      pointer-events: unset;
+    }
+  }
+
+  @include media('>=lg') {
+    .site-container {
+      min-height: 100%;
+      height: 100%;
+      padding-top: $header-height;
+    }
+  }
+
 
   // h1 {
   //   font-size: 1.4rem;
@@ -39,5 +98,4 @@ my-app {
   //   box-shadow: 0 3px 6px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.1);
   //   transform: translateY(1px);
   // }
-
 }

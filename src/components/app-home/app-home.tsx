@@ -30,12 +30,12 @@ export class AppHome {
     return { class: 'ion-page' };
   }
 
-  renderPost = (p) => {
+  renderPost = (p: Post) => {
     return (
-      <ion-item text-wrap={true}>
-        <ion-label>{p.title}</ion-label>
+      <div class="list-item" text-wrap={true}>
+        <div class="item-label">{p.title}</div>
         <p>{p.body}</p>
-      </ion-item>
+      </div>
     );
   }
 
@@ -65,33 +65,23 @@ export class AppHome {
         <h1 ref={(el) => (this.h1 = el)}>Stencil PWA Toolkit</h1>
       </header>,
 
-      // <ion-header>
-      //   <ion-toolbar color="primary">
-      //     <ion-title ref={(el) => (this.h1 = el)}>Stencil PWA Toolkit</ion-title>
-      //   </ion-toolbar>
-      // </ion-header>,
+      <div class="content">
+        <p>
+          <ion-icon name="heart" color="primary" size="large" />
+          Welcome to the Stencil PWA Toolkit.
+          You can use this starter to build entire PWAs all with
+          web components using Stencil and ionicons! Check out the readme for everything that comes in this starter out of the box and
+          Check out our docs on <a href="https://stenciljs.com">stenciljs.com</a> to get started.
+        </p>
 
-      <ion-content padding={true}>
-        <main>
-          <div class="app-home">
-            <p>
-              <ion-icon name="heart" color="primary" size="large" />
-              Welcome to the Stencil PWA Toolkit.
-              You can use this starter to build entire PWAs all with
-              web components using Stencil and ionicons! Check out the readme for everything that comes in this starter out of the box and
-              Check out our docs on <a href="https://stenciljs.com">stenciljs.com</a> to get started.
-            </p>
+        {this.renderThButton()}
 
-            {this.renderThButton()}
+        <div class="list">
+          {this.posts.map(this.renderPost)}
+        </div>
 
-            <ion-list>
-              {this.posts.map(this.renderPost)}
-            </ion-list>
-
-            <ion-img src="/assets/images/home/bg.jpg" />
-          </div>
-        </main>
-      </ion-content>
+        <ion-img src="/assets/images/home/bg.jpg" />
+      </div>
     ];
   }
 }

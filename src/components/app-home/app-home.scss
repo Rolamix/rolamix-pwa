@@ -1,5 +1,45 @@
+@import 'core';
+
 app-home {
-  .app-home {
-    padding: 10px;
+  padding: 10px;
+  display: block;
+
+  header {
+    overflow: auto; // reminder about collapsing margins - the h1's margin extends above the container.
+  }
+
+  .list {
+    margin: 0 0 16px;
+    padding: 0;
+    display: block;
+    contain: content;
+    list-style-type: none;
+
+    &.list-item {
+      -webkit-font-smoothing: antialiased;
+      display: block;
+
+      p {
+        margin: 0 0 2px;
+        overflow: inherit;
+        font-size: 14px;
+        line-height: normal;
+        text-overflow: inherit;
+        color: color($colors, text-light);
+      }
+    }
+
+    &.item-label {
+      margin: 13px 8px;
+      display: block;
+      overflow: hidden;
+      -webkit-box-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+      font-size: inherit;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      line-height: 1.5;
+    }
   }
 }
