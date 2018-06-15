@@ -131,11 +131,13 @@ export class DependencyContainer implements IContainer {
         return injection.instance;
       });
 
-    const instance = new entry.klass(...resolvedRequires);
+    const instance = new entry.klass(...resolvedRequires) as { [key: string]: any };
     // Spread the params into the instance.
     injectionParams.forEach((param) => {
       if (param.propertyKey) {
-        instance[param.propertyKey] = resolvedRequires[param.parameterIndex];
+        // Actually this may not be a string, it may be a symbol.
+        // We'll worry about that when we can actually use it.
+        instance[param.propertyKey as string] = resolvedRequires[param.parameterIndex];
       }
     });
 

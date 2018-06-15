@@ -10,7 +10,7 @@ export function InjectProp(depOrOpts: InjectDecoratorOptions | string | symbol):
   const dep = resolveInjectDep(depOrOpts);
 
   return function InjectPropDecorator(target: Function, propertyKey: string): void {
-    let val = target[propertyKey];
+    let val = (target as { [key: string]: any })[propertyKey];
 
     const getter = function() {
       // On client, return the prototype's prop.

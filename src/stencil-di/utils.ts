@@ -1,6 +1,6 @@
 import { InjectDecoratorOptions } from './interfaces';
 
-export const isSymbol = function (x) {
+export const isSymbol = function (x: any) {
   if (!x) return false;
   if (typeof x === 'symbol') return true;
   if (!x.constructor) return false;
