@@ -1,0 +1,103 @@
+/**
+ * This SCSS file must NOT define or import any SCSS files that generate CSS.
+ */
+@charset "UTF-8";
+@import 'mixins';
+
+// Breakpoints for include-media
+// https://medium.freecodecamp.org/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862
+$breakpoints: ( // e.g. ≥lg
+  'phone-sm': 399px, // <=
+  'phone': 400px, // >=
+  'md': 600px, // >=
+  'lg': 850px, // >=
+  'desktop': 996px, // >= // currently not used but what if..
+  'xl': 1200px, // >=
+  'ultra': 1800px, // >=
+  // 'phone-tall': 550px,
+  // 'medium-widescreen': 1366px,
+	// 'ultra-widescreen' : 1440px
+);
+
+$menu-width: 250px !default;
+$header-height: 80px;
+
+$font-size-root: 10px;
+$line-height-base: 1.15;
+$font-family-base: ProximaNova, sans-serif;
+$font-b: ProximaNova-Bold;
+$font-l: $font-family-base;
+$font: $font-l;
+$body-bg: #FFFFFF;
+
+$primary: #27485d;
+$secondary: #ff6c00;
+$tertiary: #f4a942;
+$secondary-header: getSafeRGBA($secondary, .8); // rgba(255, 108, 0, 0.8),
+$text-light: #686868;
+$text-dark: #3d464d;
+$danger: #f53d3d;
+$warning: #ffce00;
+$success: #48bb98;
+$primary-soft: #354052;
+$light: #959595;
+$lighter: #d2d2d2;
+$lightest: #f2f2f2;
+$medium: #989aa2;
+$dark: #222222;
+$blue: #2690ff;
+$blue-light: #5cacff;
+
+$white: #FFFFFF;
+$white-a: darken($white, 2%);
+$white-b: darken($white, 6%);
+$white-c: darken($white, 12%);
+$white-d: darken($white, 24%);
+
+// $black: rgba(#000000, .8);
+$black: #000000;
+$black-a: lighten($black, 10%);
+$black-b: lighten($black, 20%);
+$black-c: lighten($black, 40%);
+$black-d: lighten($black, 60%);
+
+$text: $primary;
+$text-blue: $blue;
+
+// To use, e.g.:
+// null was ios/md but we don't care.
+// ion-color($colors, $color-name, contrast, null, 0.8);
+$colors: (
+  primary: $primary,
+  primary-soft: $primary-soft,
+  secondary: $secondary,
+  secondary-light: #ff8932, // << from design, >> mine #FF9447,
+  secondary-lightest: #FFAC70, // FFB782, // FF994E,
+  secondary-header: rgba(255, 108, 0, 0.8),
+  tertiary: $tertiary,
+  complement: #7e56bd,
+  danger: $danger,
+  warning: $warning,
+  good: #16A400,
+  good-bright: #1DD300,
+  success: $success,
+  light: $light,
+  lighter: $lighter,
+  lightest: $lightest,
+  medium: $medium,
+  dark: $dark,
+  white: $white,
+  black: $black,
+  inverted-primary: (
+	  base: $white,
+	  contrast: #27485d,
+  ),
+  transparent: transparent,
+  text: $text,
+  text-light: $text-light,
+  text-dark: $text-dark,
+  text-blue: $text-blue,
+  blue-light: $blue-light,
+);
+
+@import 'node_modules/include-media/dist/include-media';

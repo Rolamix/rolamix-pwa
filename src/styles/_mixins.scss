@@ -1,0 +1,83 @@
+// Gracias Ionic for the utilities
+@import 'mixins-string';
+@import 'mixins-list';
+@import 'mixins-map';
+@import 'mixins-url';
+@import 'mixins-color';
+
+// eg: background: getSafeRGBA(color($colors, secondary), 0.65);
+@function getSafeRGBA($color, $alpha: 1.0) {
+  @return unquote("rgba(#{red($color)}, #{green($color)}, #{blue($color)}, #{$alpha})");
+}
+
+@mixin placeholder($color: #999, $text-indent: 0, $opacity: null) {
+  &::-moz-placeholder { // Firefox 19+
+    color: $color;
+    @if ($opacity) {
+      opacity: $opacity;
+    }
+  }
+
+  &:-ms-input-placeholder {
+    color: $color;
+    @if ($opacity) {
+      opacity: $opacity;
+    }
+  }
+
+  &::-webkit-input-placeholder {
+    // Safari placeholder margin issue
+    text-indent: $text-indent;
+    color: $color;
+    @if ($opacity) {
+      opacity: $opacity;
+    }
+  }
+}
+
+// SVG Background Image Mixin
+// @param {string} $svg
+// ----------------------------------------------------------
+@mixin svg-background-image($svg, $flip-rtl: false) {
+  $url: url-encode($svg);
+  $viewBox: str-split(str-extract($svg, "viewBox='", "'"), " ");
+
+  @if $flip-rtl != true or $viewBox == null {
+    @include multi-dir() {
+      background-image: url("data:image/svg+xml;charset=utf-8,#{$url}");
+    }
+  } @else {
+    $transform: "transform='translate(#{nth($viewBox, 3)}, 0) scale(-1, 1)'";
+    $flipped-url: $svg;
+    $flipped-url: str-replace($flipped-url, "<path", "<path #{$transform}");
+    $flipped-url: str-replace($flipped-url, "<line", "<line #{$transform}");
+    $flipped-url: str-replace($flipped-url, "<polygon", "<polygon #{$transform}");
+    $flipped-url: url-encode($flipped-url);
+
+    @include ltr () {
+      background-image: url("data:image/svg+xml;charset=utf-8,#{$url}");
+    }
+    @include rtl() {
+      background-image: url("data:image/svg+xml;charset=utf-8,#{$flipped-url}");
+    }
+  }
+}
+
+@mixin clearfix($before: null) {
+  @if ($before) {
+    &:before,
+    &:after {
+      content: " ";
+      display: table;
+    }
+    &:after {
+      clear: both;
+    }
+  } @else {
+    &:after {
+      content: " ";
+      display: table;
+      clear: both;
+    }
+  }
+}

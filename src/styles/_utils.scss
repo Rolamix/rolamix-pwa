@@ -1,0 +1,12 @@
+.clearfix:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+
+button.clickable {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}

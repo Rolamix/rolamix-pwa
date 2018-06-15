@@ -1,0 +1,14 @@
+1. Flexbox - https://github.com/philipwalton/flexbugs
+  We are using Flexbox but this means we are exposed to the buggy implementation in IE11 and Safari 10.
+  To that end, you must follow the following rules when using Flexbox:
+
+  * Use min/max height/width sparingly. Safari 10 only recognizes the `flex: x` value for sizing on lines.
+    If you need to use one of these, apply it to an inner container of the element.
+  * IE11 requires flex-basis to have a unit - do not declare as "1 0 0", use "1 0 0%" (not px).
+  * In IE11, containers with display: flex and flex-direction: column will not properly
+    calculate their flexed childrens' sizes if the container has min-height but no explicit height property.
+  * IE 11 does not vertically align items correctly when min-height is used
+  * Safari <= 10.1, non-flex children of flexed containers cannot have % heights
+
+2. Importing node_modules css/sass files:
+  * @import "~node_modules/path/to/file" (without the file extension);

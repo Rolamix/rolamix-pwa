@@ -1,3 +1,4 @@
+@import 'core';
 // Generated with purecss grid generator.
 // https://purecss.io/start/?cols=12&md=600px&lg=900px&xl=1200px&phone-sm=screen%20and%20(max-width%3A%20399px)&phone=400px&ultra=1800px
 .pure-u-1,
@@ -98,7 +99,7 @@
     width: 100%;
 }
 
-@media screen and (max-width: 399px) {
+@include media('<=phone-sm') {
   .pure-u-phone-sm-1,
   .pure-u-phone-sm-1-1,
   .pure-u-phone-sm-1-2,
@@ -198,7 +199,7 @@
   }
 }
 
-@media screen and (min-width: 400px) {
+@include media('>=phone') {
   .pure-u-phone-1,
   .pure-u-phone-1-1,
   .pure-u-phone-1-2,
@@ -298,7 +299,7 @@
   }
 }
 
-@media screen and (min-width: 600px) {
+@include media('>=md') {
     .pure-u-md-1,
     .pure-u-md-1-1,
     .pure-u-md-1-2,
@@ -398,7 +399,7 @@
     }
 }
 
-@media screen and (min-width: 900px) {
+@include media('>=lg') {
     .pure-u-lg-1,
     .pure-u-lg-1-1,
     .pure-u-lg-1-2,
@@ -498,7 +499,7 @@
     }
 }
 
-@media screen and (min-width: 1200px) {
+@include media('>=xl') {
     .pure-u-xl-1,
     .pure-u-xl-1-1,
     .pure-u-xl-1-2,
@@ -598,7 +599,7 @@
     }
 }
 
-@media screen and (min-width: 1800px) {
+@include media('>=ultra') {
     .pure-u-ultra-1,
     .pure-u-ultra-1-1,
     .pure-u-ultra-1-2,
