@@ -1,7 +1,9 @@
-const noop = (..._args) => {}; // tslint:disable-line no-empty
+// We avoid importing EventEmitter from @stencil/core here
+// since this goes down as embedded JS in the initial response.
+// Instead we invoke window.dispatchEvent directly.
 const log = console;
 
-export function initServiceWorker({ src = '/sw.js', scope = '/', unregister = false, onUpdate = noop } = {}) {
+export function initServiceWorker({ src = '/sw.js', scope = '/', unregister = false } = {}) {
   const allowsSW = Boolean(
     typeof window !== 'undefined' &&
     window.location.protocol === 'https:' ||
@@ -13,10 +15,11 @@ export function initServiceWorker({ src = '/sw.js', scope = '/', unregister = fa
   if (allowsSW && 'serviceWorker' in navigator) {
 
     if (unregister) {
-      return navigator.serviceWorker.ready.then((registration) => {
+      navigator.serviceWorker.ready.then((registration) => {
         registration.unregister();
         log.log('ServiceWorker has been unregistered');
       });
+      return;
     }
 
     const completeSetup = async () => {
@@ -31,13 +34,11 @@ export function initServiceWorker({ src = '/sw.js', scope = '/', unregister = fa
             if (sw.state === 'installed') {
               if (navigator.serviceWorker.controller) {
                 log.info('New content is available; please refresh.');
-                typeof onUpdate === 'function' && onUpdate('refresh');
-                window.dispatchEvent(new Event('swUpdate'));
+                window.dispatchEvent(new CustomEvent('swUpdate', { detail: { type: 'refresh' } }));
               } else {
                 log.info('Content is cached for offline use.');
-                typeof onUpdate === 'function' && onUpdate('cached');
+                window.dispatchEvent(new CustomEvent('swUpdate', { detail: { type: 'cached' } }));
               }
-
             }
           };
         };
