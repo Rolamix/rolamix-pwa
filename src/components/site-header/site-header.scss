@@ -183,6 +183,10 @@ site-header {
     font-weight: bold;
     padding: 1px 15px 2px;
 
+    & ion-icon {
+      margin-right: 8px;
+    }
+
     & svg-icon svg {
       fill: color($colors, text-blue);
       stroke: color($colors, text-blue);
