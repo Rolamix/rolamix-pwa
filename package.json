@@ -20,7 +20,7 @@
     "test": "jest --no-cache",
     "test.watch": "jest --watch --no-cache",
     "lint": "tslint --project .",
-    "commitmsg": "commitlint -E GIT_PARAMS"
+    "commitmsg": "echo 'linting commit msg' && commitlint -E GIT_PARAMS"
   },
   "dependencies": {
     "@engineerapart/stencil-lift": "^0.1.7",
