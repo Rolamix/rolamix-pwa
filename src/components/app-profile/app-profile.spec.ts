@@ -1,4 +1,4 @@
-import { flush, render } from '@stencil/core/testing';
+import { TestWindow } from '@stencil/core/testing';
 import { AppProfile } from './app-profile';
 
 describe('app-profile', () => {
@@ -7,30 +7,33 @@ describe('app-profile', () => {
   });
 
   describe('rendering', () => {
-    let element;
-    beforeEach(async () => {
-      element = await render({
+    // beforeEach(async () => { });
+
+    it('should not render any content if there is not a match', async () => {
+      const window = new TestWindow();
+      const element = await window.load({
         components: [AppProfile],
         html: '<app-profile></app-profile>'
       });
-    });
-
-    it('should not render any content if there is not a match', async () => {
-      await flush(element);
       expect(element.textContent).toEqual('');
     });
 
     it('should work with a name passed', async () => {
+      const window = new TestWindow();
+      const element = await window.load({
+        components: [AppProfile],
+        html: '<app-profile></app-profile>',
+      });
       element.match = {
         params: {
           name: 'stencil'
         }
       };
 
-      await flush(element);
-
-      const pElement = element.querySelector('ion-content p');
-
+      await window.flush();
+      // you can also..
+      // element.dispatchEvent(new window.Event('click')); // no need to wait for this.
+      const pElement = element.querySelector('.content p');
       expect(pElement.textContent).toEqual('Hello! My name is stencil. My name was passed in through a route param!');
     });
   });
