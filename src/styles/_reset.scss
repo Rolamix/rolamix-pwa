@@ -12,9 +12,9 @@
  */
 
 html {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  // font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.15; /* 1 */
-  font-size: 10px; // RMX specific
+  font-size: 14px; // RMX specific
   -webkit-text-size-adjust: 100%; /* 2 */
   -webkit-tap-highlight-color: rgba(0,0,0,0); // RMX specific
 }
@@ -38,14 +38,15 @@ html {
 body { // RMX specific
   margin: 0;
   padding: 0;
-  font-family: $font-family-base;
-  font-size: $font-size-root;
+  font-family: $font-family-base, $font-family-fallbacks;
+  font-size: $font-size-root ;
   line-height: $line-height-base; /* 1 */
   // color: $text-color;
   // color: var(--textColor);
   color: color($colors, text);
   background-color: color($colors, white);
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased !important;
 }
 
 html,

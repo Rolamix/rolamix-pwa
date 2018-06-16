@@ -22,24 +22,25 @@ $breakpoints: ( // e.g. ≥lg
 $menu-width: 250px !default;
 $header-height: 80px;
 
-$font-size-root: 10px;
+$font-size-root: 14px;
 $line-height-base: 1.15;
-$font-family-base: ProximaNova, Tahoma, Geneva, Verdana, sans-serif;
-$font-l: $font-family-base;
-$font-b: ProximaNova-Bold, Tahoma, Geneva, Verdana, sans-serif;
+$font-family-base: "Circular Std Book"; // ProximaNova;
+$font-family-fallbacks: "Helvetica Neue","Helvetica","Arial",sans-serif;
+$font-l: $font-family-base, $font-family-fallbacks;
+$font-b: "Circular Std Book Medium", $font-family-fallbacks; // ProximaNova-Bold;
 $font: $font-l;
-$body-bg: #FFFFFF;
+$body-bg: #f7f9fa;
 
 $primary: #27485d;
+$primary-soft: #354052;
 $secondary: #ff6c00;
-$tertiary: #f4a942;
 $secondary-header: getSafeRGBA($secondary, .8); // rgba(255, 108, 0, 0.8),
+$tertiary: #f4a942;
 $text-light: #686868;
 $text-dark: #3d464d;
 $danger: #f53d3d;
 $warning: #ffce00;
 $success: #48bb98;
-$primary-soft: #354052;
 $light: #959595;
 $lighter: #d2d2d2;
 $lightest: #f2f2f2;
@@ -61,7 +62,7 @@ $black-b: lighten($black, 20%);
 $black-c: lighten($black, 40%);
 $black-d: lighten($black, 60%);
 
-$text: $primary;
+$text: #888888;
 $text-blue: $blue;
 
 // To use, e.g.:
