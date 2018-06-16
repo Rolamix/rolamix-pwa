@@ -27,7 +27,7 @@ export class AppHome {
   }
 
   hostData() {
-    return { class: 'ion-page' };
+    return { class: 'rmx-page' };
   }
 
   renderPost = (p: Post) => {

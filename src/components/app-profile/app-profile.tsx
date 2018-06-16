@@ -60,7 +60,7 @@ export class AppProfile {
   }
 
   hostData() {
-    return { class: 'ion-page' };
+    return { class: 'rmx-page' };
   }
 
   renderNotifyToggle() {
