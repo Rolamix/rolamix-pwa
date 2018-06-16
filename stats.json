@@ -430,16 +430,6 @@
           "mode": "ios"
         },
         {
-          "fileName": "lu9phrhlcusy.es5.js",
-          "outputs": [
-            "www/build/rmx/lu9phrhlcusy.es5.js"
-          ],
-          "size": 20853,
-          "gzip": 5693,
-          "target": "es5",
-          "mode": "md"
-        },
-        {
           "fileName": "cyjqybs5fzyw.es5.js",
           "outputs": [
             "www/build/rmx/cyjqybs5fzyw.es5.js"
@@ -448,6 +438,16 @@
           "gzip": 5812,
           "target": "es5",
           "mode": "ios"
+        },
+        {
+          "fileName": "lu9phrhlcusy.es5.js",
+          "outputs": [
+            "www/build/rmx/lu9phrhlcusy.es5.js"
+          ],
+          "size": 20853,
+          "gzip": 5693,
+          "target": "es5",
+          "mode": "md"
         }
       ],
       "inputs": [
@@ -596,16 +596,6 @@
           "mode": "md"
         },
         {
-          "fileName": "vufv9idbqxsl.es5.js",
-          "outputs": [
-            "www/build/rmx/vufv9idbqxsl.es5.js"
-          ],
-          "size": 193518,
-          "gzip": 19329,
-          "target": "es5",
-          "mode": "md"
-        },
-        {
           "fileName": "dtcr0hy6vuvz.es5.js",
           "outputs": [
             "www/build/rmx/dtcr0hy6vuvz.es5.js"
@@ -614,6 +604,16 @@
           "gzip": 19587,
           "target": "es5",
           "mode": "ios"
+        },
+        {
+          "fileName": "vufv9idbqxsl.es5.js",
+          "outputs": [
+            "www/build/rmx/vufv9idbqxsl.es5.js"
+          ],
+          "size": 193518,
+          "gzip": 19329,
+          "target": "es5",
+          "mode": "md"
         }
       ],
       "inputs": [
@@ -1055,7 +1055,6 @@
     "src/global/index.ts": [
       "src/utils/sw-init.ts"
     ],
-    "src/global/svg4everybody.ts": [],
     "src/services/auto-unsubscribe.decorator.ts": [],
     "src/services/data.service.ts": [
       "src/stencil-di"
@@ -1095,6 +1094,8 @@
     "src/stencil-di/interfaces.ts": [],
     "src/stencil-di/utils.ts": [],
     "src/utils/index.ts": [],
+    "src/utils/svg-use/index.ts": [],
+    "src/utils/svg-use/svg4everybody.ts": [],
     "src/utils/sw-init.ts": []
   },
   "collections": [
