@@ -4,7 +4,11 @@
   "start_url": "/",
   "display": "standalone",
   "icons": [{
-    "src": "assets/icon/icon.png",
+    "src": "assets/icon/icon192x192.png",
+    "sizes": "192x192",
+    "type": "image/png"
+  },{
+    "src": "assets/icon/icon512x512.png",
     "sizes": "512x512",
     "type": "image/png"
   }],

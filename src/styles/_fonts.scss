@@ -11,6 +11,7 @@
     url("/assets/fonts/ProximaNova-Regular.woff") format("woff"),
     url("/assets/fonts/ProximaNova-Regular.ttf") format("truetype"),
     url("/assets/fonts/ProximaNova-Regular.svg#ProximaNova-Regular") format("svg");
+  font-display: optional; /* Define how the browser behaves during download - fallback */
 }
 
 @font-face {
@@ -25,4 +26,5 @@
     url("/assets/fonts/ProximaNova-Bold.woff") format("woff"),
     url("/assets/fonts/ProximaNova-Bold.ttf") format("truetype"),
     url("/assets/fonts/ProximaNova-Bold.svg#ProximaNova-Bold") format("svg");
+  font-display: optional; /* Define how the browser behaves during download */
 }

@@ -13,7 +13,7 @@ self.addEventListener('push', (event) => {
   const title = 'Push Notification';
   const options = {
     body: `${event.data.text()}`,
-    icon: 'images/icon.png',
+    icon: 'images/icon512x512.png',
     badge: 'images/badge.png'
   };
 
