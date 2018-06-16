@@ -58,7 +58,6 @@ export class Icon {
     });
   }
 
-
   waitUntilVisible(el: HTMLElement, rootMargin: string, cb: Function) {
     if (this.win.IntersectionObserver) {
       const io = new this.win.IntersectionObserver((data: IntersectionObserverEntry[]) => {
@@ -76,7 +75,6 @@ export class Icon {
       cb();
     }
   }
-
 
   @Watch('name')
   @Watch('src')

@@ -32,10 +32,10 @@ const setupServiceWorker = async (src: string, scope: string) => {
         // ServiceWorkerState = "installing" | "installed" | "activating" | "activated" | "redundant";
         if (sw.state === 'installed') {
           if (navigator.serviceWorker.controller) {
-            log.info('New content is available; please refresh.');
+            log.info('[ServiceWorker]: New content is available; please refresh.');
             window.dispatchEvent(new CustomEvent('swUpdate', { detail: { type: 'refresh' } }));
           } else {
-            log.info('Content is cached for offline use.');
+            log.info('[ServiceWorker]: Content is cached for offline use.');
             window.dispatchEvent(new CustomEvent('swUpdate', { detail: { type: 'cached' } }));
           }
         }
