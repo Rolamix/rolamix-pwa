@@ -54,6 +54,7 @@ exports.config = {
       type: 'www',
       console: console,
       logLevel: 'debug',
+      // resourcesUrl: 'https://noway.blah.com/',
       serviceWorker: {
         swSrc: 'src/sw.js',
         globPatterns: [
