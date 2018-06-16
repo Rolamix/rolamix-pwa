@@ -32,7 +32,7 @@ export class AppHome {
 
   renderPost = (p: Post) => {
     return (
-      <div class="list-item" text-wrap={true}>
+      <div class="list-item">
         <div class="item-label">{p.title}</div>
         <p>{p.body}</p>
       </div>
@@ -42,9 +42,9 @@ export class AppHome {
   renderThButton() {
     return (
       <th-route-link url={`/profile/${this.id}`}>
-        <ion-button>
+        <rmx-button>
           Profile page
-        </ion-button>
+        </rmx-button>
       </th-route-link>
     );
   }
@@ -52,9 +52,9 @@ export class AppHome {
   // renderStencilRouteLink() {
   //   return (
   //     <stencil-route-link url={`/profile/${this.id}`}>
-  //       <ion-button>
+  //       <rmx-button>
   //         Profile page
-  //       </ion-button>
+  //       </rmx-button>
   //     </stencil-route-link>
   //   );
   // }

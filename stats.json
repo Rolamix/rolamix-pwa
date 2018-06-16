@@ -430,16 +430,6 @@
           "mode": "ios"
         },
         {
-          "fileName": "cyjqybs5fzyw.es5.js",
-          "outputs": [
-            "www/build/rmx/cyjqybs5fzyw.es5.js"
-          ],
-          "size": 21250,
-          "gzip": 5812,
-          "target": "es5",
-          "mode": "ios"
-        },
-        {
           "fileName": "lu9phrhlcusy.es5.js",
           "outputs": [
             "www/build/rmx/lu9phrhlcusy.es5.js"
@@ -448,6 +438,16 @@
           "gzip": 5693,
           "target": "es5",
           "mode": "md"
+        },
+        {
+          "fileName": "cyjqybs5fzyw.es5.js",
+          "outputs": [
+            "www/build/rmx/cyjqybs5fzyw.es5.js"
+          ],
+          "size": 21250,
+          "gzip": 5812,
+          "target": "es5",
+          "mode": "ios"
         }
       ],
       "inputs": [
@@ -596,16 +596,6 @@
           "mode": "md"
         },
         {
-          "fileName": "dtcr0hy6vuvz.es5.js",
-          "outputs": [
-            "www/build/rmx/dtcr0hy6vuvz.es5.js"
-          ],
-          "size": 192615,
-          "gzip": 19587,
-          "target": "es5",
-          "mode": "ios"
-        },
-        {
           "fileName": "vufv9idbqxsl.es5.js",
           "outputs": [
             "www/build/rmx/vufv9idbqxsl.es5.js"
@@ -614,6 +604,16 @@
           "gzip": 19329,
           "target": "es5",
           "mode": "md"
+        },
+        {
+          "fileName": "dtcr0hy6vuvz.es5.js",
+          "outputs": [
+            "www/build/rmx/dtcr0hy6vuvz.es5.js"
+          ],
+          "size": 192615,
+          "gzip": 19587,
+          "target": "es5",
+          "mode": "ios"
         }
       ],
       "inputs": [
@@ -776,20 +776,20 @@
       ],
       "bundles": [
         {
-          "fileName": "9ky3bgti72z5.js",
+          "fileName": "c1z8gbr4efdu.js",
           "outputs": [
-            "www/build/rmx/9ky3bgti72z5.js"
+            "www/build/rmx/c1z8gbr4efdu.js"
           ],
-          "size": 10489,
-          "gzip": 3567
+          "size": 10454,
+          "gzip": 3549
         },
         {
-          "fileName": "9ky3bgti72z5.es5.js",
+          "fileName": "c1z8gbr4efdu.es5.js",
           "outputs": [
-            "www/build/rmx/9ky3bgti72z5.es5.js"
+            "www/build/rmx/c1z8gbr4efdu.es5.js"
           ],
-          "size": 14808,
-          "gzip": 4536,
+          "size": 14773,
+          "gzip": 4517,
           "target": "es5"
         }
       ],
@@ -958,20 +958,20 @@
       ],
       "bundles": [
         {
-          "fileName": "2frjqa4qevdc.js",
+          "fileName": "vmxdm9sltlnm.js",
           "outputs": [
-            "www/build/rmx/2frjqa4qevdc.js"
+            "www/build/rmx/vmxdm9sltlnm.js"
           ],
-          "size": 26216,
-          "gzip": 7532
+          "size": 26249,
+          "gzip": 7558
         },
         {
-          "fileName": "2frjqa4qevdc.es5.js",
+          "fileName": "vmxdm9sltlnm.es5.js",
           "outputs": [
-            "www/build/rmx/2frjqa4qevdc.es5.js"
+            "www/build/rmx/vmxdm9sltlnm.es5.js"
           ],
-          "size": 30538,
-          "gzip": 8395,
+          "size": 30571,
+          "gzip": 8419,
           "target": "es5"
         }
       ],

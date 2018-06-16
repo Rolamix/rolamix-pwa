@@ -12,3 +12,9 @@
 
 2. Importing node_modules css/sass files:
   * @import "~node_modules/path/to/file" (without the file extension);
+
+3. Be very, very careful about the Ionic controls you use. Some are not SSR-safe (like ion-app).
+  Some come as part of larger bundles with other components you will NOT use, wasting bandwidth.
+  In such cases, better to rebuild the components ourselves. For example, ion-button comes
+  packaged in the same bundle as ion-app: so even if you don't use it, you've got it and all its
+  dependencies in the same bundle.

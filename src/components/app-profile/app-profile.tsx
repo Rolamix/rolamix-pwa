@@ -64,12 +64,11 @@ export class AppProfile {
   }
 
   renderNotifyToggle() {
-    // htmlFor="notif-check"
     return (
-      <ion-item class="check-wrap">
-        <ion-label>Notifications</ion-label>
+      <div class="list-item">
+        <label class="item-label" htmlFor="notif-check">Notifications</label>
         <ion-toggle id="notif-check" checked={this.notify} disabled={this.notify} />
-      </ion-item>
+      </div>
     );
   }
 
@@ -77,30 +76,19 @@ export class AppProfile {
     // Here, we can use 'this.name' or 'this.match.params.name'.
     // theracode router passes your route params as props.
     return [
-      <ion-header>
-        <ion-toolbar color="primary">
-          <ion-buttons slot="start">
-            <ion-back-button defaultHref="/" />
-          </ion-buttons>
+      <header>
+        <h1>Stencil PWA Toolkit - {this.name}</h1>
+      </header>,
 
-          <ion-title>Stencil PWA Toolkit - {this.name}</ion-title>
-        </ion-toolbar>
-      </ion-header>,
-      // <header>
-      //   <h1>Stencil PWA Toolkit - {this.name}</h1>
-      // </header>,
-
-      <ion-content padding={true}>
-        <div class="app-profile">
-          <p>
-            Hello! My name is {this.name}.
-            My name was passed in through a route param!
-          </p>
+      <div class="content">
+        <p>
+          Hello! My name is {this.name}.
+          My name was passed in through a route param!
+        </p>
 
 
-          {this.swSupport ? this.renderNotifyToggle() : null}
-        </div>
-      </ion-content>
+        {this.swSupport ? this.renderNotifyToggle() : null}
+      </div>
     ];
   }
 }
