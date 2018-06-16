@@ -23,7 +23,6 @@ exports.config = {
   //   { components: ['app-home', 'etc'] },
   // ],
   copy: [
-    { src: 'global/svg4everybody.min.js', dest: 'build/rmx/svg4everybody.min.js' },
     { src: 'assets-svg/*.svg', dest: 'build/rmx/svg/' }
   ],
   plugins: [
