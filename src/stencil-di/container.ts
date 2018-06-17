@@ -97,7 +97,11 @@ export class DependencyContainer implements IContainer {
     throw new Error(`DependencyContainer: type '${Symbol.keyFor(depSymbol)}' is not known and cannot be injected.`);
   }
 
-  resolveInjections = (entry: Injectable): object => {
+  resolveAll = (...classes: (string | symbol)[]) => {
+    return classes.map(this.resolve);
+  }
+
+  private resolveInjections = (entry: Injectable): object => {
     // Here we use entry.klass, but we know that Injectable's entry.klass
     // and InjectionParam's entry.target are the same object.
     const injectionParams = this.injectionsRegistry.get(entry.klass);
@@ -144,16 +148,12 @@ export class DependencyContainer implements IContainer {
     return instance;
   }
 
-  resolveRequires = (entry: Injectable) => {
+  private resolveRequires = (entry: Injectable) => {
     const instance = new entry.klass(...this.resolveAll(...(entry.requires || [])));
     return instance;
   }
 
-  resolveAll = (...classes: (string | symbol)[]) => {
-    return classes.map(this.resolve);
-  }
-
-  findDependencyEntrySymbol = (depSymbol: symbol) => {
+  private findDependencyEntrySymbol = (depSymbol: symbol) => {
     const symbolStr = Symbol.keyFor(depSymbol);
     let entry: Injectable;
     // Standard equality won't work - symbol equality doesn't work like you expect.
