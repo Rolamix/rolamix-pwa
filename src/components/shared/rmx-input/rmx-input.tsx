@@ -30,7 +30,7 @@ export class AppTextInput {
   @Prop()
   public placeholder: string = '';
 
-  @Prop()
+  @Prop({ mutable: true, reflectToAttr: true })
   public value: string = '';
 
   @Prop()
@@ -120,6 +120,7 @@ export class AppTextInput {
       value: this.value,
       placeholder: this.label ? undefined : this.placeholder ? this.placeholder : undefined,
       disabled: this.disabled,
+      maxLength: 128
     };
 
     return (
