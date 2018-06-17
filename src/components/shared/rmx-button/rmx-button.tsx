@@ -1,4 +1,4 @@
-import { Component, Listen, Prop } from '@stencil/core';
+import { Component, Element, Listen, Prop } from '@stencil/core';
 
 import { noop } from '~utils/index';
 
@@ -7,11 +7,13 @@ import { noop } from '~utils/index';
   styleUrl: 'rmx-button.scss'
 })
 export class RmxButton {
-  @Prop()
-  public label: string = '';
+  // @Prop()
+  // public label: string = '';
 
-  @Prop()
-  public icon: string = '';
+  // @Prop()
+  // public icon: string | JSX.Element = '';
+
+  @Element() hostEl: Element;
 
   @Prop()
   public raiseClick: (evt: UIEvent) => void = noop;
@@ -50,22 +52,26 @@ export class RmxButton {
     };
   }
 
-  private renderIcon(): JSX.Element {
-    if (!this.icon) {
-      return null;
-    }
+  // private renderIcon(): JSX.Element {
+  //   if (!this.icon) {
+  //     return null;
+  //   }
 
-    return (
-      <svg-icon class="icon" name={this.icon} />
-    );
-  }
+  //   if (typeof this.icon === 'string') {
+  //     return (
+  //       <svg-icon class="icon" name={this.icon} />
+  //     );
+  //   }
 
-  private renderLabel(): JSX.Element {
-    // return (
-    //   <app-translate class="label" entry={this.label} />
-    // );
-    return this.label;
-  }
+  //   return this.icon;
+  // }
+
+  // private renderLabel(): JSX.Element {
+  //   // return (
+  //   //   <app-translate class="label" entry={this.label} />
+  //   // );
+  //   return <div class="label">{this.label}</div>;
+  // }
 
   protected render(): JSX.Element | JSX.Element[] {
     if (this.loading) {
@@ -74,9 +80,11 @@ export class RmxButton {
       );
     }
 
-    return [
-      this.renderIcon(),
-      this.renderLabel()
-    ];
+    // return [
+    //   this.renderIcon(),
+    //   this.renderLabel()
+    // ];
+
+    return <slot />;
   }
 }
