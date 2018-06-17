@@ -27,8 +27,8 @@ declare global {
 }
 
 import '@engineerapart/stencil-lift';
-import '@ionic/core';
 import 'ionicons';
+import '@ionic/core';
 import '@theracode/router';
 
 import {
@@ -263,6 +263,7 @@ declare global {
       'name': string;
       'onBlurChange': () => void;
       'onFocusChange': () => void;
+      'onInputChange': (value: string, evt: KeyboardEvent) => void;
       'onValueChange': (value: string, evt: KeyboardEvent) => void;
       'placeholder': string;
       'value': string;
@@ -298,6 +299,7 @@ declare global {
       'name'?: string;
       'onBlurChange'?: () => void;
       'onFocusChange'?: () => void;
+      'onInputChange'?: (value: string, evt: KeyboardEvent) => void;
       'onValueChange'?: (value: string, evt: KeyboardEvent) => void;
       'placeholder'?: string;
       'value'?: string;

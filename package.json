@@ -1,8 +1,8 @@
 {
-  "name": "@stencil/starter",
+  "name": "rolamix-web-pwa",
   "private": true,
-  "version": "0.0.2",
-  "description": "Stencil App Starter",
+  "version": "0.0.3",
+  "description": "Rolamix Public Webapp",
   "files": [
     "dist/"
   ],
@@ -61,14 +61,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ionic-team/stencil-app-starter.git"
+    "url": "git+https://github.com/rolamix/rolamix-web-pwa.git"
   },
   "author": "Ionic Team",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ionic-team/stencil"
+    "url": "https://github.com/rolamix/rolamix-web-pwa"
   },
-  "homepage": "https://github.com/ionic-team/stencil",
+  "homepage": "https://github.com/rolamix/rolamix-web-pwa",
   "jest": {
     "transform": {
       "^.+\\.(js|ts|tsx)$": "<rootDir>/node_modules/@stencil/core/testing/jest.preprocessor.js"
