@@ -73,7 +73,7 @@ export class AppHeader {
 
         <div class={cx('ver-mas-cerrado', { active: this.isMobileSearchboxOpen })}>
           <div class="search-link-navigation">
-            <button class="clickable ver-mas-cerrar" onClick={this.toggleMobileSearchbox}><ion-icon name="md-close" color="text-blue" /></button>
+            <button class="clickable-wrapper ver-mas-cerrar" onClick={this.toggleMobileSearchbox}><ion-icon name="md-close" color="text-blue" /></button>
             {/* Handle onValueChange if we want to autosuggest */}
             <rmx-input
               ref={this.captureSearchbox}
@@ -102,13 +102,13 @@ export class AppHeader {
           </ul>
 
           <ul>
-            <li class="menu-item search"><button class="clickable search" onClick={this.toggleMobileSearchbox}><ion-icon size="small" name="search" />Search</button></li>
+            <li class="menu-item search"><button class="clickable-wrapper search" onClick={this.toggleMobileSearchbox}><ion-icon size="small" name="search" />Search</button></li>
             <li class="menu-item"><th-route-link url="/login">Login</th-route-link></li>
             <li class="menu-item"><th-route-link url="/promotions">Signup</th-route-link></li>
           </ul>
         </nav>
 
-        <button class="clickable search" onClick={this.toggleMobileSearchbox}>
+        <button class="clickable-wrapper search" onClick={this.toggleMobileSearchbox}>
           <ion-icon size="medium" name="search" />
         </button>
 

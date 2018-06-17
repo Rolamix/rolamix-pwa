@@ -134,8 +134,9 @@ export class Icon {
 
   hostData() {
     return {
-      'role': 'img',
+      role: 'img',
       class: {
+        icon: true,
         ...createColorClasses(this.color),
         [`icon-${this.size}`]: !!this.size,
       }

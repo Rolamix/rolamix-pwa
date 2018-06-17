@@ -4,7 +4,11 @@
   clear: both;
 }
 
-button.clickable {
+button {
+  font-weight: 600;
+}
+
+button.clickable-wrapper {
   background-color: transparent;
   border: none;
   outline: none;
