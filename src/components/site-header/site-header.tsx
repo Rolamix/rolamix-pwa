@@ -85,7 +85,9 @@ export class AppHeader {
               placeholder="Bandas, Cantantes, Artistas, Música..."
               onInputChange={this.handleSearchSubmit}
             />
-            <rmx-button class="round center fit-container submit-search" onClick={this.handleSearchSubmit}>Buscar</rmx-button>
+            <rmx-button class="round center fit-container submit-search" onClick={this.handleSearchSubmit}>
+              Search
+            </rmx-button>
             {/* type="submit" id="submit"  name="enviar"  */}
           </div>
         </div>

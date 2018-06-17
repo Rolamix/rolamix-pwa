@@ -20,7 +20,7 @@ $label-translate-x-icon: $icon-small-size + $padding-v-icon;
 rmx-input {
   display: block;
   position: relative;
-  border-bottom: 1px solid color($colors, lighter);
+  // border-bottom: 1px solid color($colors, lighter);
   padding: #{$padding-v}px;
   // border-radius: 5px;
   // margin-bottom: 25px;
@@ -42,7 +42,7 @@ rmx-input {
     & .input-wrap {
       & ion-icon {
         position: relative;
-        left: -1rem;
+        left: -20px;
       }
     }
   }

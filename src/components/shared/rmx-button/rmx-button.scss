@@ -52,12 +52,15 @@ rmx-button {
     }
   }
 
-  & .label {
-    flex: 1;
-  }
+  // This makes sense if we have a translation component built-in.
+  // I may implement it that way.
+  // & .label {
+  //   flex: 1;
+  // }
 
   & .icon {
-    flex: 1;
+    // flex: 1;
+    padding-inline-end: 8px;
   }
 
   &.disabled {
@@ -68,6 +71,11 @@ rmx-button {
   &.swap {
     // grid-template-areas: 'app-button-label app-button-icon';
     flex-direction: row-reverse;
+
+    & .icon {
+      padding-inline-end: 0;
+      padding-inline-start: 8px;
+    }
   }
 
   &.center {
