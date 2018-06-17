@@ -31,7 +31,7 @@ h1 {
   // color: var(--textColor);
   color: color($colors, text);
   margin: 20px 0 10px;
-  font-size: 56px;
+  font-size: 4em; // 56px;
 }
 
 h2 {
@@ -39,7 +39,7 @@ h2 {
   // color: var(--textColor);
   color: color($colors, text);
   margin: 20px 0 10px;
-  font-size: 45px;
+  font-size: 3.2rem; // 45px;
 }
 
 h3 {
@@ -47,7 +47,7 @@ h3 {
   // color: var(--textColor);
   color: color($colors, text);
   margin: 20px 0 10px;
-  font-size: 34px;
+  font-size: 2.4rem; // 34px;
 }
 
 h4 {
@@ -55,7 +55,7 @@ h4 {
   // color: var(--textColor);
   color: color($colors, text);
   margin: 10px 0;
-  font-size: 24px;
+  font-size: 1.7rem; // 24px;
 }
 
 h5 {
@@ -63,7 +63,7 @@ h5 {
   // color: var(--textColor);
   color: color($colors, text);
   margin: 10px 0;
-  font-size: 20px;
+  font-size: 1.4rem; // 20px;
 }
 
 h6 {
@@ -71,7 +71,7 @@ h6 {
   // color: var(--textColor);
   color: color($colors, text);
   margin: 10px 0;
-  font-size: 16px;
+  font-size: 1.15rem; // 16px;
 }
 
 p {
@@ -81,7 +81,7 @@ p {
 blockquote {
   padding: 10px 20px;
   margin: 0 0 20px;
-  font-size: 17px;
+  font-size: 1.2rem; // 17px;
   border-left: 5px solid rgb(40, 40, 40);
 }
 

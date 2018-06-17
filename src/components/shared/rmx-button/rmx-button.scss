@@ -1,7 +1,7 @@
 @import 'core';
 
 rmx-button {
-  display: flex;
+  display: inline-flex;
   width: fit-content;
   align-items: center;
   color: color($colors, white);
@@ -9,7 +9,7 @@ rmx-button {
   margin: 7px 0;
   border-radius: 2px;
   font-size: 1rem;
-  font-weight: normal; // 700
+  font-weight: normal;
   user-select: none;
   outline: none;
   border: none;
@@ -52,19 +52,16 @@ rmx-button {
     }
   }
 
-
-  & .icon {
-    // grid-area: app-button-icon;
+  & .label {
     flex: 1;
   }
 
-  & .label {
-    // grid-area: app-button-label;
+  & .icon {
     flex: 1;
   }
 
   &.disabled {
-    // background-color: var(--lighterMidnight);
+    background-color: color($colors, lighter);
     pointer-events: none;
   }
 
