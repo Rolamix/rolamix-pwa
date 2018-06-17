@@ -7,8 +7,8 @@
     "namespace": "rmx",
     "fsNamespace": "rmx",
     "components": 24,
-    "entries": 9,
-    "bundles": 22
+    "entries": 8,
+    "bundles": 20
   },
   "options": {
     "minifyJs": true,
@@ -31,12 +31,18 @@
     {
       "tag": "rmx-button",
       "dependencies": [
-        "rmx-spinner",
-        "svg-icon"
+        "rmx-spinner"
       ],
       "dependencyOf": [
         "app-home",
         "site-header"
+      ]
+    },
+    {
+      "tag": "svg-icon",
+      "dependencies": [],
+      "dependencyOf": [
+        "app-logo"
       ]
     },
     {
@@ -218,19 +224,11 @@
       "dependencyOf": [
         "app-init"
       ]
-    },
-    {
-      "tag": "svg-icon",
-      "dependencies": [],
-      "dependencyOf": [
-        "app-logo",
-        "rmx-button"
-      ]
     }
   ],
   "entries": [
     {
-      "entryId": "entry:app-logo.rmx-button",
+      "entryId": "entry:app-logo.rmx-button.svg-icon",
       "components": [
         {
           "tag": "app-logo",
@@ -245,37 +243,44 @@
         {
           "tag": "rmx-button",
           "dependencies": [
-            "rmx-spinner",
-            "svg-icon"
+            "rmx-spinner"
           ],
           "dependencyOf": [
             "app-home",
             "site-header"
           ]
+        },
+        {
+          "tag": "svg-icon",
+          "dependencies": [],
+          "dependencyOf": [
+            "app-logo"
+          ]
         }
       ],
       "bundles": [
         {
-          "fileName": "b7uiqc3yvpiq.js",
+          "fileName": "boylld6zarns.js",
           "outputs": [
-            "www/build/rmx/b7uiqc3yvpiq.js"
+            "www/build/rmx/boylld6zarns.js"
           ],
-          "size": 3233,
-          "gzip": 1205
+          "size": 6951,
+          "gzip": 2524
         },
         {
-          "fileName": "b7uiqc3yvpiq.es5.js",
+          "fileName": "boylld6zarns.es5.js",
           "outputs": [
-            "www/build/rmx/b7uiqc3yvpiq.es5.js"
+            "www/build/rmx/boylld6zarns.es5.js"
           ],
-          "size": 3863,
-          "gzip": 1314,
+          "size": 7954,
+          "gzip": 2649,
           "target": "es5"
         }
       ],
       "inputs": [
         "__tmp__in__memory__/components/shared/app-logo/app-logo.js",
-        "__tmp__in__memory__/components/shared/rmx-button/rmx-button.js"
+        "__tmp__in__memory__/components/shared/rmx-button/rmx-button.js",
+        "__tmp__in__memory__/components/shared/svg-icon/svg-icon.js"
       ],
       "encapsulations": [
         "none"
@@ -377,16 +382,6 @@
           "mode": "ios"
         },
         {
-          "fileName": "1p0hudktqtrx.es5.js",
-          "outputs": [
-            "www/build/rmx/1p0hudktqtrx.es5.js"
-          ],
-          "size": 48702,
-          "gzip": 9842,
-          "target": "es5",
-          "mode": "md"
-        },
-        {
           "fileName": "m00hpvsclo2s.es5.js",
           "outputs": [
             "www/build/rmx/m00hpvsclo2s.es5.js"
@@ -395,6 +390,16 @@
           "gzip": 9488,
           "target": "es5",
           "mode": "ios"
+        },
+        {
+          "fileName": "1p0hudktqtrx.es5.js",
+          "outputs": [
+            "www/build/rmx/1p0hudktqtrx.es5.js"
+          ],
+          "size": 48702,
+          "gzip": 9842,
+          "target": "es5",
+          "mode": "md"
         }
       ],
       "inputs": [
@@ -704,20 +709,20 @@
       ],
       "bundles": [
         {
-          "fileName": "4gwrnypzoehc.js",
+          "fileName": "ymunysxwgztl.js",
           "outputs": [
-            "www/build/rmx/4gwrnypzoehc.js"
+            "www/build/rmx/ymunysxwgztl.js"
           ],
-          "size": 23587,
-          "gzip": 7046
+          "size": 23700,
+          "gzip": 7078
         },
         {
-          "fileName": "4gwrnypzoehc.es5.js",
+          "fileName": "ymunysxwgztl.es5.js",
           "outputs": [
-            "www/build/rmx/4gwrnypzoehc.es5.js"
+            "www/build/rmx/ymunysxwgztl.es5.js"
           ],
-          "size": 27977,
-          "gzip": 7922,
+          "size": 28090,
+          "gzip": 7953,
           "target": "es5"
         }
       ],
@@ -730,44 +735,6 @@
         "node_modules/@theracode/router/dist/collection/components/th-route-link.js",
         "node_modules/@theracode/router/dist/collection/components/th-route.js",
         "node_modules/@theracode/router/dist/collection/components/th-router.js"
-      ],
-      "encapsulations": [
-        "none"
-      ]
-    },
-    {
-      "entryId": "entry:svg-icon",
-      "components": [
-        {
-          "tag": "svg-icon",
-          "dependencies": [],
-          "dependencyOf": [
-            "app-logo",
-            "rmx-button"
-          ]
-        }
-      ],
-      "bundles": [
-        {
-          "fileName": "1opeplsczu5h.js",
-          "outputs": [
-            "www/build/rmx/1opeplsczu5h.js"
-          ],
-          "size": 3716,
-          "gzip": 1533
-        },
-        {
-          "fileName": "1opeplsczu5h.es5.js",
-          "outputs": [
-            "www/build/rmx/1opeplsczu5h.es5.js"
-          ],
-          "size": 4227,
-          "gzip": 1641,
-          "target": "es5"
-        }
-      ],
-      "inputs": [
-        "__tmp__in__memory__/components/shared/svg-icon/svg-icon.js"
       ],
       "encapsulations": [
         "none"

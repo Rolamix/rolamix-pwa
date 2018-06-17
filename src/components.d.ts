@@ -209,8 +209,6 @@ declare global {
       'center': boolean;
       'disabled': boolean;
       'full': boolean;
-      'icon': string;
-      'label': string;
       'loading': boolean;
       'raiseClick': (evt: UIEvent) => void;
       'swap': boolean;
@@ -239,8 +237,6 @@ declare global {
       'center'?: boolean;
       'disabled'?: boolean;
       'full'?: boolean;
-      'icon'?: string;
-      'label'?: string;
       'loading'?: boolean;
       'raiseClick'?: (evt: UIEvent) => void;
       'swap'?: boolean;

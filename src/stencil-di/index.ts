@@ -11,3 +11,6 @@ export {
   InjectableDecoratorOptions,
   IContainer,
 } from './interfaces';
+
+// BTW, note this when publishing:
+// https://github.com/ionic-team/stencil/issues/799
