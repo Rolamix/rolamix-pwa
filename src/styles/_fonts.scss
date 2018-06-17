@@ -1,23 +1,35 @@
 @font-face {
-  font-family: "Circular Std Book";
+  font-family: "Circular";
   font-style: normal;
   font-weight: 400;
   src:
-    local("CircularStd-Book"),
+    local("☺︎"),
     url("/assets/fonts/CircularStd-Book.woff2") format("woff2"),
     url("/assets/fonts/CircularStd-Book.woff") format("woff");
-  font-display: optional; /* Define how the browser behaves during download - fallback */
+  font-display: swap; // auto, block, swap, fallback, optional
 }
 
 @font-face {
-  font-family: "Circular Std Medium";
+  font-family: "Circular";
+  font-style: normal;
+  font-weight: 600;
+  src:
+    local("☺︎"),
+    url("/assets/fonts/CircularStd-Medium.woff2") format("woff2"),
+    url("/assets/fonts/CircularStd-Medium.woff") format("woff");
+  font-display: swap;
+}
+
+// This weight is currently not used.. but available if we need to.
+@font-face {
+  font-family: "Circular";
   font-style: normal;
   font-weight: 700;
   src:
-    local("CircularStd-Medium"),
-    url("/assets/fonts/CircularStd-Medium.woff2") format("woff2"),
-    url("/assets/fonts/CircularStd-Medium.woff") format("woff");
-  font-display: optional; /* Define how the browser behaves during download */
+    local("☺︎"),
+    url("/assets/fonts/CircularStd-Bold.woff2") format("woff2"),
+    url("/assets/fonts/CircularStd-Bold.woff") format("woff");
+  font-display: swap;
 }
 
 // @font-face {
@@ -25,10 +37,10 @@
 //   font-style: normal;
 //   font-weight: 400;
 //   src:
-//     local("ProximaNova-Reg"),
+//     local("☺︎"),
 //     url("/assets/fonts/ProximaNova-Regular.woff2") format("woff2"),
 //     url("/assets/fonts/ProximaNova-Regular.woff") format("woff");
-//   font-display: optional; /* Define how the browser behaves during download - fallback */
+//   font-display: swap;
 // }
 
 // @font-face {
@@ -36,8 +48,8 @@
 //   font-style: normal;
 //   font-weight: 700;
 //   src:
-//     local("ProximaNova-Bold"),
+//     local("☺︎"),
 //     url("/assets/fonts/ProximaNova-Bold.woff2") format("woff2"),
 //     url("/assets/fonts/ProximaNova-Bold.woff") format("woff");
-//   font-display: optional; /* Define how the browser behaves during download */
+//   font-display: swap;
 // }

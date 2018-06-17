@@ -12,11 +12,15 @@
 //   --box-shadow-color: #000;
 //   --text-color: #000;
 
+  --ion-color-base: #{$primary};
+
   --color-black: #{$black};
   --color-white: #{$white};
   --color-primary: #{$primary};
+  // --color-md-primary: #{$primary};
   --color-primary-soft: #{$primary-soft};
   --color-secondary: #{$secondary};
+  // --color-md-secondary: #{$secondary};
   --color-lighter: #{$lighter};
   --color-lightest: #{$lightest};
   --color-text: #{$text};

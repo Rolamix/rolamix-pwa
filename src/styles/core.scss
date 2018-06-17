@@ -22,13 +22,11 @@ $breakpoints: ( // e.g. ≥lg
 $menu-width: 250px !default;
 $header-height: 80px;
 
-$font-size-root: 14px;
+$font-size-root: 14;
 $line-height-base: 1.15;
-$font-family-base: "Circular Std Book"; // ProximaNova;
-$font-family-fallbacks: "Helvetica Neue","Helvetica","Arial",sans-serif;
-$font-l: $font-family-base, $font-family-fallbacks;
-$font-b: "Circular Std Book Medium", $font-family-fallbacks; // ProximaNova-Bold;
-$font: $font-l;
+$font-family-base: "Circular"; // ProximaNova;
+$font-family-fallbacks: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font: $font-family-base, $font-family-fallbacks;
 $body-bg: #f7f9fa;
 
 $primary: #27485d;
