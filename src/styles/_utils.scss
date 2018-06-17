@@ -10,3 +10,8 @@ button.clickable {
   outline: none;
   cursor: pointer;
 }
+
+ion-toast.toast .toast-wrapper {
+  background-color: $text-blue; // provide a fallback for IE11
+  background-color: var(--color-text-blue, $text-blue); // testing
+}
