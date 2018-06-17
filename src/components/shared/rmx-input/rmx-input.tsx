@@ -3,6 +3,7 @@ import cx from 'classnames';
 
 import { noop } from '~utils/index';
 
+let labelWarned: boolean = false;
 @Component({
   tag: 'rmx-input',
   styleUrl: 'rmx-input.scss'
@@ -42,6 +43,9 @@ export class AppTextInput {
   public onValueChange: (value: string, evt: KeyboardEvent) => void = noop;
 
   @Prop()
+  public onInputChange: (value: string, evt: KeyboardEvent) => void = noop;
+
+  @Prop()
   public onFocusChange: () => void = noop;
 
   @Prop()
@@ -50,11 +54,21 @@ export class AppTextInput {
   @State()
   private focused: boolean = false;
 
+  get isActive() {
+    return this.value.length > 0 || this.focused;
+  }
+
   private renderLabel(): JSX.Element {
     if (!this.label) { return null; }
 
+    if (this.placeholder && !labelWarned) {
+      labelWarned = true;
+      console.warn(`rmx-input[${this.name}]: You have specified a label and a placeholder. Only one is needed. Falling back to label`);
+    }
+
+    const labelClass = cx('label', { active: this.isActive, 'has-icon': !!this.icon });
     return (
-      <label class="label" htmlFor={this.name}>
+      <label class={labelClass} htmlFor={this.name}>
         {/* <app-translate entry={this.label} /> */}
         {this.label}
       </label>
@@ -79,26 +93,36 @@ export class AppTextInput {
     this.onBlurChange();
   }
 
-  private inputChangeHandler = (evt: KeyboardEvent): void => {
+  private valueChangeHandler = (evt: KeyboardEvent): void => {
     const newValue = (evt.currentTarget as HTMLInputElement).value;
     this.value = newValue; // not sure this has the intended effect (so you can read it back out).
     this.onValueChange(newValue, evt);
   }
 
+  private keypressHandler = (evt: KeyboardEvent): void => {
+    const newValue = (evt.currentTarget as HTMLInputElement).value;
+    if (evt.key === 'Enter' || evt.keyCode === 13) {
+      this.onInputChange(newValue, evt);
+    }
+  }
+
   private renderInput(): JSX.Element {
+    const props = {
+      name: this.name,
+      onFocus: this.inputFocusHandler,
+      onBlur: this.inputBlurHandler,
+      onInput: this.valueChangeHandler,
+      onChange: this.valueChangeHandler,
+      onKeyPress: this.keypressHandler,
+      class: cx('input', { active: this.isActive }, this.inputClass),
+      type: this.fieldType,
+      value: this.value,
+      placeholder: this.label ? undefined : this.placeholder ? this.placeholder : undefined,
+      disabled: this.disabled,
+    };
+
     return (
-      <input
-        name={this.name}
-        onFocus={this.inputFocusHandler}
-        onBlur={this.inputBlurHandler}
-        onInput={this.inputChangeHandler}
-        onChange={this.inputChangeHandler}
-        class={cx('input', this.inputClass)}
-        type={this.fieldType}
-        value={this.value}
-        placeholder={this.placeholder}
-        disabled={this.disabled}
-      />
+      <input {...props} />
     );
   }
 
@@ -116,7 +140,8 @@ export class AppTextInput {
   public hostData() {
     return {
       class: {
-        active: this.value.length > 0 || this.focused,
+        active: this.isActive,
+        'has-icon': !!this.icon,
         disabled: this.disabled,
         error: this.hasError
       }

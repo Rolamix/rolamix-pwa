@@ -10,12 +10,42 @@
   }
 }
 
+$label-font-size: 1.14;
+$padding-v: 5;
+$padding-v-icon: 20;
+$icon-small-size: 18; // for now we only use 'small' on icon size
+$label-translate-y: floor($font-size-root * $label-font-size * $line-height-base + $padding-v);
+$label-translate-x-icon: $icon-small-size + $padding-v-icon;
+
 rmx-input {
   display: block;
   position: relative;
   border-bottom: 1px solid color($colors, lighter);
+  padding: #{$padding-v}px;
   // border-radius: 5px;
   // margin-bottom: 25px;
+
+  & .input-wrap { // technically 'height 100' only applies to large... see how it goes.
+    display: flex;
+    height: 100%;
+
+    & ion-icon {
+      & .icon-inner {
+        padding: #{$padding-v-icon}px 0;
+      }
+    }
+  }
+
+  &.has-icon {
+    padding-left: 20px;
+
+    & .input-wrap {
+      & ion-icon {
+        position: relative;
+        left: -1rem;
+      }
+    }
+  }
 
   &:after {
     content: ' ';
@@ -35,27 +65,18 @@ rmx-input {
   & .label {
     position: absolute;
     top: 0;
+    left: 5px;
     transition: all 250ms cubic-bezier(0.23, 1, 0.32, 1);
-    transform: scale(1) translate(0, 15px);
+    transform: scale(1) translate(0, #{$label-translate-y}px); // 15px
     transform-origin: left top 0;
     pointer-events: none;
     user-select: none;
-    font-size: 16px;
-    color: var(--textColor);
-  }
+    font-size: #{$label-font-size}rem;
+    color: color($colors, text);
 
-  & .input-wrap {
-    display: flex;
-    height: 100%;
-
-    & ion-icon {
-      position: relative;
-      left: -1rem;
+    &.has-icon {
+      left: #{$label-translate-x-icon}px;
     }
-  }
-
-  &.small .input-wrap ion-icon {
-    left: 0;
   }
 
   & .input {
@@ -67,7 +88,7 @@ rmx-input {
     background-color: transparent;
     color: color($colors, text-dark);
     cursor: inherit;
-    font-size: 1.4rem;
+    font-size: 1rem;
     height: auto;
     margin: 0;
     overflow: hidden;
@@ -78,32 +99,12 @@ rmx-input {
   & .message-container {
     color: color($colors, text-dark);
     transition: opacity 450ms cubic-bezier(0.23, 1, 0.32, 1);
-    font-size: 12px;
+    font-size: .85rem; // 12px;
     transform: translateY(20px);
     position: absolute;
     left: 0;
     bottom: 0;
     animation: 450ms fadeIn cubic-bezier(0.23, 1, 0.32, 1) forwards;
-  }
-
-  &.small {
-    padding: 5px 5px 5px;
-
-    & .input-wrap {
-      & ion-icon .icon-inner {
-        padding: 16px 0;
-      }
-    }
-  }
-
-  &.large {
-    padding: 5px 20px;
-
-    & .input-wrap {
-      & ion-icon .icon-inner {
-        padding: 20px 0;
-      }
-    }
   }
 
   &.active {
@@ -112,8 +113,9 @@ rmx-input {
     }
 
     & .label {
-      transform: scale(0.75);
+      transform: scale(.75) translateY(#{$padding-v}px);
       color: color($colors, primary);
+      left: 5px;
     }
 
     & .message-container {

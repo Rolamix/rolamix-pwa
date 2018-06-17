@@ -38,8 +38,8 @@ site-header {
       justify-self: flex-start;
 
       ion-icon {
-        font-size: 1.6rem;
-        font-weight: bolder;
+        font-size: 1.14rem;
+        font-weight: 600;
         color: color($colors, text-blue);
       }
     }
@@ -155,7 +155,7 @@ site-header {
         // display: inline;
         // padding: 18px;
         line-height: 1;
-        font-size: 1.4rem;
+        font-size: 1rem;
         position: relative;
         left: 10px;
         opacity: 0;
@@ -165,22 +165,23 @@ site-header {
           text-align: left;
           border-bottom: 1px solid $header-bg;
           padding: 15px 20px;
-          font-family: $font-b;
+          // font-family: $font-b;
+          font-weight: 600;
           line-height: 1.6;
           color: $black-c; // color($colors, medium);
+          transition: all 250ms ease-out;
+
+          &:hover {
+            color: color($colors, secondary);
+          }
         }
       }
-    }
-
-    & a:hover {
-      color: #c5cae9;
     }
   }
 
   & button.search {
     display: flex;
     color: color($colors, text-blue);
-    font-weight: bold;
     padding: 1px 15px 2px;
 
     & ion-icon {
@@ -205,8 +206,12 @@ site-header {
   /* RESPONSIVE */
   @include media('<lg') {
 
-    & .menu, & .menu ul {
+    & .menu {
       flex-direction: column;
+    }
+
+    & .menu ul {
+      display: block;
     }
 
     & .menu ul:first-child {
@@ -268,13 +273,13 @@ site-header {
         }
 
         & ul:nth-child(2) {
-          flex-direction: column-reverse;
+          // flex-direction: column-reverse; // no longer flexing the ul's at this size.
 
           & li {
-            &.menu-item:nth-child(3) {
+            &.menu-item:nth-child(2) {
               transition-delay: 0.7s;
             }
-            &.menu-item:nth-child(2) {
+            &.menu-item:nth-child(3) {
               transition-delay: 0.8s;
             }
           }

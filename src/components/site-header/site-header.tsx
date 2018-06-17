@@ -52,14 +52,26 @@ export class AppHeader {
   //   this.window.open('https://github.com/bfmatei/stencil-boilerplate');
   // }
 
+  handleV = (v: any) => console.log(v);
+  handleC = (v: any) => console.log('complete', v);
+
   public render() {
     return (
       <header class={cx('header', { open: this.isOpen })}>
 
         <div class={cx('ver-mas-cerrado', { active: this.isMobileSearchboxOpen })}>
-          <form method="POST" class="search-link-navigation" action="?p=results">
+          <form method="POST" class="search-link-navigation">
             <button class="clickable ver-mas-cerrar" onClick={this.toggleMobileSearchbox}><ion-icon name="md-close" color="text-blue" /></button>
-            <rmx-input fieldType="text" value="" class="site-header search-input large" name="search_field" icon="search" placeholder="Bandas, Cantantes, Artistas, Música..." />
+            <rmx-input
+              fieldType="text"
+              class="site-header search-input"
+              value=""
+              name="search_field"
+              icon="search"
+              placeholder="Bandas, Cantantes, Artistas, Música..."
+              onValueChange={this.handleV}
+              onInputChange={this.handleC}
+            />
             <rmx-button class="round center fit-container submit-search">Buscar</rmx-button>
             {/* type="submit" id="submit"  name="enviar"  */}
           </form>
