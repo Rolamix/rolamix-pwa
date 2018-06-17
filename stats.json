@@ -260,20 +260,20 @@
       ],
       "bundles": [
         {
-          "fileName": "boylld6zarns.js",
+          "fileName": "4epqheqloyv2.js",
           "outputs": [
-            "www/build/rmx/boylld6zarns.js"
+            "www/build/rmx/4epqheqloyv2.js"
           ],
-          "size": 6951,
-          "gzip": 2524
+          "size": 6855,
+          "gzip": 2504
         },
         {
-          "fileName": "boylld6zarns.es5.js",
+          "fileName": "4epqheqloyv2.es5.js",
           "outputs": [
-            "www/build/rmx/boylld6zarns.es5.js"
+            "www/build/rmx/4epqheqloyv2.es5.js"
           ],
-          "size": 7954,
-          "gzip": 2649,
+          "size": 7858,
+          "gzip": 2631,
           "target": "es5"
         }
       ],
@@ -472,16 +472,6 @@
           "mode": "ios"
         },
         {
-          "fileName": "gokrzzn6q5jv.es5.js",
-          "outputs": [
-            "www/build/rmx/gokrzzn6q5jv.es5.js"
-          ],
-          "size": 23643,
-          "gzip": 6396,
-          "target": "es5",
-          "mode": "md"
-        },
-        {
           "fileName": "uoeesrk03vta.es5.js",
           "outputs": [
             "www/build/rmx/uoeesrk03vta.es5.js"
@@ -490,6 +480,16 @@
           "gzip": 6312,
           "target": "es5",
           "mode": "ios"
+        },
+        {
+          "fileName": "gokrzzn6q5jv.es5.js",
+          "outputs": [
+            "www/build/rmx/gokrzzn6q5jv.es5.js"
+          ],
+          "size": 23643,
+          "gzip": 6396,
+          "target": "es5",
+          "mode": "md"
         }
       ],
       "inputs": [
@@ -568,20 +568,20 @@
       ],
       "bundles": [
         {
-          "fileName": "71s2d4nvxiyg.js",
+          "fileName": "rvi5doivlxzt.js",
           "outputs": [
-            "www/build/rmx/71s2d4nvxiyg.js"
+            "www/build/rmx/rvi5doivlxzt.js"
           ],
-          "size": 10439,
-          "gzip": 3543
+          "size": 11303,
+          "gzip": 3820
         },
         {
-          "fileName": "71s2d4nvxiyg.es5.js",
+          "fileName": "rvi5doivlxzt.es5.js",
           "outputs": [
-            "www/build/rmx/71s2d4nvxiyg.es5.js"
+            "www/build/rmx/rvi5doivlxzt.es5.js"
           ],
-          "size": 14789,
-          "gzip": 4522,
+          "size": 15226,
+          "gzip": 4685,
           "target": "es5"
         }
       ],
@@ -709,20 +709,20 @@
       ],
       "bundles": [
         {
-          "fileName": "ymunysxwgztl.js",
+          "fileName": "2xbhx7x2ycg4.js",
           "outputs": [
-            "www/build/rmx/ymunysxwgztl.js"
+            "www/build/rmx/2xbhx7x2ycg4.js"
           ],
-          "size": 23700,
-          "gzip": 7078
+          "size": 23596,
+          "gzip": 7058
         },
         {
-          "fileName": "ymunysxwgztl.es5.js",
+          "fileName": "2xbhx7x2ycg4.es5.js",
           "outputs": [
-            "www/build/rmx/ymunysxwgztl.es5.js"
+            "www/build/rmx/2xbhx7x2ycg4.es5.js"
           ],
-          "size": 28090,
-          "gzip": 7953,
+          "size": 27986,
+          "gzip": 7932,
           "target": "es5"
         }
       ],
@@ -744,7 +744,7 @@
   "sourceGraph": {
     "src/components/pages/app-home/app-home.tsx": [
       "@engineerapart/stencil-lift",
-      "src/stencil-di/inject-prop.ts",
+      "@engineerapart/ts-universal-inject",
       "~services/index"
     ],
     "src/components/pages/app-init/app-init.tsx": [],
@@ -770,40 +770,17 @@
     ],
     "src/services/auto-unsubscribe.decorator.ts": [],
     "src/services/data.service.ts": [
-      "src/stencil-di"
+      "@engineerapart/ts-universal-inject"
     ],
     "src/services/picsum.service.ts": [],
     "src/services/posts.service.ts": [
-      "src/services/data.service.ts",
-      "src/stencil-di"
+      "@engineerapart/ts-universal-inject",
+      "src/services/data.service.ts"
     ],
     "src/services/users.service.ts": [
-      "src/services/data.service.ts",
-      "src/stencil-di"
+      "@engineerapart/ts-universal-inject",
+      "src/services/data.service.ts"
     ],
-    "src/stencil-di/container.ts": [
-      "src/stencil-di/utils.ts"
-    ],
-    "src/stencil-di/index.ts": [
-      "src/stencil-di/injector.ts"
-    ],
-    "src/stencil-di/inject-prop.ts": [
-      "src/stencil-di/injector.ts",
-      "src/stencil-di/utils.ts"
-    ],
-    "src/stencil-di/inject.ts": [
-      "src/stencil-di/injector.ts",
-      "src/stencil-di/utils.ts"
-    ],
-    "src/stencil-di/injectable.ts": [
-      "src/stencil-di/injector.ts",
-      "src/stencil-di/utils.ts"
-    ],
-    "src/stencil-di/injector.ts": [
-      "src/stencil-di/container.ts"
-    ],
-    "src/stencil-di/interfaces.ts": [],
-    "src/stencil-di/utils.ts": [],
     "src/utils/svg-use/index.ts": [],
     "src/utils/svg-use/svg4everybody.ts": [],
     "src/utils/sw-init.ts": [],

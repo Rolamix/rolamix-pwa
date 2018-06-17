@@ -1,7 +1,7 @@
 import { Component, State } from '@stencil/core';
 
-import { Lift } from '@engineerapart/stencil-lift/';
-import { InjectProp } from '../../../stencil-di/inject-prop';
+import { Lift } from '@engineerapart/stencil-lift';
+import { InjectProp } from '@engineerapart/ts-universal-inject';
 import { AutoUnsubscribe, PostsService, TPostsService } from '~services/index';
 import { Post } from '~types/services';
 

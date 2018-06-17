@@ -1,6 +1,6 @@
 import { DataService, TDataService } from './data.service';
 import { Post } from '~types/services';
-import { Inject, Injectable } from '../stencil-di';
+import { Inject, Injectable } from '@engineerapart/ts-universal-inject';
 
 export const TPostsService = Symbol.for('TPostsService');
 

@@ -1,4 +1,4 @@
-import { Injectable } from '../stencil-di';
+import { Injectable } from '@engineerapart/ts-universal-inject';
 
 export const TDataService = Symbol.for('TDataService');
 
