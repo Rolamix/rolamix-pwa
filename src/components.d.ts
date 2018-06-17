@@ -71,30 +71,30 @@ declare global {
 declare global {
 
   namespace StencilComponents {
-    interface AppLoader {
+    interface AppInit {
 
     }
   }
 
-  interface HTMLAppLoaderElement extends StencilComponents.AppLoader, HTMLStencilElement {}
+  interface HTMLAppInitElement extends StencilComponents.AppInit, HTMLStencilElement {}
 
-  var HTMLAppLoaderElement: {
-    prototype: HTMLAppLoaderElement;
-    new (): HTMLAppLoaderElement;
+  var HTMLAppInitElement: {
+    prototype: HTMLAppInitElement;
+    new (): HTMLAppInitElement;
   };
   interface HTMLElementTagNameMap {
-    'app-loader': HTMLAppLoaderElement;
+    'app-init': HTMLAppInitElement;
   }
   interface ElementTagNameMap {
-    'app-loader': HTMLAppLoaderElement;
+    'app-init': HTMLAppInitElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      'app-loader': JSXElements.AppLoaderAttributes;
+      'app-init': JSXElements.AppInitAttributes;
     }
   }
   namespace JSXElements {
-    export interface AppLoaderAttributes extends HTMLAttributes {
+    export interface AppInitAttributes extends HTMLAttributes {
 
     }
   }
@@ -263,8 +263,8 @@ declare global {
       'name': string;
       'onBlurChange': () => void;
       'onFocusChange': () => void;
-      'onInputChange': (value: string, evt: KeyboardEvent) => void;
-      'onValueChange': (value: string, evt: KeyboardEvent) => void;
+      'onInputChange': (evt: KeyboardEvent, value: string) => void;
+      'onValueChange': (evt: KeyboardEvent, value: string) => void;
       'placeholder': string;
       'value': string;
     }
@@ -299,8 +299,8 @@ declare global {
       'name'?: string;
       'onBlurChange'?: () => void;
       'onFocusChange'?: () => void;
-      'onInputChange'?: (value: string, evt: KeyboardEvent) => void;
-      'onValueChange'?: (value: string, evt: KeyboardEvent) => void;
+      'onInputChange'?: (evt: KeyboardEvent, value: string) => void;
+      'onValueChange'?: (evt: KeyboardEvent, value: string) => void;
       'placeholder'?: string;
       'value'?: string;
     }

@@ -1,7 +1,7 @@
 import { Component, Listen, Prop, State } from '@stencil/core';
 
 import { MatchResults } from '@theracode/router';
-import { urlB64ToUint8Array } from '../../utils';
+import { urlB64ToUint8Array } from '~utils/index';
 
 @Component({
   tag: 'app-profile',

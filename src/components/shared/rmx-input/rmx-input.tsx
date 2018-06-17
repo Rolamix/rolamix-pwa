@@ -40,10 +40,10 @@ export class AppTextInput {
   public hasError: boolean = false;
 
   @Prop()
-  public onValueChange: (value: string, evt: KeyboardEvent) => void = noop;
+  public onValueChange: (evt: KeyboardEvent, value: string) => void = noop;
 
   @Prop()
-  public onInputChange: (value: string, evt: KeyboardEvent) => void = noop;
+  public onInputChange: (evt: KeyboardEvent, value: string) => void = noop;
 
   @Prop()
   public onFocusChange: () => void = noop;
@@ -96,13 +96,14 @@ export class AppTextInput {
   private valueChangeHandler = (evt: KeyboardEvent): void => {
     const newValue = (evt.currentTarget as HTMLInputElement).value;
     this.value = newValue; // not sure this has the intended effect (so you can read it back out).
-    this.onValueChange(newValue, evt);
+    this.onValueChange(evt, newValue);
   }
 
   private keypressHandler = (evt: KeyboardEvent): void => {
     const newValue = (evt.currentTarget as HTMLInputElement).value;
     if (evt.key === 'Enter' || evt.keyCode === 13) {
-      this.onInputChange(newValue, evt);
+      this.value = newValue;
+      this.onInputChange(evt, newValue);
     }
   }
 

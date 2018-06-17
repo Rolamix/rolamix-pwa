@@ -77,7 +77,7 @@
         "ion-button"
       ],
       "dependencyOf": [
-        "app-loader",
+        "app-init",
         "ion-toast-controller"
       ]
     },
@@ -148,7 +148,7 @@
       ]
     },
     {
-      "tag": "app-loader",
+      "tag": "app-init",
       "dependencies": [
         "ion-toast",
         "ion-toast-controller",
@@ -178,7 +178,7 @@
         "th-route-link"
       ],
       "dependencyOf": [
-        "app-loader"
+        "app-init"
       ]
     },
     {
@@ -187,21 +187,21 @@
         "ion-toast"
       ],
       "dependencyOf": [
-        "app-loader"
+        "app-init"
       ]
     },
     {
       "tag": "stencil-lift",
       "dependencies": [],
       "dependencyOf": [
-        "app-loader"
+        "app-init"
       ]
     },
     {
       "tag": "th-route",
       "dependencies": [],
       "dependencyOf": [
-        "app-loader"
+        "app-init"
       ]
     },
     {
@@ -216,7 +216,7 @@
       "tag": "th-router",
       "dependencies": [],
       "dependencyOf": [
-        "app-loader"
+        "app-init"
       ]
     },
     {
@@ -313,7 +313,7 @@
         }
       ],
       "inputs": [
-        "__tmp__in__memory__/components/app-loader/app-splash/app-splash.js"
+        "__tmp__in__memory__/components/pages/app-init/app-splash/app-splash.js"
       ],
       "encapsulations": [
         "none"
@@ -352,7 +352,7 @@
             "ion-button"
           ],
           "dependencyOf": [
-            "app-loader",
+            "app-init",
             "ion-toast-controller"
           ]
         }
@@ -377,16 +377,6 @@
           "mode": "ios"
         },
         {
-          "fileName": "m00hpvsclo2s.es5.js",
-          "outputs": [
-            "www/build/rmx/m00hpvsclo2s.es5.js"
-          ],
-          "size": 44765,
-          "gzip": 9488,
-          "target": "es5",
-          "mode": "ios"
-        },
-        {
           "fileName": "1p0hudktqtrx.es5.js",
           "outputs": [
             "www/build/rmx/1p0hudktqtrx.es5.js"
@@ -395,6 +385,16 @@
           "gzip": 9842,
           "target": "es5",
           "mode": "md"
+        },
+        {
+          "fileName": "m00hpvsclo2s.es5.js",
+          "outputs": [
+            "www/build/rmx/m00hpvsclo2s.es5.js"
+          ],
+          "size": 44765,
+          "gzip": 9488,
+          "target": "es5",
+          "mode": "ios"
         }
       ],
       "inputs": [
@@ -467,16 +467,6 @@
           "mode": "ios"
         },
         {
-          "fileName": "uoeesrk03vta.es5.js",
-          "outputs": [
-            "www/build/rmx/uoeesrk03vta.es5.js"
-          ],
-          "size": 23257,
-          "gzip": 6312,
-          "target": "es5",
-          "mode": "ios"
-        },
-        {
           "fileName": "gokrzzn6q5jv.es5.js",
           "outputs": [
             "www/build/rmx/gokrzzn6q5jv.es5.js"
@@ -485,10 +475,20 @@
           "gzip": 6396,
           "target": "es5",
           "mode": "md"
+        },
+        {
+          "fileName": "uoeesrk03vta.es5.js",
+          "outputs": [
+            "www/build/rmx/uoeesrk03vta.es5.js"
+          ],
+          "size": 23257,
+          "gzip": 6312,
+          "target": "es5",
+          "mode": "ios"
         }
       ],
       "inputs": [
-        "__tmp__in__memory__/components/app-profile/app-profile.js",
+        "__tmp__in__memory__/components/pages/app-profile/app-profile.js",
         "node_modules/@ionic/core/dist/collection/components/gesture-controller/gesture-controller.js",
         "node_modules/@ionic/core/dist/collection/components/gesture/gesture.js",
         "node_modules/@ionic/core/dist/collection/components/toggle/toggle.js"
@@ -581,7 +581,7 @@
         }
       ],
       "inputs": [
-        "__tmp__in__memory__/components/app-home/app-home.js",
+        "__tmp__in__memory__/components/pages/app-home/app-home.js",
         "node_modules/@ionic/core/dist/collection/components/img/img.js"
       ],
       "encapsulations": [
@@ -627,10 +627,10 @@
       ]
     },
     {
-      "entryId": "entry:app-loader.rmx-input.site-header.ion-toast-controller.stencil-lift.th-route.th-route-link.th-router",
+      "entryId": "entry:app-init.rmx-input.site-header.ion-toast-controller.stencil-lift.th-route.th-route-link.th-router",
       "components": [
         {
-          "tag": "app-loader",
+          "tag": "app-init",
           "dependencies": [
             "ion-toast",
             "ion-toast-controller",
@@ -660,7 +660,7 @@
             "th-route-link"
           ],
           "dependencyOf": [
-            "app-loader"
+            "app-init"
           ]
         },
         {
@@ -669,21 +669,21 @@
             "ion-toast"
           ],
           "dependencyOf": [
-            "app-loader"
+            "app-init"
           ]
         },
         {
           "tag": "stencil-lift",
           "dependencies": [],
           "dependencyOf": [
-            "app-loader"
+            "app-init"
           ]
         },
         {
           "tag": "th-route",
           "dependencies": [],
           "dependencyOf": [
-            "app-loader"
+            "app-init"
           ]
         },
         {
@@ -698,31 +698,31 @@
           "tag": "th-router",
           "dependencies": [],
           "dependencyOf": [
-            "app-loader"
+            "app-init"
           ]
         }
       ],
       "bundles": [
         {
-          "fileName": "13lbjgneswdr.js",
+          "fileName": "4gwrnypzoehc.js",
           "outputs": [
-            "www/build/rmx/13lbjgneswdr.js"
+            "www/build/rmx/4gwrnypzoehc.js"
           ],
-          "size": 23572,
-          "gzip": 7071
+          "size": 23587,
+          "gzip": 7046
         },
         {
-          "fileName": "13lbjgneswdr.es5.js",
+          "fileName": "4gwrnypzoehc.es5.js",
           "outputs": [
-            "www/build/rmx/13lbjgneswdr.es5.js"
+            "www/build/rmx/4gwrnypzoehc.es5.js"
           ],
-          "size": 27964,
-          "gzip": 7954,
+          "size": 27977,
+          "gzip": 7922,
           "target": "es5"
         }
       ],
       "inputs": [
-        "__tmp__in__memory__/components/app-loader/app-loader.js",
+        "__tmp__in__memory__/components/pages/app-init/app-init.js",
         "__tmp__in__memory__/components/shared/rmx-input/rmx-input.js",
         "__tmp__in__memory__/components/site-header/site-header.js",
         "node_modules/@engineerapart/stencil-lift/dist/collection/components/stencil-lift/stencil-lift.js",
@@ -775,15 +775,15 @@
     }
   ],
   "sourceGraph": {
-    "src/components/app-home/app-home.tsx": [
+    "src/components/pages/app-home/app-home.tsx": [
       "@engineerapart/stencil-lift",
-      "src/services",
-      "src/stencil-di/inject-prop.ts"
+      "src/stencil-di/inject-prop.ts",
+      "~services/index"
     ],
-    "src/components/app-loader/app-loader.tsx": [],
-    "src/components/app-loader/app-splash/app-splash.tsx": [],
-    "src/components/app-profile/app-profile.tsx": [
-      "src/utils"
+    "src/components/pages/app-init/app-init.tsx": [],
+    "src/components/pages/app-init/app-splash/app-splash.tsx": [],
+    "src/components/pages/app-profile/app-profile.tsx": [
+      "~utils/index"
     ],
     "src/components/shared/app-logo/app-logo.tsx": [],
     "src/components/shared/rmx-button/rmx-button.tsx": [
@@ -805,8 +805,6 @@
     "src/services/data.service.ts": [
       "src/stencil-di"
     ],
-    "src/services/index.ts": [],
-    "src/services/interfaces.ts": [],
     "src/services/picsum.service.ts": [],
     "src/services/posts.service.ts": [
       "src/services/data.service.ts",
@@ -839,10 +837,12 @@
     ],
     "src/stencil-di/interfaces.ts": [],
     "src/stencil-di/utils.ts": [],
-    "src/utils/index.ts": [],
     "src/utils/svg-use/index.ts": [],
     "src/utils/svg-use/svg4everybody.ts": [],
-    "src/utils/sw-init.ts": []
+    "src/utils/sw-init.ts": [],
+    "src/services/index.ts": [],
+    "src/types/services.ts": [],
+    "src/utils/index.ts": []
   },
   "collections": [
     {

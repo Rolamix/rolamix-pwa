@@ -1,14 +1,14 @@
-import 'ionicons'; // tslint:disable-line no-import-side-effect
-import '@ionic/core'; // tslint:disable-line no-import-side-effect
+import 'ionicons';
+import '@ionic/core';
 import { Component, Listen, Prop, State } from '@stencil/core';
 
 @Component({
-  tag: 'app-loader',
-  styleUrl: 'app-loader.scss'
+  tag: 'app-init',
+  styleUrl: 'app-init.scss'
 })
-export class AppLoader {
+export class AppInit {
 
-  // @Prop({ context: 'window' }) private window: Window;
+  @Prop({ context: 'window' }) private window: Window;
   @Prop({ context: 'document' }) private doc: Document;
   @Prop({ connect: 'ion-toast-controller' }) toastCtrl: HTMLIonToastControllerElement;
   @State() private isMenuOpen: boolean = false;
@@ -32,7 +32,7 @@ export class AppLoader {
       });
       await toast.present();
       await toast.onWillDismiss();
-      window.location.reload();
+      this.window.location.reload();
     }
   }
 

@@ -1,8 +1,9 @@
 import { Component, State } from '@stencil/core';
 
 import { Lift } from '@engineerapart/stencil-lift/';
-import { InjectProp } from '../../stencil-di/inject-prop';
-import { AutoUnsubscribe, Post, PostsService, TPostsService } from '../../services';
+import { InjectProp } from '../../../stencil-di/inject-prop';
+import { AutoUnsubscribe, PostsService, TPostsService } from '~services/index';
+import { Post } from '~types/services';
 
 @Lift({ key: 'AppHome' })
 @AutoUnsubscribe()

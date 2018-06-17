@@ -14,7 +14,7 @@ export class RmxSpinner {
   @Prop()
   public size: 'small' | 'medium' | 'large' = 'small';
 
-  public hostData(): JSXElements.AppLoaderAttributes {
+  public hostData(): JSXElements.AppInitAttributes {
     return {
       class: {
         [this.size]: true,

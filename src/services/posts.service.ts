@@ -1,5 +1,5 @@
 import { DataService, TDataService } from './data.service';
-import { Post } from './interfaces';
+import { Post } from '~types/services';
 import { Inject, Injectable } from '../stencil-di';
 
 export const TPostsService = Symbol.for('TPostsService');

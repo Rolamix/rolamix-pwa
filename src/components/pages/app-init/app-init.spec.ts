@@ -1,7 +1,7 @@
 import { TestWindow } from '@stencil/core/testing';
-import { AppLoader } from './app-loader';
+import { AppInit } from './app-init';
 
-describe('my-app', () => {
+describe('app-init', () => {
 
   it('should update', async () => {
     await window.flush();
@@ -12,8 +12,8 @@ describe('my-app', () => {
   beforeEach(async () => {
     window = new TestWindow();
     await window.load({
-      components: [AppLoader],
-      html: '<my-app></my-app>'
+      components: [AppInit],
+      html: '<app-init></app-init>'
     });
   });
 });

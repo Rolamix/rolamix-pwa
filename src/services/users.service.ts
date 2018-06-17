@@ -1,6 +1,6 @@
 import { DataService, TDataService } from './data.service';
 import { InjectProp, Injectable } from '../stencil-di';
-import { User } from './interfaces';
+import { User } from '~types/services';
 
 export const TUsersService = Symbol.for('TUsersService');
 
