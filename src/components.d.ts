@@ -27,9 +27,9 @@ declare global {
 }
 
 import '@engineerapart/stencil-lift';
+import '@theracode/router';
 import 'ionicons';
 import '@ionic/core';
-import '@theracode/router';
 
 import {
   MatchResults,
@@ -71,31 +71,33 @@ declare global {
 declare global {
 
   namespace StencilComponents {
-    interface AppInit {
-
+    interface AppProfile {
+      'match': MatchResults;
+      'name': string;
     }
   }
 
-  interface HTMLAppInitElement extends StencilComponents.AppInit, HTMLStencilElement {}
+  interface HTMLAppProfileElement extends StencilComponents.AppProfile, HTMLStencilElement {}
 
-  var HTMLAppInitElement: {
-    prototype: HTMLAppInitElement;
-    new (): HTMLAppInitElement;
+  var HTMLAppProfileElement: {
+    prototype: HTMLAppProfileElement;
+    new (): HTMLAppProfileElement;
   };
   interface HTMLElementTagNameMap {
-    'app-init': HTMLAppInitElement;
+    'app-profile': HTMLAppProfileElement;
   }
   interface ElementTagNameMap {
-    'app-init': HTMLAppInitElement;
+    'app-profile': HTMLAppProfileElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      'app-init': JSXElements.AppInitAttributes;
+      'app-profile': JSXElements.AppProfileAttributes;
     }
   }
   namespace JSXElements {
-    export interface AppInitAttributes extends HTMLAttributes {
-
+    export interface AppProfileAttributes extends HTMLAttributes {
+      'match'?: MatchResults;
+      'name'?: string;
     }
   }
 }
@@ -137,33 +139,31 @@ declare global {
 declare global {
 
   namespace StencilComponents {
-    interface AppProfile {
-      'match': MatchResults;
-      'name': string;
+    interface RolamixApp {
+
     }
   }
 
-  interface HTMLAppProfileElement extends StencilComponents.AppProfile, HTMLStencilElement {}
+  interface HTMLRolamixAppElement extends StencilComponents.RolamixApp, HTMLStencilElement {}
 
-  var HTMLAppProfileElement: {
-    prototype: HTMLAppProfileElement;
-    new (): HTMLAppProfileElement;
+  var HTMLRolamixAppElement: {
+    prototype: HTMLRolamixAppElement;
+    new (): HTMLRolamixAppElement;
   };
   interface HTMLElementTagNameMap {
-    'app-profile': HTMLAppProfileElement;
+    'rolamix-app': HTMLRolamixAppElement;
   }
   interface ElementTagNameMap {
-    'app-profile': HTMLAppProfileElement;
+    'rolamix-app': HTMLRolamixAppElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      'app-profile': JSXElements.AppProfileAttributes;
+      'rolamix-app': JSXElements.RolamixAppAttributes;
     }
   }
   namespace JSXElements {
-    export interface AppProfileAttributes extends HTMLAttributes {
-      'match'?: MatchResults;
-      'name'?: string;
+    export interface RolamixAppAttributes extends HTMLAttributes {
+
     }
   }
 }

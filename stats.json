@@ -83,8 +83,8 @@
         "ion-button"
       ],
       "dependencyOf": [
-        "app-init",
-        "ion-toast-controller"
+        "ion-toast-controller",
+        "rolamix-app"
       ]
     },
     {
@@ -154,7 +154,16 @@
       ]
     },
     {
-      "tag": "app-init",
+      "tag": "rmx-input",
+      "dependencies": [
+        "ion-icon"
+      ],
+      "dependencyOf": [
+        "site-header"
+      ]
+    },
+    {
+      "tag": "rolamix-app",
       "dependencies": [
         "ion-toast",
         "ion-toast-controller",
@@ -166,15 +175,6 @@
       "dependencyOf": []
     },
     {
-      "tag": "rmx-input",
-      "dependencies": [
-        "ion-icon"
-      ],
-      "dependencyOf": [
-        "site-header"
-      ]
-    },
-    {
       "tag": "site-header",
       "dependencies": [
         "app-logo",
@@ -184,7 +184,7 @@
         "th-route-link"
       ],
       "dependencyOf": [
-        "app-init"
+        "rolamix-app"
       ]
     },
     {
@@ -193,21 +193,21 @@
         "ion-toast"
       ],
       "dependencyOf": [
-        "app-init"
+        "rolamix-app"
       ]
     },
     {
       "tag": "stencil-lift",
       "dependencies": [],
       "dependencyOf": [
-        "app-init"
+        "rolamix-app"
       ]
     },
     {
       "tag": "th-route",
       "dependencies": [],
       "dependencyOf": [
-        "app-init"
+        "rolamix-app"
       ]
     },
     {
@@ -222,7 +222,7 @@
       "tag": "th-router",
       "dependencies": [],
       "dependencyOf": [
-        "app-init"
+        "rolamix-app"
       ]
     }
   ],
@@ -318,7 +318,7 @@
         }
       ],
       "inputs": [
-        "__tmp__in__memory__/components/pages/app-init/app-splash/app-splash.js"
+        "__tmp__in__memory__/components/pages/rolamix-app/app-splash/app-splash.js"
       ],
       "encapsulations": [
         "none"
@@ -357,21 +357,12 @@
             "ion-button"
           ],
           "dependencyOf": [
-            "app-init",
-            "ion-toast-controller"
+            "ion-toast-controller",
+            "rolamix-app"
           ]
         }
       ],
       "bundles": [
-        {
-          "fileName": "1p0hudktqtrx.js",
-          "outputs": [
-            "www/build/rmx/1p0hudktqtrx.js"
-          ],
-          "size": 43988,
-          "gzip": 8843,
-          "mode": "md"
-        },
         {
           "fileName": "m00hpvsclo2s.js",
           "outputs": [
@@ -382,14 +373,13 @@
           "mode": "ios"
         },
         {
-          "fileName": "m00hpvsclo2s.es5.js",
+          "fileName": "1p0hudktqtrx.js",
           "outputs": [
-            "www/build/rmx/m00hpvsclo2s.es5.js"
+            "www/build/rmx/1p0hudktqtrx.js"
           ],
-          "size": 44765,
-          "gzip": 9488,
-          "target": "es5",
-          "mode": "ios"
+          "size": 43988,
+          "gzip": 8843,
+          "mode": "md"
         },
         {
           "fileName": "1p0hudktqtrx.es5.js",
@@ -400,6 +390,16 @@
           "gzip": 9842,
           "target": "es5",
           "mode": "md"
+        },
+        {
+          "fileName": "m00hpvsclo2s.es5.js",
+          "outputs": [
+            "www/build/rmx/m00hpvsclo2s.es5.js"
+          ],
+          "size": 44765,
+          "gzip": 9488,
+          "target": "es5",
+          "mode": "ios"
         }
       ],
       "inputs": [
@@ -472,16 +472,6 @@
           "mode": "ios"
         },
         {
-          "fileName": "uoeesrk03vta.es5.js",
-          "outputs": [
-            "www/build/rmx/uoeesrk03vta.es5.js"
-          ],
-          "size": 23257,
-          "gzip": 6312,
-          "target": "es5",
-          "mode": "ios"
-        },
-        {
           "fileName": "gokrzzn6q5jv.es5.js",
           "outputs": [
             "www/build/rmx/gokrzzn6q5jv.es5.js"
@@ -490,6 +480,16 @@
           "gzip": 6396,
           "target": "es5",
           "mode": "md"
+        },
+        {
+          "fileName": "uoeesrk03vta.es5.js",
+          "outputs": [
+            "www/build/rmx/uoeesrk03vta.es5.js"
+          ],
+          "size": 23257,
+          "gzip": 6312,
+          "target": "es5",
+          "mode": "ios"
         }
       ],
       "inputs": [
@@ -521,20 +521,20 @@
       ],
       "bundles": [
         {
-          "fileName": "osajgawopnfv.js",
+          "fileName": "yt1cr1fdog2c.js",
           "outputs": [
-            "www/build/rmx/osajgawopnfv.js"
+            "www/build/rmx/yt1cr1fdog2c.js"
           ],
-          "size": 6533,
-          "gzip": 1844
+          "size": 6029,
+          "gzip": 1779
         },
         {
-          "fileName": "osajgawopnfv.es5.js",
+          "fileName": "yt1cr1fdog2c.es5.js",
           "outputs": [
-            "www/build/rmx/osajgawopnfv.es5.js"
+            "www/build/rmx/yt1cr1fdog2c.es5.js"
           ],
-          "size": 7075,
-          "gzip": 1944,
+          "size": 6571,
+          "gzip": 1875,
           "target": "es5"
         }
       ],
@@ -632,10 +632,19 @@
       ]
     },
     {
-      "entryId": "entry:app-init.rmx-input.site-header.ion-toast-controller.stencil-lift.th-route.th-route-link.th-router",
+      "entryId": "entry:rmx-input.rolamix-app.site-header.ion-toast-controller.stencil-lift.th-route.th-route-link.th-router",
       "components": [
         {
-          "tag": "app-init",
+          "tag": "rmx-input",
+          "dependencies": [
+            "ion-icon"
+          ],
+          "dependencyOf": [
+            "site-header"
+          ]
+        },
+        {
+          "tag": "rolamix-app",
           "dependencies": [
             "ion-toast",
             "ion-toast-controller",
@@ -647,15 +656,6 @@
           "dependencyOf": []
         },
         {
-          "tag": "rmx-input",
-          "dependencies": [
-            "ion-icon"
-          ],
-          "dependencyOf": [
-            "site-header"
-          ]
-        },
-        {
           "tag": "site-header",
           "dependencies": [
             "app-logo",
@@ -665,7 +665,7 @@
             "th-route-link"
           ],
           "dependencyOf": [
-            "app-init"
+            "rolamix-app"
           ]
         },
         {
@@ -674,21 +674,21 @@
             "ion-toast"
           ],
           "dependencyOf": [
-            "app-init"
+            "rolamix-app"
           ]
         },
         {
           "tag": "stencil-lift",
           "dependencies": [],
           "dependencyOf": [
-            "app-init"
+            "rolamix-app"
           ]
         },
         {
           "tag": "th-route",
           "dependencies": [],
           "dependencyOf": [
-            "app-init"
+            "rolamix-app"
           ]
         },
         {
@@ -703,31 +703,31 @@
           "tag": "th-router",
           "dependencies": [],
           "dependencyOf": [
-            "app-init"
+            "rolamix-app"
           ]
         }
       ],
       "bundles": [
         {
-          "fileName": "2xbhx7x2ycg4.js",
+          "fileName": "q4rkd2bg1aaa.js",
           "outputs": [
-            "www/build/rmx/2xbhx7x2ycg4.js"
+            "www/build/rmx/q4rkd2bg1aaa.js"
           ],
-          "size": 23596,
-          "gzip": 7058
+          "size": 23629,
+          "gzip": 7050
         },
         {
-          "fileName": "2xbhx7x2ycg4.es5.js",
+          "fileName": "q4rkd2bg1aaa.es5.js",
           "outputs": [
-            "www/build/rmx/2xbhx7x2ycg4.es5.js"
+            "www/build/rmx/q4rkd2bg1aaa.es5.js"
           ],
-          "size": 27986,
-          "gzip": 7932,
+          "size": 28019,
+          "gzip": 7925,
           "target": "es5"
         }
       ],
       "inputs": [
-        "__tmp__in__memory__/components/pages/app-init/app-init.js",
+        "__tmp__in__memory__/components/pages/rolamix-app/rolamix-app.js",
         "__tmp__in__memory__/components/shared/rmx-input/rmx-input.js",
         "__tmp__in__memory__/components/site-header/site-header.js",
         "node_modules/@engineerapart/stencil-lift/dist/collection/components/stencil-lift/stencil-lift.js",
@@ -747,11 +747,11 @@
       "@engineerapart/ts-universal-inject",
       "~services/index"
     ],
-    "src/components/pages/app-init/app-init.tsx": [],
-    "src/components/pages/app-init/app-splash/app-splash.tsx": [],
     "src/components/pages/app-profile/app-profile.tsx": [
       "~utils/index"
     ],
+    "src/components/pages/rolamix-app/app-splash/app-splash.tsx": [],
+    "src/components/pages/rolamix-app/rolamix-app.tsx": [],
     "src/components/shared/app-logo/app-logo.tsx": [],
     "src/components/shared/rmx-button/rmx-button.tsx": [
       "~utils/index"
