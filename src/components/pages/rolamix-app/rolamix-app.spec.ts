@@ -1,7 +1,7 @@
 import { TestWindow } from '@stencil/core/testing';
-import { AppInit } from './app-init';
+import { RolamixApp } from './rolamix-app';
 
-describe('app-init', () => {
+describe('rolamix-app', () => {
 
   it('should update', async () => {
     await window.flush();
@@ -12,8 +12,8 @@ describe('app-init', () => {
   beforeEach(async () => {
     window = new TestWindow();
     await window.load({
-      components: [AppInit],
-      html: '<app-init></app-init>'
+      components: [RolamixApp],
+      html: '<rolamix-app></rolamix-app>'
     });
   });
 });

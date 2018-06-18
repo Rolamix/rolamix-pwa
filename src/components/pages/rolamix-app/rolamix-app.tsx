@@ -3,10 +3,10 @@ import '@ionic/core';
 import { Component, Listen, Prop, State } from '@stencil/core';
 
 @Component({
-  tag: 'app-init',
-  styleUrl: 'app-init.scss'
+  tag: 'rolamix-app',
+  styleUrl: 'rolamix-app.scss'
 })
-export class AppInit {
+export class RolamixApp {
 
   @Prop({ context: 'window' }) private window: Window;
   @Prop({ context: 'document' }) private doc: Document;
