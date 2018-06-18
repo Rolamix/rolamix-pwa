@@ -1,8 +1,8 @@
 const sass = require('@stencil/sass');
-const postcss = require('@stencil/postcss');
-const cssvariables = require('postcss-css-variables');
-const postcssimport = require('postcss-import');
-const postcssreport = require('postcss-reporter');
+// const postcss = require('@stencil/postcss');
+// const cssvariables = require('postcss-css-variables');
+// const postcssimport = require('postcss-import');
+// const postcssreport = require('postcss-reporter');
 
 // I think we can get off sass completely and use postcss plugins
 // https://pawelgrzybek.com/from-sass-to-postcss/
@@ -26,22 +26,22 @@ exports.config = {
     { src: 'assets-svg/*.svg', dest: 'build/rmx/svg/' }
   ],
   plugins: [
-    postcss({
-      plugins: [
-        // We should probably add postcss-url
-        postcssimport({ // be skimpy on repeated imports
-          skipDuplicates: true,
-          path: [
-            'src/styles/'
-          ]
-        }),
-        // Transform css-variable usages to use fallbacks for older browsers
-        cssvariables({
-          preserve: true,
-        }),
-        postcssreport(),
-      ]
-    }),
+    // postcss({
+    //   plugins: [
+    //     // We should probably add postcss-url
+    //     postcssimport({ // be skimpy on repeated imports
+    //       skipDuplicates: true,
+    //       path: [
+    //         'src/styles/'
+    //       ]
+    //     }),
+    //     // Transform css-variable usages to use fallbacks for older browsers
+    //     cssvariables({
+    //       preserve: true,
+    //     }),
+    //     postcssreport(),
+    //   ]
+    // }),
     sass({
       injectGlobalPaths: [ ], // Inject @ top of every scss file. SASS variables, mixins & functions only.
       includePaths: [
@@ -63,7 +63,9 @@ exports.config = {
         globIgnores: [
           '**/build/rmx/svg/*',
           '**/index.html' // caching this causes '/' to be cached too.. for future reference :muscle:.
-        ]
+        ],
+        // Stencil uses injectManifest, which doesn't support this :(
+        // importWorkboxFrom: 'local', // 'cdn'
       }
     },
     {
