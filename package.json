@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "@engineerapart/stencil-lift": "^0.1.7",
-    "@engineerapart/ts-universal-inject": "^1.1.0",
+    "@engineerapart/ts-universal-inject": "^1.1.1",
     "@ionic/core": "^4.0.0-alpha.7",
     "@stencil/core": "^0.9.7",
     "@stencil/router": "^0.2.1",
@@ -35,6 +35,10 @@
     "classnames": "^2.2.6",
     "compression": "^1.7.2",
     "express": "^4.16.3",
+    "i18next": "^11.3.3",
+    "i18next-express-middleware": "^1.1.1",
+    "i18next-fetch-backend": "^0.1.0",
+    "i18next-node-fs-backend": "^1.0.0",
     "ionicons": "4.1.2",
     "redux": "^4.0.0",
     "svg4everybody": "^2.1.9"
