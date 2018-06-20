@@ -1,4 +1,5 @@
-import { initServiceWorker } from '../utils/sw-init';
+import { initServiceWorker } from './utils/sw-init';
+import { TranslateService } from './services/index';
 
 // This is temporarily commented out as the `setupConfig` method has been temporarily removed
 // setupConfig({
@@ -6,3 +7,6 @@ import { initServiceWorker } from '../utils/sw-init';
   // mode: 'md'
   // });
 initServiceWorker();
+
+declare var Context: any;
+Context.TranslateService = new TranslateService(Context.isServer);

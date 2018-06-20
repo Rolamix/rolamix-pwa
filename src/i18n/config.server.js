@@ -3,21 +3,21 @@ const i18next = require('i18next');
 const i18nextMiddleware = require('i18next-express-middleware');
 const i18nextFSBackend = require('i18next-node-fs-backend');
 
-// Context DOES contain req on the server... how?
 i18next
   .use(i18nextMiddleware.LanguageDetector)
   .use(i18nextFSBackend)
   .init({
-    debug: true,
+    debug: false,
+    load: 'all', // 'languageOnly', // 'all', 'currentOnly'
     fallbackLng: 'en',
     preload: ['en', 'es'],
     initImmediate: true,
-    ns: ['app'], // 'pages', 'message', 'global', etc. - for now only one file, 'app'.
-    defaultNS: 'app', // keys in any other name space require prefix: t('pages:home_text') etc
+    ns: ['translations'], // 'pages', 'message', 'global', etc. - for now only one file, 'app'.
+    defaultNS: 'translations', // keys in any other name space require prefix: t('pages:home_text') etc
     saveMissing: false,
     backend: {
-      loadPath: path.resolve(__dirname, '..', '/locales/{{lng}}/{{ns}}.json'),
-      addPath: path.resolve(__dirname, '..', '/locales/{{lng}}/{{ns}}.missing.json'),
+      loadPath: path.resolve(__dirname, '..', '..', 'www', 'locales/{{lng}}/{{ns}}.json'),
+      addPath: path.resolve(__dirname, '..', '..', 'www', 'locales/{{lng}}/{{ns}}.missing.json'),
       jsonIndent: 2
     },
     detection: {

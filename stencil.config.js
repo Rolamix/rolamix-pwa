@@ -18,12 +18,13 @@ exports.config = {
   hashFileNames: true,
   hashedFileNameLength: 12,
   globalStyle: 'src/styles/global.scss', // The file contents injected into the page header - NOT referenced by url.
-  globalScript: 'src/global/index.ts',
+  globalScript: 'src/global.ts',
   // bundles: [
-  //   { components: ['app-home', 'etc'] },
+  //   { components: ['translation-manager', 'app-translate', 'rolamix-app'] },
   // ],
   copy: [
-    { src: 'assets-svg/*.svg', dest: 'build/rmx/svg/' }
+    { src: 'assets-svg/*.svg', dest: 'build/rmx/svg/' },
+    { src: 'i18n/locales', dest: 'locales' }
   ],
   plugins: [
     // postcss({
@@ -66,12 +67,17 @@ exports.config = {
         ],
         // Stencil uses injectManifest, which doesn't support this :(
         // importWorkboxFrom: 'local', // 'cdn'
-      }
+      },
+      // testing
+      // hydrateComponents: true,
+      // inlineStyles: true,
+      // inlineAssetsMaxSize: 3000,
+      // removeUnusedStyles: true,
     },
-    {
-      type: 'stats',
-      file: 'stats.json'
-    }
+    // {
+    //   type: 'stats',
+    //   file: 'stats.json'
+    // }
   ],
 };
 

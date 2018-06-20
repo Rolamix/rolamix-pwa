@@ -83,6 +83,7 @@ export class RolamixApp {
 
     return (
       <stencil-lift>
+        <translation-manager />
         <site-header isOpen={this.isMenuOpen} />
 
         <div class="site-container">

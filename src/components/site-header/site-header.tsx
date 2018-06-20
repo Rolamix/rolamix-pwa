@@ -1,5 +1,7 @@
 import { Component, Event, EventEmitter, Listen, Prop, State } from '@stencil/core';
 import cx from 'classnames';
+// import { InjectProp } from '@engineerapart/ts-universal-inject';
+import { TranslateService } from '~services/index';
 
 // Also https://codepen.io/sergioandrade/pen/onkub
 
@@ -10,6 +12,11 @@ import cx from 'classnames';
 export class AppHeader {
 
   @Event() menuToggle: EventEmitter;
+
+  // @InjectProp(TTranslateService)
+  // private translateService: TranslateService;
+  @Prop({ context: 'TranslateService' })
+  private translateService: TranslateService;
 
   // @Prop({ context: 'window' }) private window: Window;
   @Prop() isLoggedIn: boolean = false;
@@ -67,6 +74,12 @@ export class AppHeader {
     console.log('Searching:', searchTerm);
   }
 
+  setLanguage = (lang: string) => {
+    return () => {
+      this.translateService.setLanguage(lang);
+    };
+  }
+
   public render() {
     return (
       <header class={cx('header', { open: this.isOpen })}>
@@ -96,17 +109,22 @@ export class AppHeader {
 
         <nav class={cx('menu hide-sm', { open: this.isOpen })}>
           <ul>
-            <li class="menu-item"><th-route-link url="/">Home</th-route-link></li>
-            <li class="menu-item"><th-route-link url="/about">About</th-route-link></li>
-            <li class="menu-item"><th-route-link url="/espectaculos">News</th-route-link></li>
-            <li class="menu-item"><th-route-link url="/promotions">Promotions</th-route-link></li>
-            <li class="menu-item"><th-route-link url="/contacto">Contact</th-route-link></li>
+            <li class="menu-item"><th-route-link url="/"><app-translate key="header.menu.home" fallback="Home" /></th-route-link></li>
+            <li class="menu-item"><th-route-link url="/about"><app-translate key="header.menu.about" fallback="About" /></th-route-link></li>
+            <li class="menu-item"><th-route-link url="/espectaculos"><app-translate key="header.menu.espectaculos" fallback="News" /></th-route-link></li>
+            <li class="menu-item"><th-route-link url="/promotions"><app-translate key="header.menu.promotions" fallback="Promotions" /></th-route-link></li>
+            <li class="menu-item"><th-route-link url="/contacto"><app-translate key="header.menu.contact" fallback="Contact" /></th-route-link></li>
           </ul>
 
           <ul>
-            <li class="menu-item search"><button class="clickable-wrapper search" onClick={this.toggleMobileSearchbox}><ion-icon size="small" name="search" />Search</button></li>
-            <li class="menu-item"><th-route-link url="/login">Login</th-route-link></li>
-            <li class="menu-item"><th-route-link url="/promotions">Signup</th-route-link></li>
+            <li class="menu-item search">
+              <button class="clickable-wrapper search" onClick={this.toggleMobileSearchbox}>
+              <ion-icon size="small" name="search" />
+              <app-translate key="header.menu.search" fallback="Search" />
+              </button>
+            </li>
+            <li class="menu-item"><th-route-link url="/login"><app-translate key="header.menu.login" fallback="Login" /></th-route-link></li>
+            <li class="menu-item"><th-route-link url="/signup"><app-translate key="header.menu.signup" fallback="Signup" /></th-route-link></li>
           </ul>
         </nav>
 
@@ -119,6 +137,11 @@ export class AppHeader {
           <s class="bar" />
           <s class="bar" />
         </button>
+
+        <div class="locale-switcher">
+          <button class="clickable-wrapper" onClick={this.setLanguage('en')}><img src="/assets/images/locale/en_x64.png" alt="change language to english" /></button>
+          <button class="clickable-wrapper" onClick={this.setLanguage('es')}><img src="/assets/images/locale/mx_x64.png" alt="cambiar idioma a español" /></button>
+        </div>
 
       </header>
     );

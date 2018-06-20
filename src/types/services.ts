@@ -32,3 +32,8 @@ export interface User {
   company: Company;
   address: UserAddress;
 }
+
+// we can also pass in things like male/female, counts, and interpolation rules
+export interface TranslationMethodOptions {
+  replace?: { [key: string]: any };
+}

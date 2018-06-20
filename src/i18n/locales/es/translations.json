@@ -1,0 +1,15 @@
+{
+  "key": "Bienvenidos a Rolamix!",
+  "header": {
+    "menu": {
+      "home": "Inicio",
+      "about": "Sobre",
+      "espectaculos": "Espectáculos",
+      "promotions": "Promociones",
+      "contact": "Contacto",
+      "search": "Buscar",
+      "login": "Inicia Sesión",
+      "signup": "Registrar"
+    }
+  }
+}

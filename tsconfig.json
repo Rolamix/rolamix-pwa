@@ -17,6 +17,8 @@
     "noImplicitReturns": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
+    "isolatedModules": false,
+    "preserveConstEnums": true,
     "lib": [
       "dom",
       "es2017"

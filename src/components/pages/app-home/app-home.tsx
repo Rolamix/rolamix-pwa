@@ -63,7 +63,7 @@ export class AppHome {
   render() {
     return [
       <header>
-        <h1 ref={(el) => (this.h1 = el)}>Stencil PWA Toolkit</h1>
+        <h1 ref={(el) => (this.h1 = el)}><app-translate key="key" /></h1>
       </header>,
 
       <div class="content">

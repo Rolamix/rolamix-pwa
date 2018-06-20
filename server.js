@@ -1,7 +1,7 @@
 const stencil = require('@stencil/core/server');
 const express = require('express');
 const compression = require('compression');
-const i18nextHandler = require('./src/server/i18next');
+const i18nextHandler = require('./src/i18n/config.server');
 
 // set which port express it will be using
 const port = process.env.PORT || 3030;

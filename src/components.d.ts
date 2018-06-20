@@ -417,6 +417,79 @@ declare global {
 declare global {
 
   namespace StencilComponents {
+    interface AppTranslate {
+      'fallback': string;
+      'key': string;
+      'replace': { [key: string]: any };
+      'value': string;
+    }
+  }
+
+  interface HTMLAppTranslateElement extends StencilComponents.AppTranslate, HTMLStencilElement {}
+
+  var HTMLAppTranslateElement: {
+    prototype: HTMLAppTranslateElement;
+    new (): HTMLAppTranslateElement;
+  };
+  interface HTMLElementTagNameMap {
+    'app-translate': HTMLAppTranslateElement;
+  }
+  interface ElementTagNameMap {
+    'app-translate': HTMLAppTranslateElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'app-translate': JSXElements.AppTranslateAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface AppTranslateAttributes extends HTMLAttributes {
+      'fallback'?: string;
+      'key'?: string;
+      'replace'?: { [key: string]: any };
+      'value'?: string;
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
+    interface TranslationManager {
+      'lang': string;
+    }
+  }
+
+  interface HTMLTranslationManagerElement extends StencilComponents.TranslationManager, HTMLStencilElement {}
+
+  var HTMLTranslationManagerElement: {
+    prototype: HTMLTranslationManagerElement;
+    new (): HTMLTranslationManagerElement;
+  };
+  interface HTMLElementTagNameMap {
+    'translation-manager': HTMLTranslationManagerElement;
+  }
+  interface ElementTagNameMap {
+    'translation-manager': HTMLTranslationManagerElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'translation-manager': JSXElements.TranslationManagerAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface TranslationManagerAttributes extends HTMLAttributes {
+      'lang'?: string;
+      'onLanguageChanged'?: (event: CustomEvent) => void;
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
     interface SiteHeader {
       'isLoggedIn': boolean;
       'isOpen': boolean;
