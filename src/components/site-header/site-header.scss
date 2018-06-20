@@ -1,0 +1,363 @@
+// @import "grid";
+@import 'core';
+
+$header-bg: color($colors, transparent);
+
+site-header {
+  display: block;
+  height: $header-height;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  background-color: color($colors, white);
+
+  & .ver-mas-cerrado {
+    position: absolute;
+    top: -100px;
+    float: left;
+    width: 100%;
+    overflow: hidden;
+    padding: 0;
+    z-index: 9999999;
+    background: color($colors, white);
+    transition: all 250ms ease;
+
+    &.active {
+      top: 0;
+    }
+
+    & .search-link-navigation {
+      display: flex;
+      width: 100%;
+      line-height: normal;
+    }
+
+    & .ver-mas-cerrar {
+      padding: 23px;
+      display: block;
+      justify-self: flex-start;
+
+      ion-icon {
+        font-size: 1.14rem;
+        font-weight: 600;
+        color: color($colors, text-blue);
+      }
+    }
+
+    & .search-input {
+      flex: 1;
+      margin-right: 15px;
+      // this does not set the text color - it sets the icon color, which uses currentColor
+      color: color($colors, text-blue);
+    }
+
+    & rmx-button.submit-search {
+      justify-self: flex-end;
+      margin-right: 5px;
+    }
+  }
+
+  /* HEADER */
+  & .header {
+    // position: fixed;
+    left: 0;
+    right: 0;
+    height: $header-height;
+    line-height: $header-height;
+    color: color($colors, black);
+    background-color: $header-bg;
+    display: flex;
+    align-items: center;
+  }
+
+  & .header-logo {
+    padding: 0 0 0 15px;
+    flex: 1;
+    // This accounts for the fact that the svg is not vertically centered
+    // inside its viewbox - this is becaues of the path itself and can't be fixed
+    // without reauthoring the asset.
+    position: relative;
+    top: -3px;
+
+    & a {
+      display: inline-block;
+    }
+
+    & app-logo {
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 8px;
+    }
+  }
+
+  & .header-icon {
+    width: 40px;
+    height: 34px;
+    position: relative;
+    display: block;
+    margin-right: 16px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    & .bar {
+      background-color: #777;
+      display: block;
+      width: 27px;
+      height: 2px;
+      border-radius: 100px;
+      position: absolute;
+      top: 16px;
+      right: 7px;
+      opacity: 1;
+      transition: all .3s;
+
+      &:first-child {
+        transform: translateY(-6px);
+      }
+
+      &:last-child {
+        transform: translateY(6px);
+      }
+    }
+
+    &.x .bar {
+      // transform: rotate(45deg);
+
+      &:first-child {
+        transform: rotate(-45deg);
+      }
+      &:nth-child(2) {
+        opacity: 0;
+        transform: rotate(-45deg);
+      }
+      &:last-child {
+        transform: rotate(45deg);
+      }
+    }
+
+  }
+
+
+  /* MENU */
+  & .menu {
+    display: flex;
+    width: 100%;
+    z-index: 3;
+
+    & ul {
+      list-style-type: none;
+      display: flex;
+      margin: 0;
+
+      & li {
+        // display: inline;
+        // padding: 18px;
+        line-height: 1;
+        font-size: 1rem;
+        position: relative;
+        left: 10px;
+        opacity: 0;
+
+        & a {
+          display: block;
+          text-align: left;
+          border-bottom: 1px solid $header-bg;
+          padding: 15px 20px;
+          font-weight: 600;
+          line-height: 1.6;
+          color: $black-c; // color($colors, medium);
+          transition: all 250ms ease-out;
+
+          &:hover {
+            color: color($colors, secondary);
+          }
+        }
+      }
+    }
+  }
+
+  & button.search {
+    display: flex;
+    color: color($colors, text-blue);
+    padding: 1px 15px 2px;
+
+    & ion-icon {
+      margin-right: 8px;
+    }
+
+    & svg-icon svg {
+      fill: color($colors, text-blue);
+      stroke: color($colors, text-blue);
+    }
+  }
+
+  & li.menu-item.search {
+    color: color($colors, text-blue);
+    display: none;
+
+    & button.search {
+      display: none;
+    }
+  }
+
+  & .locale-switcher {
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 24px;
+
+    & button.clickable-wrapper {
+      display: inherit;
+      padding: 0 5px;
+      height: 24px;
+    }
+
+    & img {
+      width: 26px;
+      display: inline;
+    }
+  }
+
+  /* RESPONSIVE */
+  @include media('<lg') {
+
+    & .menu {
+      flex-direction: column;
+    }
+
+    & .menu ul {
+      display: block;
+    }
+
+    & .menu ul:first-child {
+      margin-top: 10px;
+    }
+
+    & .menu ul li {
+      transition: all 250ms ease-out;
+    }
+
+    // we need an extra class that forces it hidden on a small screen,
+    // and gets removed when the menu is open, allowing it to animate.
+
+    & .menu {
+      position: absolute;
+      right: 0;
+      top: $header-height;
+      bottom: 0;
+      width: $menu-width;
+      background-color: color($colors, lightest);
+      // transition-duration: 300ms;
+      transform: translateX($menu-width * 1); // -1 if on left
+      overflow-x: hidden;
+      overflow-y: scroll;
+      -webkit-overflow-scrolling: touch;
+      will-change: scroll-position;
+      contain: size style layout;
+
+      &.hide-sm {
+        visibility: collapse;
+        opacity: 0;
+      }
+
+      &.open {
+        transition-duration: 300ms;
+        transform: translateX(0);
+        visibility: visible;
+        opacity: 1;
+
+        & li {
+          left: 0;
+          opacity: 1;
+
+          &.menu-item:nth-child(1) {
+            transition-delay: 0.2s;
+          }
+          &.menu-item:nth-child(2) {
+            transition-delay: 0.3s;
+          }
+          &.menu-item:nth-child(3) {
+            transition-delay: 0.4s;
+          }
+          &.menu-item:nth-child(4) {
+            transition-delay: 0.5s;
+          }
+          &.menu-item:nth-child(5) {
+            transition-delay: 0.6s;
+          }
+        }
+
+        & ul:nth-child(2) {
+          // flex-direction: column-reverse; // no longer flexing the ul's at this size.
+
+          & li {
+            &.menu-item:nth-child(2) {
+              transition-delay: 0.7s;
+            }
+            &.menu-item:nth-child(3) {
+              transition-delay: 0.8s;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include media('>=lg') {
+    position: fixed;
+    // position: static;
+    // Alternatively, on the large screen, or on the homepage,
+    // we can make the bg color transparent,
+    // and allow this component to scroll with the page instead of being fixed.
+    background-color: color($colors, white);
+
+    & button.search {
+      display: none;
+    }
+
+    & .header-icon {
+      display: none;
+    }
+
+    & .menu {
+
+      & ul {
+        margin: initial;
+
+        & li {
+          left: 0;
+          opacity: 1;
+
+          & a {
+            padding: 20px 17px;
+          }
+
+          &:first-child a {
+            padding-left: 20px;
+          }
+
+          &.menu-item.search {
+            display: flex;
+            align-items: center;
+
+            button.search {
+              display: flex;
+              align-items: center;
+            }
+          }
+        }
+      }
+
+      & ul:first-child {
+        flex: 1;
+      }
+      & ul:nth-child(2) {
+        align-self: flex-end;
+      }
+    }
+  }
+
+}

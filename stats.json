@@ -1,0 +1,13 @@
+{
+  "diagnostics": [
+    {
+      "level": "error",
+      "type": "build",
+      "header": "build error",
+      "messageText": "TypeError: Path must be a string. Received undefined\n    at assertPath (path.js:28:11)\n    at Object.join (path.js:1251:7)\n    at pathJoin (/Users/patricksears/Git/Clients/Rolamix/rolamix-web-pwa/node_modules/@stencil/core/dist/compiler/index.js:164:47)\n    at /Users/patricksears/Git/Clients/Rolamix/rolamix-web-pwa/node_modules/@stencil/core/dist/compiler/index.js:14990:30\n    at Generator.next (<anonymous>)\n    at fulfilled (/Users/patricksears/Git/Clients/Rolamix/rolamix-web-pwa/node_modules/@stencil/core/dist/compiler/index.js:14971:58)\n    at <anonymous>\n    at process._tickCallback (internal/process/next_tick.js:188:7)",
+      "relFilePath": null,
+      "absFilePath": null,
+      "lines": []
+    }
+  ]
+}

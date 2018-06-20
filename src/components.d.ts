@@ -26,6 +26,7 @@ declare global {
   interface HTMLAttributes {}
 }
 
+import '@engineerapart/stencil-lift';
 import '@theracode/router';
 import 'ionicons';
 import '@ionic/core';
@@ -33,9 +34,6 @@ import '@ionic/core';
 import {
   MatchResults,
 } from '@theracode/router';
-import {
-  EventEmitter,
-} from '@stencil/core';
 
 declare global {
 
@@ -108,36 +106,31 @@ declare global {
 declare global {
 
   namespace StencilComponents {
-    interface LazyImg {
-      'alt': string;
-      'src': string;
-      'width': number;
+    interface AppSplash {
+      'active': boolean;
     }
   }
 
-  interface HTMLLazyImgElement extends StencilComponents.LazyImg, HTMLStencilElement {}
+  interface HTMLAppSplashElement extends StencilComponents.AppSplash, HTMLStencilElement {}
 
-  var HTMLLazyImgElement: {
-    prototype: HTMLLazyImgElement;
-    new (): HTMLLazyImgElement;
+  var HTMLAppSplashElement: {
+    prototype: HTMLAppSplashElement;
+    new (): HTMLAppSplashElement;
   };
   interface HTMLElementTagNameMap {
-    'lazy-img': HTMLLazyImgElement;
+    'app-splash': HTMLAppSplashElement;
   }
   interface ElementTagNameMap {
-    'lazy-img': HTMLLazyImgElement;
+    'app-splash': HTMLAppSplashElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      'lazy-img': JSXElements.LazyImgAttributes;
+      'app-splash': JSXElements.AppSplashAttributes;
     }
   }
   namespace JSXElements {
-    export interface LazyImgAttributes extends HTMLAttributes {
-      'alt'?: string;
-      'onLazyImgloaded'?: (event: CustomEvent<HTMLImageElement>) => void;
-      'src'?: string;
-      'width'?: number;
+    export interface AppSplashAttributes extends HTMLAttributes {
+      'active'?: boolean;
     }
   }
 }
@@ -146,31 +139,385 @@ declare global {
 declare global {
 
   namespace StencilComponents {
-    interface MyApp {
+    interface RolamixApp {
 
     }
   }
 
-  interface HTMLMyAppElement extends StencilComponents.MyApp, HTMLStencilElement {}
+  interface HTMLRolamixAppElement extends StencilComponents.RolamixApp, HTMLStencilElement {}
 
-  var HTMLMyAppElement: {
-    prototype: HTMLMyAppElement;
-    new (): HTMLMyAppElement;
+  var HTMLRolamixAppElement: {
+    prototype: HTMLRolamixAppElement;
+    new (): HTMLRolamixAppElement;
   };
   interface HTMLElementTagNameMap {
-    'my-app': HTMLMyAppElement;
+    'rolamix-app': HTMLRolamixAppElement;
   }
   interface ElementTagNameMap {
-    'my-app': HTMLMyAppElement;
+    'rolamix-app': HTMLRolamixAppElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      'my-app': JSXElements.MyAppAttributes;
+      'rolamix-app': JSXElements.RolamixAppAttributes;
     }
   }
   namespace JSXElements {
-    export interface MyAppAttributes extends HTMLAttributes {
+    export interface RolamixAppAttributes extends HTMLAttributes {
 
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
+    interface AppLogo {
+
+    }
+  }
+
+  interface HTMLAppLogoElement extends StencilComponents.AppLogo, HTMLStencilElement {}
+
+  var HTMLAppLogoElement: {
+    prototype: HTMLAppLogoElement;
+    new (): HTMLAppLogoElement;
+  };
+  interface HTMLElementTagNameMap {
+    'app-logo': HTMLAppLogoElement;
+  }
+  interface ElementTagNameMap {
+    'app-logo': HTMLAppLogoElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'app-logo': JSXElements.AppLogoAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface AppLogoAttributes extends HTMLAttributes {
+
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
+    interface RmxButton {
+      'center': boolean;
+      'disabled': boolean;
+      'full': boolean;
+      'loading': boolean;
+      'raiseClick': (evt: UIEvent) => void;
+      'swap': boolean;
+    }
+  }
+
+  interface HTMLRmxButtonElement extends StencilComponents.RmxButton, HTMLStencilElement {}
+
+  var HTMLRmxButtonElement: {
+    prototype: HTMLRmxButtonElement;
+    new (): HTMLRmxButtonElement;
+  };
+  interface HTMLElementTagNameMap {
+    'rmx-button': HTMLRmxButtonElement;
+  }
+  interface ElementTagNameMap {
+    'rmx-button': HTMLRmxButtonElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'rmx-button': JSXElements.RmxButtonAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface RmxButtonAttributes extends HTMLAttributes {
+      'center'?: boolean;
+      'disabled'?: boolean;
+      'full'?: boolean;
+      'loading'?: boolean;
+      'raiseClick'?: (evt: UIEvent) => void;
+      'swap'?: boolean;
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
+    interface RmxInput {
+      'disabled': boolean;
+      'fieldType': 'text' | 'password';
+      'hasError': boolean;
+      'icon': string | JSX.Element;
+      'inputClass': string;
+      'label': string;
+      'message': string;
+      'name': string;
+      'onBlurChange': () => void;
+      'onFocusChange': () => void;
+      'onInputChange': (evt: KeyboardEvent, value: string) => void;
+      'onValueChange': (evt: KeyboardEvent, value: string) => void;
+      'placeholder': string;
+      'value': string;
+    }
+  }
+
+  interface HTMLRmxInputElement extends StencilComponents.RmxInput, HTMLStencilElement {}
+
+  var HTMLRmxInputElement: {
+    prototype: HTMLRmxInputElement;
+    new (): HTMLRmxInputElement;
+  };
+  interface HTMLElementTagNameMap {
+    'rmx-input': HTMLRmxInputElement;
+  }
+  interface ElementTagNameMap {
+    'rmx-input': HTMLRmxInputElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'rmx-input': JSXElements.RmxInputAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface RmxInputAttributes extends HTMLAttributes {
+      'disabled'?: boolean;
+      'fieldType'?: 'text' | 'password';
+      'hasError'?: boolean;
+      'icon'?: string | JSX.Element;
+      'inputClass'?: string;
+      'label'?: string;
+      'message'?: string;
+      'name'?: string;
+      'onBlurChange'?: () => void;
+      'onFocusChange'?: () => void;
+      'onInputChange'?: (evt: KeyboardEvent, value: string) => void;
+      'onValueChange'?: (evt: KeyboardEvent, value: string) => void;
+      'placeholder'?: string;
+      'value'?: string;
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
+    interface RmxSpinner {
+      'active': boolean;
+      'backgroundColor': 'white' | 'primarySoft';
+      'size': 'small' | 'medium' | 'large';
+    }
+  }
+
+  interface HTMLRmxSpinnerElement extends StencilComponents.RmxSpinner, HTMLStencilElement {}
+
+  var HTMLRmxSpinnerElement: {
+    prototype: HTMLRmxSpinnerElement;
+    new (): HTMLRmxSpinnerElement;
+  };
+  interface HTMLElementTagNameMap {
+    'rmx-spinner': HTMLRmxSpinnerElement;
+  }
+  interface ElementTagNameMap {
+    'rmx-spinner': HTMLRmxSpinnerElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'rmx-spinner': JSXElements.RmxSpinnerAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface RmxSpinnerAttributes extends HTMLAttributes {
+      'active'?: boolean;
+      'backgroundColor'?: 'white' | 'primarySoft';
+      'size'?: 'small' | 'medium' | 'large';
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
+    interface SvgIcon {
+      /**
+       * Specifies the label to use for accessibility. Defaults to the icon name.
+       */
+      'ariaLabel': string;
+      'color': string;
+      /**
+       * A combination of both `name` and `src`. If a `src` url is detected it will set the `src` property. Otherwise it assumes it's a built-in named SVG and set the `name` property.
+       */
+      'icon': string;
+      /**
+       * Specifies which icon to use from the built-in set of icons.
+       */
+      'name': string;
+      /**
+       * The size of the icon. Available options are: `"small"`, `"medium"` and `"large"`.
+       */
+      'size': string;
+      /**
+       * Specifies the exact `src` of an SVG file to use.
+       */
+      'src': string;
+    }
+  }
+
+  interface HTMLSvgIconElement extends StencilComponents.SvgIcon, HTMLStencilElement {}
+
+  var HTMLSvgIconElement: {
+    prototype: HTMLSvgIconElement;
+    new (): HTMLSvgIconElement;
+  };
+  interface HTMLElementTagNameMap {
+    'svg-icon': HTMLSvgIconElement;
+  }
+  interface ElementTagNameMap {
+    'svg-icon': HTMLSvgIconElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'svg-icon': JSXElements.SvgIconAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface SvgIconAttributes extends HTMLAttributes {
+      /**
+       * Specifies the label to use for accessibility. Defaults to the icon name.
+       */
+      'ariaLabel'?: string;
+      'color'?: string;
+      /**
+       * A combination of both `name` and `src`. If a `src` url is detected it will set the `src` property. Otherwise it assumes it's a built-in named SVG and set the `name` property.
+       */
+      'icon'?: string;
+      /**
+       * Specifies which icon to use from the built-in set of icons.
+       */
+      'name'?: string;
+      /**
+       * The size of the icon. Available options are: `"small"`, `"medium"` and `"large"`.
+       */
+      'size'?: string;
+      /**
+       * Specifies the exact `src` of an SVG file to use.
+       */
+      'src'?: string;
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
+    interface AppTranslate {
+      'fallback': string;
+      'key': string;
+      'replace': { [key: string]: any };
+      'value': string;
+    }
+  }
+
+  interface HTMLAppTranslateElement extends StencilComponents.AppTranslate, HTMLStencilElement {}
+
+  var HTMLAppTranslateElement: {
+    prototype: HTMLAppTranslateElement;
+    new (): HTMLAppTranslateElement;
+  };
+  interface HTMLElementTagNameMap {
+    'app-translate': HTMLAppTranslateElement;
+  }
+  interface ElementTagNameMap {
+    'app-translate': HTMLAppTranslateElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'app-translate': JSXElements.AppTranslateAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface AppTranslateAttributes extends HTMLAttributes {
+      'fallback'?: string;
+      'key'?: string;
+      'replace'?: { [key: string]: any };
+      'value'?: string;
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
+    interface TranslationManager {
+      'lang': string;
+    }
+  }
+
+  interface HTMLTranslationManagerElement extends StencilComponents.TranslationManager, HTMLStencilElement {}
+
+  var HTMLTranslationManagerElement: {
+    prototype: HTMLTranslationManagerElement;
+    new (): HTMLTranslationManagerElement;
+  };
+  interface HTMLElementTagNameMap {
+    'translation-manager': HTMLTranslationManagerElement;
+  }
+  interface ElementTagNameMap {
+    'translation-manager': HTMLTranslationManagerElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'translation-manager': JSXElements.TranslationManagerAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface TranslationManagerAttributes extends HTMLAttributes {
+      'lang'?: string;
+      'onLanguageChanged'?: (event: CustomEvent) => void;
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
+    interface SiteHeader {
+      'isLoggedIn': boolean;
+      'isOpen': boolean;
+    }
+  }
+
+  interface HTMLSiteHeaderElement extends StencilComponents.SiteHeader, HTMLStencilElement {}
+
+  var HTMLSiteHeaderElement: {
+    prototype: HTMLSiteHeaderElement;
+    new (): HTMLSiteHeaderElement;
+  };
+  interface HTMLElementTagNameMap {
+    'site-header': HTMLSiteHeaderElement;
+  }
+  interface ElementTagNameMap {
+    'site-header': HTMLSiteHeaderElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'site-header': JSXElements.SiteHeaderAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface SiteHeaderAttributes extends HTMLAttributes {
+      'isLoggedIn'?: boolean;
+      'isOpen'?: boolean;
+      'onMenuToggle'?: (event: CustomEvent) => void;
     }
   }
 }

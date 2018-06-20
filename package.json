@@ -1,51 +1,84 @@
 {
-  "name": "@stencil/starter",
+  "name": "rolamix-web-pwa",
   "private": true,
-  "version": "0.0.1",
-  "description": "Stencil App Starter",
+  "version": "0.0.3",
+  "description": "Rolamix Public Webapp",
   "files": [
     "dist/"
   ],
   "scripts": {
-    "build": "NODE_ENV=production stencil build",
-    "buildWPrerender": "NODE_ENV=production stencil build --prerender",
-    "dev": "sd concurrent \"stencil build --dev --watch\" \"stencil-dev-server\" ",
+    "build": "NODE_ENV=production stencil build --ssr --es5",
+    "buildWPrerender": "NODE_ENV=production stencil build --prerender --es5",
     "devWithSW": "sd concurrent \"stencil build --dev --service-worker --watch\" \"stencil-dev-server\" ",
     "serve": "stencil-dev-server",
-    "start": "npm run dev",
-    "start:ssr": "NODE_ENV=production stencil build --ssr && NODE_ENV=production node server.js",
-    "start:ssr:dev": "sd concurrent \"NODE_ENV=production stencil build --dev --watch\" \"NODE_ENV=production node server.js\"",
+    "start": "npm run build && npm run start:prod",
+    "start:dev": "sd concurrent \"stencil build --dev --watch\" \"npm run delay && node server.js\"",
+    "start:prod": "NODE_ENV=production node server.js",
+    "dev": "sd concurrent \"stencil build --dev --watch\" \"stencil-dev-server\" ",
+    "start:no-ssr": "npm run dev",
+    "delay": "node scripts/delay.js 20000",
     "test": "jest --no-cache",
     "test.watch": "jest --watch --no-cache",
-    "lint": "tslint --project ."
+    "lint": "tslint --project .",
+    "commitmsg": "commitlint -E GIT_PARAMS",
+    "release": "standard-version",
+    "release:push": "git push --follow-tags origin master",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
   },
   "dependencies": {
+    "@engineerapart/stencil-lift": "^0.1.7",
+    "@engineerapart/ts-universal-inject": "^1.1.1",
     "@ionic/core": "^4.0.0-alpha.7",
-    "@stencil/core": "^0.9.7",
+    "@stencil/core": "0.9.7",
+    "@stencil/router": "^0.2.1",
     "@theracode/router": "^0.0.7",
+    "classnames": "^2.2.6",
+    "compression": "^1.7.2",
     "express": "^4.16.3",
-    "ionicons": "^4.1.2"
+    "i18next": "^11.3.3",
+    "i18next-browser-languagedetector": "^2.2.0",
+    "i18next-express-middleware": "^1.1.1",
+    "i18next-fetch-backend": "^0.1.0",
+    "i18next-node-fs-backend": "^1.0.0",
+    "ionicons": "4.1.2",
+    "redux": "^4.0.0",
+    "svg4everybody": "^2.1.9"
   },
   "devDependencies": {
+    "@commitlint/cli": "^7.0.0",
+    "@commitlint/config-angular": "^7.0.1",
+    "@commitlint/config-conventional": "^7.0.1",
     "@stencil/dev-server": "latest",
+    "@stencil/postcss": "^0.0.4",
     "@stencil/sass": "0.0.5",
     "@stencil/utils": "latest",
     "@theracode/tslint-rules": "^0.0.1",
+    "@types/classnames": "^2.2.4",
+    "@types/i18next": "^8.4.3",
     "@types/jest": "^22.2.3",
+    "conventional-changelog-cli": "^2.0.1",
+    "husky": "^0.14.3",
+    "include-media": "^1.4.9",
     "jest": "^23.1.0",
+    "postcss-css-variables": "^0.8.1",
+    "postcss-import": "^11.1.0",
+    "postcss-reporter": "^5.0.0",
+    "standard-version": "^4.4.0",
     "tslint": "^5.10.0",
+    "tslint-language-service": "^0.9.9",
+    "tslint-react": "^3.6.0",
     "typescript": "^2.9.1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ionic-team/stencil-app-starter.git"
+    "url": "git+https://github.com/rolamix/rolamix-web-pwa.git"
   },
   "author": "Ionic Team",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ionic-team/stencil"
+    "url": "https://github.com/rolamix/rolamix-web-pwa"
   },
-  "homepage": "https://github.com/ionic-team/stencil",
+  "homepage": "https://github.com/rolamix/rolamix-web-pwa",
   "jest": {
     "transform": {
       "^.+\\.(js|ts|tsx)$": "<rootDir>/node_modules/@stencil/core/testing/jest.preprocessor.js"
@@ -57,6 +90,11 @@
       "js",
       "json",
       "jsx"
+    ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
     ]
   }
 }

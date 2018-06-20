@@ -1,0 +1,77 @@
+@import 'core';
+
+svg-icon {
+  display: inline-block;
+  font-size: inherit;
+}
+
+svg-icon .icon-inner,
+svg-icon svg {
+  height: 1em;
+  width: 1em;
+}
+
+svg-icon svg {
+  fill: currentColor;
+  stroke: currentColor;
+}
+
+.icon-small .icon-inner {
+  font-size: 1.28rem;
+}
+
+.icon-medium .icon-inner {
+  font-size: 1.71rem;
+}
+
+.icon-large .icon-inner {
+  font-size: 2.28rem;
+}
+
+/* Icon Colors */
+/* ------------------- */
+
+.icon-primary svg {
+  fill: var(--color-primary, $primary);
+  stroke: var(--color-primary, $primary);
+}
+
+.icon-secondary svg {
+  fill: var(--color-secondary, $secondary);
+  stroke: var(--color-secondary, $secondary);
+}
+
+.icon-tertiary svg {
+  fill: var(--color-tertiary, $tertiary);
+  stroke: var(--color-tertiary, $tertiary);
+}
+
+.icon-success svg {
+  fill: var(--color-success, $success);
+  stroke: var(--color-success, $success);
+}
+
+.icon-warning svg {
+  fill: var(--color-warning, $warning);
+  stroke: var(--color-warning, $warning);
+}
+
+.icon-danger svg {
+  fill: var(--color-danger, $danger);
+  stroke: var(--color-danger, $danger);
+}
+
+.icon-light svg {
+  fill: var(--color-light, $light);
+  stroke: var(--color-light, $light);
+}
+
+// .icon-medium svg {
+//   fill: var(--color-medium, $medium);
+//   stroke: var(--color-medium,  $medium);
+// }
+
+.icon-dark svg {
+  fill: var(--color-dark, $dark);
+  stroke: var(--color-dark, $dark);
+}

@@ -4,10 +4,14 @@
   "start_url": "/",
   "display": "standalone",
   "icons": [{
-    "src": "assets/icon/icon.png",
+    "src": "assets/icon/icon192x192.png",
+    "sizes": "192x192",
+    "type": "image/png"
+  },{
+    "src": "assets/icon/icon512x512.png",
     "sizes": "512x512",
     "type": "image/png"
   }],
-  "background_color": "#488aff",
-  "theme_color": "#488aff"
+  "background_color": "#42BC98",
+  "theme_color": "#42BC98"
 }

@@ -1,0 +1,21 @@
+.clearfix:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+
+button {
+  font-weight: 600;
+}
+
+button.clickable-wrapper {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+ion-toast.toast .toast-wrapper {
+  background-color: $text-blue; // provide a fallback for IE11
+  background-color: var(--color-text-blue, $text-blue); // testing
+}

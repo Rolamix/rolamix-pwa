@@ -1,0 +1,25 @@
+@import 'core';
+
+$logo-width: 190px;
+$logo-height: 45px;
+
+app-logo {
+
+  width: $logo-width;
+  height: $logo-height;
+  display: block;
+
+  svg-icon .icon-inner, svg-icon svg {
+    width: $logo-width;
+    height: $logo-height;
+    fill: unset;
+    stroke: black;
+    stroke-width: .5px;
+    stroke-opacity: .7;
+  }
+
+  svg #_Group_2 {
+    fill: color($colors, black);
+  }
+
+}

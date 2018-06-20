@@ -1,0 +1,42 @@
+@import 'core';
+
+app-home {
+  padding: 10px;
+  display: block;
+
+  & header {
+    overflow: auto; // reminder about collapsing margins - the h1's margin extends above the container.
+  }
+
+  & .list {
+    margin: 0 0 16px;
+    padding: 0;
+    display: block;
+    contain: content;
+    list-style-type: none;
+
+    &.list-item {
+      display: block;
+
+      & p {
+        margin: 0 0 2px;
+        overflow: inherit;
+        font-size: 1rem;
+        line-height: normal;
+        text-overflow: inherit;
+        color: color($colors, text-light);
+      }
+    }
+
+    &.item-label {
+      margin: 13px 8px;
+      display: block;
+      overflow: hidden;
+      flex: 1;
+      font-size: inherit;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      line-height: 1.5;
+    }
+  }
+}
